@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1146" height="283.333" viewBox="0 0 1146 283.333">
+  <g id="그룹_163" data-name="그룹 163" transform="translate(-387 -3692.064)">
+    <text id="입사지원" transform="translate(458.957 3849.87)" fill="#fff" font-size="32" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-weight="500" letter-spacing="-0.025em"><tspan x="0" y="0">입사지원</tspan></text>
+    <text id="서류전형" transform="translate(755.957 3849.87)" fill="#fff" font-size="32" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-weight="500" letter-spacing="-0.025em"><tspan x="0" y="0">서류전형</tspan></text>
+    <text id="면접1_2차" data-name="면접1,2차" transform="translate(1046.155 3849.87)" fill="#fff" font-size="32" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-weight="500" letter-spacing="-0.025em"><tspan x="0" y="0">면접</tspan><tspan y="0" font-family="NotoSans-Medium, Noto Sans">1,2</tspan><tspan y="0">차</tspan></text>
+    <text id="최종합격" transform="translate(1349.957 3849.87)" fill="#fff" font-size="32" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-weight="500" letter-spacing="-0.025em"><tspan x="0" y="0">최종합격</tspan></text>
+    <g id="패스_43" data-name="패스 43" fill="none" stroke-miterlimit="10" opacity="0.5">
+      <path d="M514.5,3692.064,387,3762.9v141.667l127.5,70.83,127.5-70.83V3762.9Z" stroke="none"/>
+      <path d="M 514.4972534179688 3694.352294921875 L 389 3764.076904296875 L 389 3903.390380859375 L 514.4972534179688 3973.109619140625 L 640 3903.390380859375 L 640 3764.076904296875 L 514.4972534179688 3694.352294921875 M 514.4971923828125 3692.064453125 L 642 3762.900146484375 L 642 3904.567138671875 L 514.4971923828125 3975.3974609375 L 387 3904.567138671875 L 387 3762.900146484375 L 514.4971923828125 3692.064453125 Z" stroke="none" fill="#fff"/>
+    </g>
+    <g id="패스_44" data-name="패스 44" fill="none" stroke-miterlimit="10" opacity="0.5">
+      <path d="M811.5,3692.064,684,3762.9v141.667l127.5,70.83,127.5-70.83V3762.9Z" stroke="none"/>
+      <path d="M 811.4972534179688 3694.352294921875 L 686 3764.076904296875 L 686 3903.390380859375 L 811.4972534179688 3973.109619140625 L 937 3903.390380859375 L 937 3764.076904296875 L 811.4972534179688 3694.352294921875 M 811.4971923828125 3692.064453125 L 939 3762.900146484375 L 939 3904.567138671875 L 811.4971923828125 3975.3974609375 L 684 3904.567138671875 L 684 3762.900146484375 L 811.4971923828125 3692.064453125 Z" stroke="none" fill="#fff"/>
+    </g>
+    <g id="패스_45" data-name="패스 45" fill="none" stroke-miterlimit="10" opacity="0.5">
+      <path d="M1108.5,3692.064,981,3762.9v141.667l127.5,70.83,127.5-70.83V3762.9Z" stroke="none"/>
+      <path d="M 1108.497192382812 3694.352294921875 L 983 3764.076904296875 L 983 3903.390380859375 L 1108.497192382812 3973.109619140625 L 1234 3903.390380859375 L 1234 3764.076904296875 L 1108.497192382812 3694.352294921875 M 1108.497192382812 3692.064453125 L 1236 3762.900146484375 L 1236 3904.567138671875 L 1108.497192382812 3975.3974609375 L 981 3904.567138671875 L 981 3762.900146484375 L 1108.497192382812 3692.064453125 Z" stroke="none" fill="#fff"/>
+    </g>
+    <g id="패스_46" data-name="패스 46" fill="none" stroke-miterlimit="10" opacity="0.5">
+      <path d="M1405.5,3692.064,1278,3762.9v141.667l127.5,70.83,127.5-70.83V3762.9Z" stroke="none"/>
+      <path d="M 1405.497192382812 3694.352294921875 L 1280 3764.076904296875 L 1280 3903.390380859375 L 1405.497192382812 3973.109619140625 L 1531 3903.390380859375 L 1531 3764.076904296875 L 1405.497192382812 3694.352294921875 M 1405.497192382812 3692.064453125 L 1533 3762.900146484375 L 1533 3904.567138671875 L 1405.497192382812 3975.3974609375 L 1278 3904.567138671875 L 1278 3762.900146484375 L 1405.497192382812 3692.064453125 Z" stroke="none" fill="#fff"/>
+    </g>
+  </g>
+</svg>
