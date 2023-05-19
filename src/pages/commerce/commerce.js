@@ -18,8 +18,16 @@ import Lg11 from '../../assets/image/business/commerce/lg11.png'
 import Lg12 from '../../assets/image/business/commerce/lg12.png'
 import Lg13 from '../../assets/image/business/commerce/lg13.png'
 import Lg14 from '../../assets/image/business/commerce/lg14.png'
+import Lg15 from '../../assets/image/business/commerce/lg15.png'
+import Lg16 from '../../assets/image/business/commerce/lg16.png'
 
 import Txt1 from '../../assets/image/business/commerce/txt1.svg'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import { setDefaultLanguage } from 'react-multi-lang'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
 
 const MContainer = styled.div`
 	position: relative;
@@ -28,6 +36,12 @@ const MContainer = styled.div`
 `
 
 const Commerce = () => {
+	const language = useSelector(selectLanguage)
+	const { t, i18n } = useTranslation()
+
+	useEffect(() => {
+		setDefaultLanguage(language ? language : 'ko')
+	}, [language])
 	return (
 		<>
 			<div className="sub-visual">
@@ -49,34 +63,21 @@ const Commerce = () => {
 					/>
 				</h2>
 				<h3 className="text-lg lg:text-3xl text-center font-bold lg:font-light mb-36">
-					현실과 가상이 공존하는 무한 커머스
+					{t('cms1_1')}
 				</h3>
-				<p
-					className="text-lg lg:text-2xl text-center font-extralight lg:leading-9"
-					style={{ marginBottom: '600px' }}
-				>
-					<span className="block md:hidden lg:hidden">
-						기존 온라인 커머스를 기반으로
-						<br />
-						메타버스와 연동된 상품을 판매함으로써
-						<br />
-						새로운 수익 모델을 창출하고 고객과
-						<br />
-						브랜드 간의 특별한 사용자 경험을 제공합니다.
-					</span>
-					<span className="hidden md:block lg:block">
-						기존 온라인 커머스를 기반으로 메타버스와 연동된 상품을 판매함으로써
-						<br />
-						새로운 수익 모델을 창출하고 고객과 브랜드 간의 특별한 사용자 경험을
-						제공합니다.
-					</span>
-				</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p
+						className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 break-keep"
+						style={{ marginBottom: '600px' }}
+					>
+						{t('cms1_2')}
+					</p>
+				</div>
 				<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mb-4">
 					meta commerce
 				</h2>
-				<p className="text-lg lg:text-2xl text-center mt-3 mb-20">
-					커머스 산업의 새로운 패러다임
-				</p>
+
+				<p className="text-lg lg:text-2xl text-center mt-3 mb-20">{t('cms1_3')}</p>
 			</div>
 			<MContainer>
 				<ParallaxBanner
@@ -91,39 +92,16 @@ const Commerce = () => {
 				/>
 			</MContainer>
 			<div className="container p-4 lg:p-0">
-				<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-80">
-					<span className="block md:hidden lg:hidden">
-						갤럭시코퍼레이션은 기존의 이커머스
-						<br />
-						산업에서의 한계를 극복하기 위해,
-						<br />
-						새로운 유통 채널과 혁신적인 방법을
-						<br />
-						도입하여 메타버스에서의
-						<br />
-						새로운 패러다임을 제시하고 있습니다.
-						<br />
-						이를 통해, 기존 이커머스 산업에서
-						<br />
-						발생하던 문제들을 해결하고,
-						<br />
-						더욱 더 효율적이고 편리한 구매 경험을
-						<br />
-						제공하고자 노력하고 있습니다.
-					</span>
-					<span className="hidden md:block lg:block">
-						갤럭시코퍼레이션은 기존의 이커머스 산업에서의 한계를 극복하기 위해, 새로운
-						유통 채널과 혁신적인 방법을 도입하여 메타버스에서의 새로운 패러다임을
-						제시하고 있습니다. 이를 통해, 기존 이커머스 산업에서 발생하던 문제들을
-						해결하고, 더욱 더 효율적이고 편리한 구매 경험을 제공하고자 노력하고
-						있습니다.
-					</span>
-				</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-80 break-keep">
+						{t('cms1_4')}
+					</p>
+				</div>
 			</div>
 			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mb-4">
 				REAL COMMERCE
 			</h2>
-			<p className="text-lg lg:text-2xl text-center mb-20">커머스 올인원</p>
+			<p className="text-lg lg:text-2xl text-center mb-20">{t('cms1_5')}</p>
 			<ParallaxBanner
 				layers={[
 					{
@@ -134,26 +112,14 @@ const Commerce = () => {
 				style={{ height: 330 }}
 			/>
 			<div className="container p-4 lg:p-0">
-				<p className="text-lg text-center font-extralight lg:leading-9 mt-16">
-					<span className="block md:hidden lg:hidden">
-						다년간 축적된 노하우를 기반으로
-						<br />
-						커머스 브랜딩, 서비스, 디자인
-						<br />
-						그리고 마케팅까지 온·오프라인을 아우르는
-						<br />
-						이커머스 관련 제반 업무를 제공합니다.
-					</span>
-					<span className="hidden md:block lg:block">
-						다년간 축적된 노하우를 기반으로 커머스 브랜딩, 서비스, 디자인 그리고
-						마케팅까지 온·오프라인을 아우르는
-						<br />
-						이커머스 관련 제반 업무를 제공합니다.
-					</span>
-				</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p className="text-lg text-center font-extralight lg:leading-9 mt-16 break-keep">
+						{t('cms1_6')}
+					</p>
+				</div>
 			</div>
 			<div className="container mb-10 mt-52">
-				<h3 className="text-3xl mb-2">입점채널</h3>
+				<h3 className="text-3xl mb-2">{t('cms1_7')}</h3>
 				<div className="flex flex-row flex-wrap">
 					<div className="basis-1/3 p-2">
 						<div
@@ -305,6 +271,28 @@ const Commerce = () => {
 						>
 							<img
 								src={Lg14}
+								alt=""
+							/>
+						</div>
+					</div>
+					<div className="basis-1/3 p-2">
+						<div
+							className="flex justify-center items-center"
+							style={{ height: 200 }}
+						>
+							<img
+								src={Lg15}
+								alt=""
+							/>
+						</div>
+					</div>
+					<div className="basis-1/3 p-2">
+						<div
+							className="flex justify-center items-center"
+							style={{ height: 200 }}
+						>
+							<img
+								src={Lg16}
 								alt=""
 							/>
 						</div>

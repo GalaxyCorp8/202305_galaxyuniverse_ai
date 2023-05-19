@@ -34,7 +34,7 @@ const Footer = () => {
 	return (
 		<div className="container p-4">
 			<div className="md:flex md:flex-row md:justify-end md:items-center mt-40">
-				<ul className="mb-3.5 gap-x-5 flex mt-5 md:mt-0 justify-end">
+				<ul className="mb-3.5 gap-x-8 flex mt-5 md:mt-0 justify-end">
 					<li>
 						<Link
 							to="/"
@@ -99,14 +99,26 @@ const Footer = () => {
 						className="footer-logo mb-3.5"
 						alt="GALAXY CORP."
 					/>
-					<p className="text-xs">ⓒ 2023 GALAXY, Inc. All rights reserved.</p>
+					<p className="text-xs font-extralight">
+						2023 GALAXY corporation. CO., LTD. All rights reserved.
+					</p>
 				</div>
 				<PrivacyList className="text-sm flex md:justify-end">
 					<li>
-						<Link to="/">개인정보처리방침</Link>
+						<Link
+							to="/"
+							className="font-extralight"
+						>
+							개인정보처리방침
+						</Link>
 					</li>
 					<li>
-						<Link to="/">문의하기</Link>
+						<Link
+							to="/"
+							className="font-extralight"
+						>
+							문의하기
+						</Link>
 					</li>
 				</PrivacyList>
 			</Container>
