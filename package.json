@@ -1,65 +1,62 @@
 {
-    "name": "galaxy_corporation",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@reduxjs/toolkit": "^1.9.1",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "add": "^2.0.6",
-        "autoprefixer": "^9",
-        "axios": "^1.2.1",
-        "i18next": "^22.4.9",
-        "postcss": "^7",
-        "react": "^18.2.0",
-        "react-device-detect": "^2.2.3",
-        "react-dom": "^18.2.0",
-        "react-draggable": "^4.4.5",
-        "react-i18next": "^12.1.4",
-        "react-multi-lang": "^2.2.0",
-        "react-redux": "^8.0.5",
-        "react-router-dom": "^6.4.4",
-        "react-scripts": "^5.0.1",
-        "react-scroll-parallax": "^3.3.2",
-        "react-slick": "^0.29.0",
-        "redux-persist": "^6.0.0",
-        "slick-carousel": "^1.8.1",
-        "styled": "^1.0.0",
-        "styled-components": "^5.3.6",
-        "styled-reset": "^4.4.4",
-        "web-vitals": "^2.1.4",
-        "yarn": "^1.22.19"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ],
-        "rules": {
-            "react/jsx-uses-react": "off",
-            "react/react-in-jsx-scope": "off"
-        }
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "tailwindcss": "^3.2.4"
-    }
+	"name": "galaxy_corporation",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.1",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"@typescript-eslint/parser": "^5.48.2",
+		"add": "^2.0.6",
+		"autoprefixer": "^9",
+		"axios": "^1.2.1",
+		"i18next": "^22.4.9",
+		"postcss": "^7",
+		"react": "^18.2.0",
+		"react-device-detect": "^2.2.3",
+		"react-dom": "^18.2.0",
+		"react-draggable": "^4.4.5",
+		"react-i18next": "^12.1.4",
+		"react-multi-lang": "^2.2.0",
+		"react-redux": "^8.0.5",
+		"react-router-dom": "^6.4.4",
+		"react-scripts": "5.0.1",
+		"react-scroll-parallax": "^3.3.2",
+		"react-slick": "^0.29.0",
+		"redux-persist": "^6.0.0",
+		"slick-carousel": "^1.8.1",
+		"styled": "^1.0.0",
+		"styled-components": "^5.3.6",
+		"styled-reset": "^4.4.4",
+		"web-vitals": "^2.1.4",
+		"yarn": "^1.22.19"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"tailwindcss": "^3.2.4"
+	}
 }

@@ -24,6 +24,12 @@ import Sl15 from '../../assets/image/business/media/sl15.png'
 import Sl16 from '../../assets/image/business/media/sl16.png'
 
 import Txt1 from '../../assets/image/business/media/txt1.svg'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import { setDefaultLanguage } from 'react-multi-lang'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
 
 const NextArrowContainer = styled.div`
 	position: absolute;
@@ -83,6 +89,13 @@ const MContainer = styled.div`
 `
 
 const Media = () => {
+	const language = useSelector(selectLanguage)
+	const { t, i18n } = useTranslation()
+
+	useEffect(() => {
+		setDefaultLanguage(language ? language : 'ko')
+	}, [language])
+
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -143,47 +156,24 @@ const Media = () => {
 					/>
 				</h2>
 				<h3 className="lg:text-3xl text-center font-bold lg:font-light mb-20">
-					미디어 콘텐츠
+					{t('media1_1')}
 				</h3>
-				<p
-					className="text-lg lg:text-2xl text-center font-extralight lg:leading-9"
-					style={{ marginBottom: '600px' }}
-				>
-					<span className="block md:hidden lg:hidden">
-						누구나 쉽게 접하고 즐길 수 있는
-						<br />
-						콘텐츠를 통해 보다 많은 사람들이
-						<br />
-						행복한 세상을 꿈꿀 수 있는
-						<br />
-						새로운 세상을 전달합니다.
-					</span>
-					<span className="hidden md:block lg:block">
-						누구나 쉽게 접하고 즐길 수 있는 콘텐츠를 통해 보다 많은 사람들이
-						<br />
-						행복한 세상을 꿈꿀 수 있는 새로운 세상을 전달합니다.
-					</span>
-				</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p
+						className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 break-keep"
+						style={{ marginBottom: '600px' }}
+					>
+						{t('media1_2')}
+					</p>
+				</div>
 				<h2 className="text-2xl lg:text-6xl eng text-center mt-14 mb-10">
 					virtual variety
 				</h2>
-				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-32">
-					<span className="block md:hidden lg:hidden">
-						갤럭시의 메타버스 콘텐츠들은
-						<br />
-						갤럭시 미리내 세계관과 초연결되어
-						<br />
-						무한한 메타버스 이야기로 재미와 즐거움을
-						<br />
-						선사하며 잠재되어있던 꿈을 깨워줍니다.
-					</span>
-					<span className="hidden md:block lg:block">
-						갤럭시의 메타버스 콘텐츠들은 갤럭시 미리내 세계관과 초연결되어
-						<br />
-						무한한 메타버스 이야기로 재미와 즐거움을 선사하며 잠재되어있던 꿈을
-						깨워줍니다.
-					</span>
-				</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-32 break-keep">
+						{t('media1_3')}
+					</p>
+				</div>
 			</div>
 			<MContainer>
 				<ParallaxBanner
@@ -203,27 +193,19 @@ const Media = () => {
 			>
 				REAL VARIETY
 			</h2>
-			<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-54">
-				<span className="block md:hidden lg:hidden">
-					국내, 글로벌에서 가장 화제가 되고 있는
-					<br />
-					콘텐츠를 제작하는 스튜디오로 TV,
-					<br />
-					온라인플랫폼, OTT 등 다양한 채널 별<br />
-					포트폴리오와 노하우를 갖춘 스튜디오입니다.
-				</span>
-				<span className="hidden md:block lg:block">
-					국내, 글로벌에서 가장 화제가 되고 있는 콘텐츠를 제작하는 스튜디오로 TV,
-					온라인플랫폼, OTT 등<br />
-					다양한 채널 별 포트폴리오와 노하우를 갖춘 스튜디오입니다.
-				</span>
-			</p>
+			<div className="w-auto md:w-3/5 mx-auto">
+				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-54">
+					{t('media1_4')}
+				</p>
+			</div>
 			<h2 className="text-2xl lg:text-5xl eng text-center eng mb-5 mt-80">
 				lUYWORKS Media
 			</h2>
-			<p className="text-lg lg:text-2xl  font-bold lg:font-light text-center mb-32">
-				예능콘텐츠 전문 스튜디오
-			</p>
+			<div className="w-auto md:w-3/5 mx-auto">
+				<p className="text-lg lg:text-2xl  font-bold lg:font-light text-center mb-32 break-keep">
+					{t('media1_5')}
+				</p>
+			</div>
 			<div className="mb-10">
 				<Slider {...settings}>
 					<div className="px-1">
@@ -266,7 +248,7 @@ const Media = () => {
 			</div>
 			<h2 className="text-2xl lg:text-5xl eng text-center eng mb-5 mt-80">WDM</h2>
 			<p className="text-lg lg:text-2xl  font-bold lg:font-light text-center mb-16">
-				예능콘텐츠 전문 스튜디오
+				{t('media1_6')}
 			</p>
 
 			<ParallaxBanner
@@ -282,7 +264,7 @@ const Media = () => {
 				rudolph studio
 			</h2>
 			<p className="text-lg lg:text-2xl font-bold lg:font-light text-center mb-16">
-				예능콘텐츠 전문 스튜디오
+				{t('media1_6')}
 			</p>
 			<div className="mb-10">
 				<Slider {...settings}>

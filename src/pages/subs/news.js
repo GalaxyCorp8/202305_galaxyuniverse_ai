@@ -5,6 +5,12 @@ import styled from 'styled-components'
 import Arr from '../../assets/image/common/dropdown_arr.svg'
 import TempImg from '../../assets/image/news/temp.png'
 import Txt1 from '../../assets/image/news/txt1.svg'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import { setDefaultLanguage } from 'react-multi-lang'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
 
 const Banner = styled.div`
 	height: 464px;
@@ -28,6 +34,12 @@ const GallItem = styled.li`
 const News = () => {
 	const [activeTab, setActiveTab] = useState(0)
 	const [activeDropdown, setActiveDropdown] = useState(false)
+	const language = useSelector(selectLanguage)
+	const { t, i18n } = useTranslation()
+
+	useEffect(() => {
+		setDefaultLanguage(language ? language : 'ko')
+	}, [language])
 	return (
 		<>
 			<div className="container p-4 lg:p-0 mt-24 md:mt-60">
@@ -38,7 +50,7 @@ const News = () => {
 					/>
 				</h2>
 				<p className="text-lg lg:text-4xl text-center mb-20 md:mb-40">
-					갤럭시 뉴스
+					{t('news1')}
 				</p>
 				<ul className="tabBtns text-center flex items-center justify-center gap-10 mb-9 md:mb-28">
 					<li>
@@ -51,7 +63,7 @@ const News = () => {
 							}
 							onClick={() => setActiveTab(0)}
 						>
-							보도자료
+							{t('news2')}
 						</button>
 					</li>
 					{/* <li>
@@ -107,13 +119,11 @@ const News = () => {
 								to="/page/news/1"
 								className="text-base font-light"
 							>
-								갤럭시코퍼레이션,
-								<br />
-								‘규제혁신대상 중기부 장관상’ 수상 영예
+								{t('news3')}
 							</Link>
 						</div>
 						<div className="flex items-center justify-between">
-							<p className="text-base">언론</p>
+							<p className="text-base">{t('news5')}</p>
 							<p className="text-base font-extralight">2023.01.01</p>
 						</div>
 					</GallItem>

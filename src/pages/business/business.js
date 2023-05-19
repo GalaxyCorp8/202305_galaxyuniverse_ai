@@ -84,15 +84,11 @@ const Business = () => {
 					/>
 					{/* METAVERSE WORLD FOR PEOPLE // {i18n.language} -- {t('welcome')} */}
 				</h2>
-				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-28">
-					갤럭시코퍼레이션은 국내 최초 메타버스 AI 아바타 포탈 기업입니다.
-					<br />
-					현실과 가상의 조화를 통한 ‘행복’을 최우선 가치로 두고 메타버스 FIRST
-					MOVER로서
-					<br />
-					IP, 컨텐츠, 커머스, 테크를 메타버스 아바타와 융복합하여 비즈니스를 진행하고
-					있습니다.
-				</p>
+				<div className="w-auto md:w-4/5 mx-auto">
+					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-28 break-keep">
+						{t('biz1')}
+					</p>
+				</div>
 			</div>
 			<div className="container">
 				<div className="flex flex-wrap">

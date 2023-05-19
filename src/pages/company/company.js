@@ -19,6 +19,15 @@ import Txt2 from '../../assets/image/company/txt2.svg'
 import Txt3 from '../../assets/image/company/txt3.svg'
 import Txt4 from '../../assets/image/company/txt4.svg'
 
+import y2019n from '../../assets/image/company/y-2019_n.svg'
+import y2019a from '../../assets/image/company/y-2019_a.svg'
+import y2021n from '../../assets/image/company/y-2021_n.svg'
+import y2021a from '../../assets/image/company/y-2021_a.svg'
+import y2022n from '../../assets/image/company/y-2022_n.svg'
+import y2022a from '../../assets/image/company/y-2022_a.svg'
+import y2023n from '../../assets/image/company/y-2023_n.svg'
+import y2023a from '../../assets/image/company/y-2023_a.svg'
+
 import { useState } from 'react'
 
 const SubParagraph = styled.p`
@@ -137,21 +146,13 @@ const Company = () => {
 					/>
 				</h2>
 				<h3 className="text-lg lg:text-3xl text-center font-light mb-36">
-					메타버스 AI 아바타 포탈 기업
+					{t('cmp1')}
 				</h3>
-				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
-					<span className="block md:hidden lg:hidden">
-						갤럭시 코퍼레이션은 가상과 현실을 공존시켜,
-						<br />
-						인류의 삶을 더 행복하고 이롭게 재창조하는
-						<br />
-						메타버스 AI 아바타 포탈 기업입니다.
-					</span>
-					<span className="hidden md:block lg:block">
-						갤럭시 코퍼레이션은 가상과 현실을 공존시켜, 인류의 삶을
-						<br /> 더 행복하고 이롭게 재창조하는 메타버스 AI 아바타 포탈 기업입니다.
-					</span>
-				</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
+						{t('cmp1_1')}
+					</p>
+				</div>
 			</div>
 			<div className="container px-4 lg:p-0 mt-96">
 				<span
@@ -234,12 +235,7 @@ const Company = () => {
 			</div>
 			<div className="container px-4 lg:p-0">
 				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9">
-					전 세계의 메타버스를 넘나들며 자사의 무한한 메타버스 콘텐츠, 플랫폼,
-					비즈니스 등을 통해 전세계 70억명 인구가 다양한 아바타로 공생하는 신인류의
-					세상을 창조하여 인류의 행복한 삶에 기여합니다. 전 세계의 메타버스를
-					넘나들며 자사의 무한한 메타버스 콘텐츠, 플랫폼, 비즈니스 등을 통해 전세계
-					70억명 인구가 다양한 아바타로 공생하는 신인류의 세상을 창조하여 인류의
-					행복한 삶에 기여합니다.
+					{t('cmp1_2')}
 				</p>
 				<div className=" mt-96">
 					<div className="outlined-text hidden sm:hidden md:block lg:block">
@@ -317,10 +313,7 @@ const Company = () => {
 			</div>
 			<div className="container px-4 lg:p-0">
 				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9">
-					우리는 글로벌 메타버스 아바타 포탈 기업으로 미래 산업의 비즈니스에
-					혁신하며, 무한한 IP를 기반으로 글로벌 최고의 메타버스 AI 아바타 포탈 기업을
-					지향합니다. 이를 통해 인류의 삶의 긍정적인 영향을 끼치며 다양한 꿈을
-					실현시키는 메타버스 AI 아바타 포탈 기업으로서의 역할을 수행하고 노력합니다.
+					{t('cmp1_3')}
 				</p>
 				<div className="mt-96">
 					<div className="outlined-text hidden sm:hidden md:block lg:block">
@@ -400,10 +393,7 @@ const Company = () => {
 			</div>
 			<div className="container px-4 lg:px-0">
 				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9">
-					아티스트를 비롯한 다양한 전문가들의 IP을 활용하여, 양질의 갤럭시 아바타와
-					갤럭시 미리내 세계관을 만들어갑니다. 이를 바탕으로 IP 매니지먼트, 콘텐츠
-					제작, 버추얼 휴먼, 커머스, ESG 등 다양한 비즈니스 분야에서 활동하며,
-					메타버스 A to Z를 통합한 메타버스 포털 기업으로 성장하고 있습니다.
+					{t('cmp1_4')}
 				</p>
 				<div className="mt-96">
 					<div className="outlined-text hidden sm:hidden md:block lg:block">
@@ -454,7 +444,10 @@ const Company = () => {
 								className={`text-4xl ${activeTabNum === 0 && 'active'}`}
 								onClick={() => setActiveTabNum(0)}
 							>
-								2019
+								<img
+									src={activeTabNum === 0 ? y2019a : y2019n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 						<div className="flex-1 text-center">
@@ -463,7 +456,10 @@ const Company = () => {
 								className={`text-4xl ${activeTabNum === 1 && 'active'}`}
 								onClick={() => setActiveTabNum(1)}
 							>
-								2021
+								<img
+									src={activeTabNum === 1 ? y2021a : y2021n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 						<div className="flex-1 text-center">
@@ -472,7 +468,10 @@ const Company = () => {
 								className={`text-4xl ${activeTabNum === 2 && 'active'}`}
 								onClick={() => setActiveTabNum(2)}
 							>
-								2022
+								<img
+									src={activeTabNum === 2 ? y2022a : y2022n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 						<div className="flex-1 text-center">
@@ -481,7 +480,10 @@ const Company = () => {
 								className={`text-4xl ${activeTabNum === 3 && 'active'}`}
 								onClick={() => setActiveTabNum(3)}
 							>
-								2023
+								<img
+									src={activeTabNum === 3 ? y2023a : y2023n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 					</div>
@@ -490,106 +492,104 @@ const Company = () => {
 							<p className="text-lg font-extralight">
 								2019.08
 								<br />
-								갤럭시코퍼레이션 법인설립
+								{t('cmp1_17')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2020.01 <br />
-								㈜주피터엔터테인먼트 법인 자회사 인수 (가수/배우 매니지먼트)
+								{t('cmp1_18')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2020.08 <br />
-								티인베스트먼트, 신송지티아이 SEED 투자유치
+								{t('cmp1_19')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2020.09 <br />
-								㈜페르소나유니버스 법인 설립 (CJ EnM SPC) 부캐 오디션 예능 Mnet
-								부캐선발대회 방영
+								{t('cmp1_20')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2020.10 <br />
-								㈜빅플래쉬 법인 자회사 인수 (마케팅/광고대행)
+								{t('cmp1_21')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2020.12 <br />
-								㈜유라보레이션 법인 자회사 인수 (유튜브 콘텐츠 스튜디오)
+								{t('cmp1_22')}
 							</p>
 						</TabContent>
 						<TabContent className={`${activeTabNum === 1 && 'active'}`}>
 							<p className="text-lg font-extralight">
 								2021.01
 								<br />
-								SK 광고 마케팅 대행 계약 체결
+								{t('cmp1_9')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.04
 								<br />
-								부캐릭터 기반 커머스 런칭 (GS 홈쇼핑/롯데홈쇼핑)
+								{t('cmp1_10')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.06
 								<br />
-								한국투자, KB인베스트먼트, 키움인베스트번트, P&I인베스트먼트,
-								T인베스트먼트, ATU 파트너스 등 Series A 투자유치
+								{t('cmp1_11')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.07
 								<br />
-								카이스트 메타버스 전문가 양성 프로그램 공동 개설
+								{t('cmp1_12')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.08
 								<br />
-								골프예능 백돌이 대탈출 방영
+								{t('cmp1_13')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.09
 								<br />
-								신한금융지주 투자 유치
+								{t('cmp1_14')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.10
 								<br />
-								㈜페르소나스페이스 법인 설립 (메타버스 콘텐츠 스튜디오)
+								{t('cmp1_15')}
 							</p>
 							<br />
 							<br />
 							<p className="text-lg font-extralight">
 								2021.12
 								<br />
-								㈜ 메타플래닛 설립 (메타버스 공간 개발사 올림플래닛 합작법인)
+								{t('cmp1_16')}
 								<br />
-								㈜메타사운드 설립(AI 보이스 미디어젠 합작법인)
+								{t('cmp1_16_1')}
 								<br />
-								메타버스 아바타쇼 TV조선 부캐전성시대 방영
+								{t('cmp1_16_2')}
 							</p>
 						</TabContent>
 						<TabContent className={`${activeTabNum === 2 && 'active'}`}>
 							<p className="text-lg font-extralight">
 								2022.05
 								<br />
-								예능 제작사 루이웍스 미디어/WDM엔터테인먼트/루돌프 미디어 인수
+								{t('cmp1_6')}
 							</p>
 							<br />
 							<br />
@@ -597,9 +597,7 @@ const Company = () => {
 							<p className="text-lg font-extralight">
 								2022.10
 								<br />
-								메타버스 AI 음악쇼 TV조선 아바드림 방영
-								<br />
-								복싱선수 매니파퀴아오 아바타 매니지먼트 MOU 체결
+								{t('cmp1_7')}
 							</p>
 							<br />
 							<br />
@@ -607,16 +605,16 @@ const Company = () => {
 							<p className="text-lg font-extralight">
 								2022.12
 								<br />
-								트로트 예능 TV 조선 미스터트롯2 방영(WDM엔터테인먼트)
+								{t('cmp1_8')}
 								<br />
-								(주)브랑토리 인수 합병 (온라인 커머스)
+								{t('cmp1_8_1')}
 							</p>
 						</TabContent>
 						<TabContent className={`${activeTabNum === 3 && 'active'}`}>
 							<p className="text-lg font-extralight">
 								2023.01
 								<br />
-								넷플릭스 예능 시청시간 글로벌1위 피지컬:100 방영(루이웍스 미디어)
+								{t('cmp1_5')}
 							</p>
 						</TabContent>
 					</TabContents>

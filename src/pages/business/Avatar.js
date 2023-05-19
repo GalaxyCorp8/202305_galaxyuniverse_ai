@@ -20,6 +20,12 @@ import HpXs from '../../assets/image/business/avatar/hp-xs.svg'
 import HpMd from '../../assets/image/business/avatar/hp-md.svg'
 
 import Txt1 from '../../assets/image/business/avatar/txt1.svg'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import { setDefaultLanguage } from 'react-multi-lang'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
 
 import { useState } from 'react'
 
@@ -112,9 +118,16 @@ const MirineaOverlay = {
 }
 
 const Avatar = () => {
+	const language = useSelector(selectLanguage)
+	const { t, i18n } = useTranslation()
+
 	const [av1State, setAv1State] = useState(false)
 	const [av2State, setAv2State] = useState(false)
 	const [av3State, setAv3State] = useState(false)
+
+	useEffect(() => {
+		setDefaultLanguage(language ? language : 'ko')
+	}, [language])
 
 	return (
 		<>
@@ -137,22 +150,19 @@ const Avatar = () => {
 					/>
 				</h2>
 				<h3 className="text-lg lg:text-3xl text-center font-bold lg:font-light mb-36">
-					무한 확장하는 갤럭시 IP
+					{t('ava1_1')}
 				</h3>
-				<p
-					className="text-lg lg:text-2xl text-center font-extralight lg:leading-9"
-					style={{ marginBottom: '600px' }}
-				>
-					갤럭시코퍼레이션은 연예인의 메타버스 아바타를 만들고
-					<br />
-					다양한 영역의 멀티버스 IP로 확장합니다. 80여팀의 셀럽,연예인과의 협업
-					경험을 통해
-					<br />
-					국내 최대/최다의 아바타 IP 사업 노하우 및 포트폴리오를 보유하고 있습니다
-				</p>
+				<div className="w-auto md:w-4/5 mx-auto">
+					<p
+						className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 break-keep"
+						style={{ marginBottom: '600px' }}
+					>
+						{t('ava1_2')}
+					</p>
+				</div>
 				<h2 className="text-2xl lg:text-5xl eng text-center mb-5">MIRINAE</h2>
 				<p className="text-lg lg:text-2xl text-center font-bold mb-16">
-					무한 확장되는 갤럭시 멀티 메타버스 세계관
+					{t('ava1_3')}
 				</p>
 			</div>
 			<MContainer>
@@ -163,40 +173,28 @@ const Avatar = () => {
 				/>
 			</MContainer>
 			<div className="container p-4 lg:p-0">
-				<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-20">
-					미리내 세상은 빛을 통한 현실의 세계
-					<br className="xs:block sm:block md:hidden lg:hidden" /> Light on와 빛이
-					사라질 때 보이는 가상
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 세계 Balck on로
-					나뉩니다.
-					<br className="xs:block sm:block md:hidden lg:hidden" />
-					<br />
-					현실 세계의 우리는 수많은 찰나의 선에
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 따라 삶이
-					흘러갑니다. 순간과 선택의
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 순간이 교차되는
-					교차점이
-					<br className="hidden sm:hidden md:block lg:block" /> 현재 모습을
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 이루고 수많은 순간
-					중 꿈을 상상하는
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 순간 내가 상상하는
-					꿈이 실현됩니다.
-				</p>
+				<div className="w-auto md:w-4/5 mx-auto">
+					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-20 break-keep">
+						{t('ava1_4')}
+					</p>
+				</div>
 			</div>
 			<div
 				className="container flex justify-center"
 				style={{ marginBottom: '500px' }}
 			>
-				<img
-					src={MsMd}
-					className="hidden sm:block"
-					alt=""
-				/>
-				<img
-					src={MsXs}
-					alt=""
-					className="block sm:hidden"
-				/>
+				<Link to="/page/ip">
+					<img
+						src={MsMd}
+						className="hidden sm:block"
+						alt=""
+					/>
+					<img
+						src={MsXs}
+						alt=""
+						className="block sm:hidden"
+					/>
+				</Link>
 			</div>
 			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-2">
 				AVA
@@ -214,26 +212,11 @@ const Avatar = () => {
 				style={{ height: 330 }}
 			/>
 			<div className="container p-4 lg:p-0">
-				<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-48">
-					AVA는 현실의 꿈을 실현시켜 다양한
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 꿈을 경험하고
-					현실과 미래를 초연결
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 시키는 갤럭시의
-					핵심 가치입니다.
-					<br className="xs:block sm:block md:hidden lg:hidden" />
-					<br className="xs:block sm:block md:hidden lg:hidden" />
-					<br className="hidden sm:hidden md:block lg:block" />
-					갤럭시는 다양한 꿈을 AVA를 통해
-					<br className="xs:block sm:block md:hidden lg:hidden" />
-					실현하고 더 큰 세상과 더 많은 사람들을
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 연결해 일상에
-					새로운 경험을 넘어 꿈과
-					<br className="xs:block sm:block md:hidden lg:hidden" />
-					<br className="hidden sm:hidden md:block lg:block" />
-					희망의 메시지로 세상을 변화시키시
-					<br className="xs:block sm:block md:hidden lg:hidden" />
-					위해 노력하고 있습니다.
-				</p>
+				<div className="w-auto md:w-4/5 mx-auto">
+					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-48 break-keep">
+						{t('ava1_5')}
+					</p>
+				</div>
 			</div>
 			<div className="container mb-10">
 				<div className="block md:flex justify-center items-center gap-10">
@@ -264,23 +247,23 @@ const Avatar = () => {
 				className="container flex justify-center"
 				style={{ marginBottom: '580px' }}
 			>
-				<img
-					src={AvaMd}
-					className="hidden sm:block"
-					alt=""
-				/>
-				<img
-					src={AvaXs}
-					alt=""
-					className="block sm:hidden"
-				/>
+				<Link to="/page/ip">
+					<img
+						src={AvaMd}
+						className="hidden sm:block"
+						alt=""
+					/>
+					<img
+						src={AvaXs}
+						alt=""
+						className="block sm:hidden"
+					/>
+				</Link>
 			</div>
 			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-2">
 				HUMAN
 			</h2>
-			<h3 className="lg:text-2xl text-center font-bold mb-16">
-				갤럭시코퍼레이션의 ARTIST & ACTOR
-			</h3>
+			<h3 className="lg:text-2xl text-center font-bold mb-16">{t('ava1_6')}</h3>
 			<ParallaxBanner
 				layers={[
 					{
@@ -291,32 +274,11 @@ const Avatar = () => {
 				style={{ height: 330 }}
 			/>
 			<div className="container p-4 lg:p-0">
-				<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-16">
-					갤럭시코퍼레이션은 무한 잠재력이
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 있는 다양한
-					아티스트와 전문가들을
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 끊임없이 발굴하여
-					갤럭시 메타버스
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 사업에 호환이 잘
-					될 수<br className="hidden sm:hidden md:block lg:block" />
-					있도록 교감하여
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 매니지먼트를 지속
-					연개하고 있습니다.
-					<br className="xs:block sm:block md:hidden lg:hidden" />{' '}
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 갤럭시 휴먼은 국내
-					최초 글로벌
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 메타버스
-					크리에이터로 더 큰 세상과
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 무한한
-					<br className="hidden sm:hidden md:block lg:block" />
-					가능성으로 함께 성장할 수
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 있습니다. 갤럭시는
-					성장 가능한
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 다양한 오리진
-					크리에이터를
-					<br className="xs:block sm:block md:hidden lg:hidden" /> 지향하고
-					지원합니다.
-				</p>
+				<div className="w-auto md:w-4/5 mx-auto">
+					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-16 break-keep">
+						{t('ava1_7')}
+					</p>
+				</div>
 			</div>
 			<div className="container flex justify-center">
 				<Link to="/page/ip">
