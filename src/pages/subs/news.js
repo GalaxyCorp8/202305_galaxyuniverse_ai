@@ -18,7 +18,7 @@ const Banner = styled.div`
 `
 
 const GallItem = styled.li`
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.08);
 	.img {
 		position: relative;
 		height: 200px;
@@ -123,7 +123,7 @@ const News = () => {
 							</Link>
 						</div>
 						<div className="flex items-center justify-between">
-							<p className="text-base">{t('news5')}</p>
+							<p className="text-base"></p>
 							<p className="text-base font-extralight">2023.01.01</p>
 						</div>
 					</GallItem>

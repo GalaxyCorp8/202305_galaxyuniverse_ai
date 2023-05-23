@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import Layout from './layout/Layout'
@@ -17,27 +17,43 @@ import Landing from './pages/Landing'
 // import Sub08 from './pages/subs/p_08'
 // import Recruit from './pages/subs/recruit'
 // import Contact from './pages/subs/contact'
-import News from './pages/subs/news'
-import NewView from './pages/subs/news_view'
-import Investors from './pages/subs/investors'
-import InvestorsView from './pages/subs/investors_view'
+// import News from './pages/subs/news'
+// import NewsView from './pages/subs/news_view'
+// import Investors from './pages/subs/investors'
+// import InvestorsView from './pages/subs/investors_view'
 // import AvaIp from './pages/subs/avaip'
-import Company from './pages/company/company'
-import Avatar from './pages/business/Avatar'
+// import Company from './pages/company/company'
+// import Avatar from './pages/business/Avatar'
 
-import Business from './pages/business/business'
-import Career from './pages/career/career'
-import Commerce from './pages/commerce/commerce'
-import Media from './pages/media/media'
-import Tech from './pages/tech/tech'
-import Ip from './pages/ip/ip'
+// import Business from './pages/business/business'
+// import Career from './pages/career/career'
+// import Commerce from './pages/commerce/commerce'
+// import Media from './pages/media/media'
+// import Tech from './pages/tech/tech'
+// import Ip from './pages/ip/ip'
+// import Human from './pages/human/human'
 
 import NotFound from './pages/notfound/notFound'
+
+const Company = React.lazy(() => import('./pages/company/company'))
+const Business = React.lazy(() => import('./pages/business/business'))
+const Career = React.lazy(() => import('./pages/career/career'))
+const Commerce = React.lazy(() => import('./pages/commerce/commerce'))
+const Media = React.lazy(() => import('./pages/media/media'))
+const Tech = React.lazy(() => import('./pages/tech/tech'))
+const Ip = React.lazy(() => import('./pages/ip/ip'))
+const Human = React.lazy(() => import('./pages/human/human'))
+const Avatar = React.lazy(() => import('./pages/business/Avatar'))
+const News = React.lazy(() => import('./pages/subs/news'))
+const NewsView = React.lazy(() => import('./pages/subs/news_view'))
+const Investors = React.lazy(() => import('./pages/subs/investors'))
+const InvestorsView = React.lazy(() => import('./pages/subs/investors_view'))
 
 function App() {
 	return (
 		<ParallaxProvider>
-			<Suspense fallback={<Loader />}>
+			{/* <Suspense fallback={<Loader />}> */}
+			<Suspense>
 				<Routes>
 					<Route
 						path="/"
@@ -52,6 +68,14 @@ function App() {
 						element={
 							<HeaderLayout>
 								<Ip />
+							</HeaderLayout>
+						}
+					/>
+					<Route
+						path="/page/human"
+						element={
+							<HeaderLayout>
+								<Human />
 							</HeaderLayout>
 						}
 					/>
@@ -123,7 +147,7 @@ function App() {
 						path="/page/news/:id"
 						element={
 							<Layout>
-								<NewView />
+								<NewsView />
 							</Layout>
 						}
 					/>

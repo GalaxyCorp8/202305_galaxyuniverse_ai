@@ -18,6 +18,7 @@ import AvaXs from '../../assets/image/business/avatar/ava-xs.svg'
 import AvaMd from '../../assets/image/business/avatar/ava-md.svg'
 import HpXs from '../../assets/image/business/avatar/hp-xs.svg'
 import HpMd from '../../assets/image/business/avatar/hp-md.svg'
+import Mirinae from '../../assets/image/business/avatar/mirinae.png'
 
 import Txt1 from '../../assets/image/business/avatar/txt1.svg'
 import { useTranslation } from 'react-i18next'
@@ -167,7 +168,8 @@ const Avatar = () => {
 			</div>
 			<MContainer>
 				<ParallaxBanner
-					layers={[MirinaeBg, MirineaOverlay, MirinaeText]}
+					// layers={[MirinaeBg, MirineaOverlay, MirinaeText]}
+					layers={[{ image: Mirinae, speed: -5 }]}
 					className="bg-gray-900"
 					style={{ height: '330px' }}
 				/>
@@ -183,7 +185,11 @@ const Avatar = () => {
 				className="container flex justify-center"
 				style={{ marginBottom: '500px' }}
 			>
-				<Link to="/page/ip">
+				<a
+					href="https://galaxyava.com/"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<img
 						src={MsMd}
 						className="hidden sm:block"
@@ -194,7 +200,7 @@ const Avatar = () => {
 						alt=""
 						className="block sm:hidden"
 					/>
-				</Link>
+				</a>
 			</div>
 			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-2">
 				AVA
@@ -281,7 +287,7 @@ const Avatar = () => {
 				</div>
 			</div>
 			<div className="container flex justify-center">
-				<Link to="/page/ip">
+				<Link to="/page/human">
 					<img
 						src={HpMd}
 						className="hidden sm:block"

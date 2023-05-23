@@ -193,19 +193,27 @@ const Career = () => {
 							</colgroup>
 							<tbody>
 								<tr>
-									<td className="p-2">{t('care1_12')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_12')}</b>
+									</td>
 									<td className="p-2">{t('care1_13')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_14')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_14')}</b>
+									</td>
 									<td className="p-2">{t('care1_15')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_16')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_16')}</b>
+									</td>
 									<td className="p-2">{t('care1_17')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_18')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_18')}</b>
+									</td>
 									<td className="p-2">{t('care1_19')}</td>
 								</tr>
 							</tbody>
@@ -220,7 +228,7 @@ const Career = () => {
 					>
 						WORK
 					</h4>
-					<div className="w-3/4 border-t-2 border-gray-800">
+					<div className="w-3/4 border-t-2 border-white">
 						<table className="table-auto text-lg font-light my-20">
 							<colgroup>
 								<col style={{ width: 200 }} />
@@ -228,15 +236,21 @@ const Career = () => {
 							</colgroup>
 							<tbody>
 								<tr>
-									<td className="p-2">{t('care1_20')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_20')}</b>
+									</td>
 									<td className="p-2">{t('care1_21')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_22')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_22')}</b>
+									</td>
 									<td className="p-2">{t('care1_23')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_24')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_24')}</b>
+									</td>
 									<td className="p-2">{t('care1_25')}</td>
 								</tr>
 							</tbody>
@@ -250,7 +264,7 @@ const Career = () => {
 					>
 						HEALTH
 					</h4>
-					<div className="w-3/4 border-t-2 border-gray-800">
+					<div className="w-3/4 border-t-2 border-white">
 						<table className="table-auto text-lg font-light my-20">
 							<colgroup>
 								<col style={{ width: 200 }} />
@@ -258,15 +272,21 @@ const Career = () => {
 							</colgroup>
 							<tbody>
 								<tr>
-									<td className="p-2">{t('care1_26')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_26')}</b>
+									</td>
 									<td className="p-2">{t('care1_27')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_28')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_28')}</b>
+									</td>
 									<td className="p-2">{t('care1_29')}</td>
 								</tr>
 								<tr>
-									<td className="p-2">{t('care1_30')}</td>
+									<td className="p-2">
+										<b className="font-bold">{t('care1_30')}</b>
+									</td>
 									<td className="p-2">{t('care1_31')}</td>
 								</tr>
 							</tbody>
