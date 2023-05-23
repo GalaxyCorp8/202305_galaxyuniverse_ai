@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.5bf50649.css",
-    "main.js": "/static/js/main.5ac554cb.js",
-    "static/js/902.17d18cf1.chunk.js": "/static/js/902.17d18cf1.chunk.js",
+    "main.js": "/static/js/main.01ff0d6f.js",
+    "static/js/902.9ac5bb0f.chunk.js": "/static/js/902.9ac5bb0f.chunk.js",
     "static/js/505.830dc449.chunk.js": "/static/js/505.830dc449.chunk.js",
     "static/js/284.5259e6a6.chunk.js": "/static/js/284.5259e6a6.chunk.js",
     "static/js/181.e10776e6.chunk.js": "/static/js/181.e10776e6.chunk.js",
@@ -21,7 +21,6 @@
     "static/js/787.2a55cbdc.chunk.js": "/static/js/787.2a55cbdc.chunk.js",
     "static/js/350.8e5b3021.chunk.js": "/static/js/350.8e5b3021.chunk.js",
     "static/js/370.00258df9.chunk.js": "/static/js/370.00258df9.chunk.js",
-    "static/media/main.webm": "/static/media/main.fc76dafc38d738abd036.webm",
     "static/media/bg.png": "/static/media/bg.22955a27614e31da3025.png",
     "static/media/landing_bg.png": "/static/media/landing_bg.539e6f54d1ab63b6f626.png",
     "static/media/sub_company1.png": "/static/media/sub_company1.5340b1013fa15b40bf9b.png",
@@ -161,8 +160,8 @@
     "static/media/dropdown_arr.svg": "/static/media/dropdown_arr.e7f7afaa52735c3e67f9964a5a6b7198.svg",
     "static/media/slash.svg": "/static/media/slash.b55018b4266e45c2b9c12c94f3f3b725.svg",
     "main.5bf50649.css.map": "/static/css/main.5bf50649.css.map",
-    "main.5ac554cb.js.map": "/static/js/main.5ac554cb.js.map",
-    "902.17d18cf1.chunk.js.map": "/static/js/902.17d18cf1.chunk.js.map",
+    "main.01ff0d6f.js.map": "/static/js/main.01ff0d6f.js.map",
+    "902.9ac5bb0f.chunk.js.map": "/static/js/902.9ac5bb0f.chunk.js.map",
     "505.830dc449.chunk.js.map": "/static/js/505.830dc449.chunk.js.map",
     "284.5259e6a6.chunk.js.map": "/static/js/284.5259e6a6.chunk.js.map",
     "181.e10776e6.chunk.js.map": "/static/js/181.e10776e6.chunk.js.map",
@@ -184,6 +183,6 @@
   },
   "entrypoints": [
     "static/css/main.5bf50649.css",
-    "static/js/main.5ac554cb.js"
+    "static/js/main.01ff0d6f.js"
   ]
 }
