@@ -28,6 +28,8 @@ import y2022a from '../../assets/image/company/y-2022_a.svg'
 import y2023n from '../../assets/image/company/y-2023_n.svg'
 import y2023a from '../../assets/image/company/y-2023_a.svg'
 
+import Video from '../../assets/video/company.webm'
+
 import { useState } from 'react'
 
 const SubParagraph = styled.p`
@@ -60,6 +62,9 @@ const YearTabButton = styled.button`
 	}
 	@media (max-width: 1023px) {
 		font-size: 1.5rem;
+		img {
+			max-width: 55px;
+		}
 	}
 `
 
@@ -111,6 +116,22 @@ const gradientOverlay = {
 	),
 }
 
+const VideoContainer = styled.div`
+	position: relative;
+	height: 680px;
+	overflow: hidden;
+	video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+	}
+`
+
 const Company = () => {
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
@@ -123,12 +144,11 @@ const Company = () => {
 
 	return (
 		<>
-			<div className="sub-visual">
-				{/* <ParallaxBanner
+			{/* <ParallaxBanner
 					layers={[background, headline, foreground, gradientOverlay]}
 					className="aspect-[2/1] bg-gray-900"
 				/> */}
-				<ParallaxBanner
+			{/* <ParallaxBanner
 					layers={[
 						{
 							image: SubVisualImage,
@@ -136,8 +156,15 @@ const Company = () => {
 						},
 					]}
 					style={{ height: 680 }}
-				/>
-			</div>
+				/> */}
+			<VideoContainer>
+				<video
+					src={Video}
+					autoPlay
+					loop
+					muted
+				></video>
+			</VideoContainer>
 			<div className="container p-4 lg:p-0">
 				<h2 className="flex justify-center mt-32 mb-10">
 					<img
@@ -155,10 +182,7 @@ const Company = () => {
 				</div>
 			</div>
 			<div className="container px-4 lg:p-0 mt-96">
-				<span
-					className="block md:hidden lg:hidden"
-					m
-				>
+				<span className="block md:hidden lg:hidden">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="90"
@@ -185,10 +209,7 @@ const Company = () => {
 						</text>
 					</svg>
 				</span>
-				<span
-					className="hidden md:block lg:block"
-					d
-				>
+				<span className="hidden md:block lg:block">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="179.5"

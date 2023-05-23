@@ -183,11 +183,11 @@ const Media = () => {
 							speed: -5,
 						},
 					]}
-					className="bg-gray-900"
+					className="bg-gray-900 mb-54"
 					style={{ height: '330px' }}
 				/>
 			</MContainer>
-			<h2
+			{/* <h2
 				className="text-2xl lg:text-6xl eng text-center eng mb-5"
 				style={{ marginTop: '700px' }}
 			>
@@ -197,7 +197,7 @@ const Media = () => {
 				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-54">
 					{t('media1_4')}
 				</p>
-			</div>
+			</div> */}
 			<h2 className="text-2xl lg:text-5xl eng text-center eng mb-5 mt-80">
 				lUYWORKS Media
 			</h2>
@@ -258,7 +258,7 @@ const Media = () => {
 						speed: -5,
 					},
 				]}
-				style={{ height: 330 }}
+				style={{ height: 400 }}
 			/>
 			<h2 className="text-2xl lg:text-5xl eng text-center eng mb-5 mt-80">
 				rudolph studio

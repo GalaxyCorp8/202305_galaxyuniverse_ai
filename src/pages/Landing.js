@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import React, { useEffect } from 'react'
 import { Parallax } from 'react-scroll-parallax'
 import { osName } from 'react-device-detect'
+import video from '../assets/video/main.webm'
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -61,17 +62,16 @@ const Landing = () => {
 			{isMobile ? (
 				<PostContainer />
 			) : (
-				<PostContainer />
-				// <VideoBackground
-				// 	muted
-				// 	autoPlay
-				// 	loop
-				// >
-				// 	<source
-				// 		src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
-				// 		type="video/mp4"
-				// 	/>
-				// </VideoBackground>
+				<VideoBackground
+					muted
+					autoPlay
+					loop
+				>
+					<source
+						src={video}
+						type="video/webm"
+					/>
+				</VideoBackground>
 			)}
 		</VideoWrapper>
 	)

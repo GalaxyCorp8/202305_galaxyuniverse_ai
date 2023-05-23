@@ -1,6 +1,6 @@
 import Bg from '../../assets/image/ip/bg.png'
 import styled from 'styled-components'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax'
 
 import Img1 from '../../assets/image/ip/cardImg/image_1.jpg'
@@ -45,6 +45,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import ArrLeft from '../../assets/image/business/media/arr-l.svg'
 import ArrRight from '../../assets/image/business/media/arr-r.svg'
+import PopupCloseImg from '../../assets/image/common/popupClose.svg'
+
+import ReactHammer from 'react-hammerjs'
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -78,11 +81,45 @@ const PostContainer = styled.div`
 	background-position: center;
 `
 const ImgContainer = styled.ul`
+	position: relative;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50px;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.01) 100%
+		);
+		z-index: 1;
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 50px;
+		height: 100%;
+		background: linear-gradient(
+			-90deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.01) 100%
+		);
+		z-index: 1;
+	}
 	li {
 		img {
 			width: 220px;
 			height: auto;
 		}
+	}
+	.slick-dots {
+		display: none !important;
 	}
 `
 const NextArrowContainer = styled.div`
@@ -114,7 +151,73 @@ const PrevArrowContainer = styled.div`
 	}
 `
 
+const PopupContainer = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.popup-inner {
+		position: relative;
+		width: 1219px;
+		height: 701px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #fff;
+		background: #000;
+		.popup-close {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 48px;
+			height: 48px;
+			border: 1px solid #fff;
+			background: #000;
+			z-index: 10000;
+			span {
+				display: block;
+				width: 12px;
+				height: 12px;
+				background-image: url(${PopupCloseImg});
+				background-size: cover;
+				background-position: center;
+			}
+			position: absolute;
+			top: -1px;
+			right: -48px;
+		}
+		.popup-content {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	@media (max-width: 1320px) {
+		padding: 60px;
+		.popup-inner {
+			width: 100%;
+			height: 422px;
+			.popup-close {
+				right: -1px;
+				top: -48px;
+			}
+		}
+	}
+`
+
 const Ip = () => {
+	const [popup, setPopup] = useState(false)
+	const imageRefs = useRef([])
+
 	const NextArrow = (props) => {
 		const { className, style, onClick } = props
 		return (
@@ -177,15 +280,17 @@ const Ip = () => {
 	]
 
 	const settings = {
-		dots: true,
+		dots: false,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
+		slidesToScroll: 5,
 		initialSlide: 0,
 		variableWidth: true,
-		centerMode: true,
-		nextArrow: <NextArrow />,
-		prevArrow: <PrevArrow />,
+		centerMode: false,
+		arrows: false,
+		// nextArrow: <NextArrow />,
+		// prevArrow: <PrevArrow />,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -193,7 +298,7 @@ const Ip = () => {
 					slidesToShow: 3,
 					slidesToScroll: 3,
 					infinite: true,
-					dots: true,
+					dots: false,
 				},
 			},
 			{
@@ -202,7 +307,7 @@ const Ip = () => {
 					slidesToShow: 2,
 					slidesToScroll: 2,
 					infinite: true,
-					dots: true,
+					dots: false,
 				},
 			},
 			{
@@ -211,15 +316,44 @@ const Ip = () => {
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					infinite: true,
-					dots: true,
+					dots: false,
 				},
 			},
 		],
 	}
 
-	useEffect(() => {}, [])
+	const handleSwipeLeft = (index) => {
+		console.log(index)
+	}
+
+	const handleswipeRight = (index) => {
+		console.log(index)
+	}
+
+	const handleClick = (index) => {
+		setPopup(true)
+	}
+
+	useEffect(() => {
+		imageRefs.current = imageRefs.current.slice(0, imgArr.length)
+	}, [imgArr])
+
 	return (
 		<>
+			{popup && (
+				<PopupContainer>
+					<div className="popup-inner">
+						<button
+							type="button"
+							className="popup-close"
+							onClick={() => setPopup(false)}
+						>
+							<span></span>
+						</button>
+						<div className="popup-content">111</div>
+					</div>
+				</PopupContainer>
+			)}
 			<div className="sub-visual">
 				<ParallaxBanner
 					layers={[
@@ -234,15 +368,19 @@ const Ip = () => {
 			<ImgContainer>
 				<Slider {...settings}>
 					{imgArr.map((img, index) => (
-						<li
+						<ReactHammer
 							key={index}
+							onSwipeLeft={() => handleSwipeLeft(index)}
+							onSwipeRight={() => handleswipeRight(index)}
+							onTap={() => handleClick(index)}
 							className="px-1"
 						>
 							<img
 								src={img}
+								ref={(el) => (imageRefs.current[index] = el)}
 								alt=""
 							/>
-						</li>
+						</ReactHammer>
 					))}
 				</Slider>
 			</ImgContainer>
