@@ -28,9 +28,7 @@ import y2022a from "../../assets/image/company/y-2022_a.svg";
 import y2023n from "../../assets/image/company/y-2023_n.svg";
 import y2023a from "../../assets/image/company/y-2023_a.svg";
 
-import Video from "../../assets/video/company.webm";
-// import Video from "../../../public/assets/video/company.webm";
-// import Video from "../../../node_modules/company.webm";
+// import Video from "../../assets/video/company.webm";
 
 import { useState } from "react";
 

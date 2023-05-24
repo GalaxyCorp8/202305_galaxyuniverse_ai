@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.5bf50649.css",
-    "main.js": "/static/js/main.01ff0d6f.js",
-    "static/js/902.9ac5bb0f.chunk.js": "/static/js/902.9ac5bb0f.chunk.js",
+    "main.js": "/static/js/main.4e91e179.js",
+    "static/js/576.19a3a6fa.chunk.js": "/static/js/576.19a3a6fa.chunk.js",
     "static/js/505.830dc449.chunk.js": "/static/js/505.830dc449.chunk.js",
     "static/js/284.5259e6a6.chunk.js": "/static/js/284.5259e6a6.chunk.js",
     "static/js/181.e10776e6.chunk.js": "/static/js/181.e10776e6.chunk.js",
@@ -33,7 +33,6 @@
     "static/media/ava.png": "/static/media/ava.4937d76b7929fc62a48f.png",
     "static/media/mirinae_bg.png": "/static/media/mirinae_bg.2c3cdf1169f19aab6377.png",
     "static/media/mirinae.png": "/static/media/mirinae.8e4f88469caa40bff9af.png",
-    "static/media/company.webm": "/static/media/company.9dafd3da1607a4ba15e7.webm",
     "static/media/img4.png": "/static/media/img4.337799b49e2a6ee67490.png",
     "static/media/img3.png": "/static/media/img3.2646ad2e264dc9425cf5.png",
     "static/media/sl15.png": "/static/media/sl15.fc4e656867d79e3a80c4.png",
@@ -160,8 +159,8 @@
     "static/media/dropdown_arr.svg": "/static/media/dropdown_arr.e7f7afaa52735c3e67f9964a5a6b7198.svg",
     "static/media/slash.svg": "/static/media/slash.b55018b4266e45c2b9c12c94f3f3b725.svg",
     "main.5bf50649.css.map": "/static/css/main.5bf50649.css.map",
-    "main.01ff0d6f.js.map": "/static/js/main.01ff0d6f.js.map",
-    "902.9ac5bb0f.chunk.js.map": "/static/js/902.9ac5bb0f.chunk.js.map",
+    "main.4e91e179.js.map": "/static/js/main.4e91e179.js.map",
+    "576.19a3a6fa.chunk.js.map": "/static/js/576.19a3a6fa.chunk.js.map",
     "505.830dc449.chunk.js.map": "/static/js/505.830dc449.chunk.js.map",
     "284.5259e6a6.chunk.js.map": "/static/js/284.5259e6a6.chunk.js.map",
     "181.e10776e6.chunk.js.map": "/static/js/181.e10776e6.chunk.js.map",
@@ -183,6 +182,6 @@
   },
   "entrypoints": [
     "static/css/main.5bf50649.css",
-    "static/js/main.01ff0d6f.js"
+    "static/js/main.4e91e179.js"
   ]
 }
