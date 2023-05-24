@@ -3,7 +3,8 @@ import styled from "styled-components";
 import React, { useEffect } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { osName } from "react-device-detect";
-// import video from '../assets/video/main.webm'
+
+// import video from "../assets/video/main.webm";
 
 const VideoBackground = styled.video`
 	position: absolute;
