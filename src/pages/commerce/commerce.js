@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 import { ParallaxBanner } from 'react-scroll-parallax'
-import SubVisualImage from '../../assets/image/business/commerce/bg.png'
-import Img1 from '../../assets/image/business/commerce/img1.png'
-import Img2 from '../../assets/image/business/commerce/img2.png'
+import SubVisualImage from '../../assets/image/WEB_image/x1/2_2commerce/commerce_1.jpg'
+import SubVisualImageXs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_1.jpg'
+import Img1 from '../../assets/image/WEB_image/x1/2_2commerce/commerce_2.jpg'
+import Img1Xs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_2.jpg'
+import Img2 from '../../assets/image/WEB_image/x1/2_2commerce/commerce_3.jpg'
+import Img2Xs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_3.jpg'
 
 import Lg1 from '../../assets/image/business/commerce/lg1.png'
 import Lg2 from '../../assets/image/business/commerce/lg2.png'
@@ -22,12 +25,16 @@ import Lg15 from '../../assets/image/business/commerce/lg15.png'
 import Lg16 from '../../assets/image/business/commerce/lg16.png'
 
 import Txt1 from '../../assets/image/business/commerce/txt1.svg'
+import Txt1Xs from '../../assets/image/MOBILE_image/x1/5_business_commerce/txt1xs.svg'
+
 import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { setDefaultLanguage } from 'react-multi-lang'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
+
+import { useWindowSize } from '@react-hook/window-size'
 
 const MContainer = styled.div`
 	position: relative;
@@ -38,17 +45,25 @@ const MContainer = styled.div`
 const Commerce = () => {
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
-	}, [language])
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
+
 	return (
 		<>
 			<div className="sub-visual">
 				<ParallaxBanner
 					layers={[
 						{
-							image: SubVisualImage,
+							image: isXs ? SubVisualImageXs : SubVisualImage,
 							speed: -5,
 						},
 					]}
@@ -56,75 +71,81 @@ const Commerce = () => {
 				/>
 			</div>
 			<div className="container p-4 lg:p-0">
-				<h2 className="flex justify-center mt-14 mb-5">
+				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
 					<img
-						src={Txt1}
+						src={isXs ? Txt1Xs : Txt1}
 						alt=""
 					/>
 				</h2>
-				<h3 className="text-lg lg:text-3xl text-center font-bold lg:font-light mb-36">
+				<h3 className="text-lg lg:text-3xl text-center font-light lg:mb-36 mb-10">
 					{t('cms1_1')}
 				</h3>
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p
 						className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 break-keep"
-						style={{ marginBottom: '600px' }}
+						style={{ marginBottom: isXs ? 300 : 600 }}
 					>
 						{t('cms1_2')}
 					</p>
 				</div>
-				<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mb-4">
+				<h2 className="text-3xl lg:text-6xl eng text-center mt-14 mb-1 lg:mb-10">
 					meta commerce
 				</h2>
 
-				<p className="text-lg lg:text-2xl text-center mt-3 mb-20">{t('cms1_3')}</p>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-5 lg:mb-32 break-keep">
+						{t('cms1_3')}
+					</p>
+				</div>
 			</div>
-			<MContainer>
-				<ParallaxBanner
-					layers={[
-						{
-							image: Img1,
-							speed: -5,
-						},
-					]}
-					className="bg-gray-900"
-					style={{ height: '330px' }}
-				/>
-			</MContainer>
+			<ParallaxBanner
+				layers={[
+					{
+						image: isXs ? Img1Xs : Img1,
+						speed: -5,
+					},
+				]}
+				className="bg-gray-900"
+				style={{ height: isXs ? '235px' : '300px' }}
+			/>
 			<div className="container p-4 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
-					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-80 break-keep">
+					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-80 break-keep">
 						{t('cms1_4')}
 					</p>
 				</div>
 			</div>
-			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mb-4">
+			<h2 className="text-3xl lg:text-5xl lg:leading-snug eng text-center mb-1 lg:mb-4">
 				REAL COMMERCE
 			</h2>
-			<p className="text-lg lg:text-2xl text-center mb-20">{t('cms1_5')}</p>
+			<p className="text-lg lg:text-2xl text-center mb-5 lg:mb-20">
+				{t('cms1_5')}
+			</p>
 			<ParallaxBanner
 				layers={[
 					{
-						image: Img2,
+						image: isXs ? Img2Xs : Img2,
 						speed: -5,
 					},
 				]}
-				style={{ height: 330 }}
+				style={{ height: isXs ? '235px' : '300px' }}
 			/>
 			<div className="container p-4 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
-					<p className="text-lg text-center font-extralight lg:leading-9 mt-16 break-keep">
+					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-60 lg:mb-80 break-keep">
 						{t('cms1_6')}
 					</p>
 				</div>
 			</div>
-			<div className="container mb-10 mt-52">
-				<h3 className="text-3xl mb-2">{t('cms1_7')}</h3>
+			<div className="container mb-10 lg:mt-52">
+				<h3 className="text-lg lg:text-3xl lg:mb-2 text-center lg:text-left">
+					{t('cms1_7')}
+				</h3>
 				<div className="flex flex-row flex-wrap">
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg1}
@@ -135,7 +156,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg2}
@@ -146,7 +167,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg3}
@@ -157,7 +178,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg4}
@@ -168,7 +189,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg5}
@@ -179,7 +200,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg6}
@@ -190,7 +211,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg7}
@@ -201,7 +222,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg8}
@@ -212,7 +233,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg9}
@@ -223,7 +244,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg10}
@@ -234,7 +255,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg11}
@@ -245,7 +266,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg12}
@@ -256,7 +277,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg13}
@@ -267,7 +288,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg14}
@@ -278,7 +299,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg15}
@@ -289,7 +310,7 @@ const Commerce = () => {
 					<div className="basis-1/3 p-2">
 						<div
 							className="flex justify-center items-center"
-							style={{ height: 200 }}
+							style={{ height: isXs ? 100 : 200 }}
 						>
 							<img
 								src={Lg16}

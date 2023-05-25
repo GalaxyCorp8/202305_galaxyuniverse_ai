@@ -12,6 +12,8 @@ import { setDefaultLanguage } from 'react-multi-lang'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
 
+import { useWindowSize } from '@react-hook/window-size'
+
 const Banner = styled.div`
 	height: 464px;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -36,10 +38,17 @@ const News = () => {
 	const [activeDropdown, setActiveDropdown] = useState(false)
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
-	}, [language])
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
 	return (
 		<>
 			<div className="container p-4 lg:p-0 mt-24 md:mt-60">
@@ -49,10 +58,10 @@ const News = () => {
 						alt=""
 					/>
 				</h2>
-				<p className="text-lg lg:text-4xl text-center mb-20 md:mb-40">
+				<p className="text-lg lg:text-4xl text-center mb-8 lg:mb-40">
 					{t('news1')}
 				</p>
-				<ul className="tabBtns text-center flex items-center justify-center gap-10 mb-9 md:mb-28">
+				<ul className="tabBtns text-center flex items-center justify-center gap-5 lg:gap-10 mb-20 lg:mb-28">
 					<li>
 						<button
 							type="button"

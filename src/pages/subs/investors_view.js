@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 import Arr from '../../assets/image/common/dropdown_arr.svg'
+import { setDefaultLanguage } from 'react-multi-lang'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
+
+import { useWindowSize } from '@react-hook/window-size'
+import { useTranslation } from 'react-i18next'
 
 const Banner = styled.div`
 	height: 464px;
@@ -10,16 +17,31 @@ const Banner = styled.div`
 `
 
 const InvestorsView = () => {
+	const language = useSelector(selectLanguage)
+	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
+
+	useEffect(() => {
+		setDefaultLanguage(language ? language : 'ko')
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
 	return (
 		<>
 			<div className="mb-28 mt-44" />
-			<div className="container">
-				<h2 className="text-5xl text-center eng mb-5">Investors</h2>
-				<ul className="tabBtns text-center flex items-center justify-center gap-10 mb-28">
+			<div className="container p-4 lg:p-0 mt-0 lg:mt-56">
+				<h2 className="text-2xl lg:text-4xl eng text-center mt-0 md:mt-14 mb-10">
+					Investors
+				</h2>
+				<ul className="tabBtns text-center flex items-center justify-center gap-5 lg:gap-10 mb-20 lg:mb-28">
 					<li>
 						<Link
 							to="/investors"
-							className="active text-3xl"
+							className="active text-base md:text-3xl"
 						>
 							IR
 						</Link>
@@ -27,7 +49,7 @@ const InvestorsView = () => {
 					<li>
 						<Link
 							to="/investors"
-							className="text-3xl"
+							className="text-base md:text-3xl"
 						>
 							자료실
 						</Link>
@@ -35,7 +57,7 @@ const InvestorsView = () => {
 					<li>
 						<Link
 							to="/investors"
-							className="text-3xl"
+							className="text-base md:text-3xl"
 						>
 							재무정보
 						</Link>
@@ -43,7 +65,7 @@ const InvestorsView = () => {
 					<li>
 						<Link
 							to="/investors"
-							className="text-3xl"
+							className="text-base md:text-3xl"
 						>
 							공시정보
 						</Link>
@@ -51,7 +73,7 @@ const InvestorsView = () => {
 					<li>
 						<Link
 							to="/investors"
-							className="text-3xl"
+							className="text-base md:text-3xl"
 						>
 							공고
 						</Link>

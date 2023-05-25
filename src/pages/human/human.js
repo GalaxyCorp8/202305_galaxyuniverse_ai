@@ -286,9 +286,9 @@ const Human = () => {
 					{imgArr.map((img, index) => (
 						<ReactHammer
 							key={index}
-							onSwipeLeft={() => handleSwipeLeft(index)}
-							onSwipeRight={() => handleswipeRight(index)}
-							onTap={() => handleClick(index)}
+							// onSwipeLeft={() => handleSwipeLeft(index)}
+							// onSwipeRight={() => handleswipeRight(index)}
+							// onTap={() => handleClick(index)}
 							className="px-1"
 						>
 							<img
