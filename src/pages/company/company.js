@@ -46,7 +46,7 @@ import y2021Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_2.jpg";
 import y2022Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_3.jpg";
 import y2023Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_4.jpg";
 
-import Video from "../../assets/video/company_5mb.mp4";
+// import Video from "../../assets/video/company_5mb.mp4";
 
 import { useState } from "react";
 
@@ -150,8 +150,9 @@ const Company = () => {
 			<VideoContainer>
 				<video playsInline muted autoPlay loop webkit-playsinline="true">
 					<source
-						src={Video}
-						//src="https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/company.webm"
+						// src={Video}
+						// src="https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/company.webm"
+						src="https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/company_5mb.mp4"
 						type="video/mp4"
 					/>
 				</video>

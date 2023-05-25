@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { osName } from "react-device-detect";
 
-import Video from "../assets/video/intro_30sec_10mb.mp4";
+// import Video from "../assets/video/intro_30sec_10mb.mp4";
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -84,10 +84,13 @@ const Landing = () => {
 				webkit-playsinline="true"
 			>
 				<source
-					src={Video}
+					// src={Video}
 					// src={
 					// 	'https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/main.webm'
 					// }
+					src={
+						"https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/intro_30sec_10mb.mp4"
+					}
 					type="video/mp4"
 				/>
 			</VideoBackground>
