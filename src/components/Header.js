@@ -100,7 +100,10 @@ const MobileOverlay = styled.header`
 			right: 0;
 		}
 	}
+
 	.overlay-inner {
+		overflow-y: scroll;
+
 		position: absolute;
 		top: 0;
 		right: -260px;
@@ -145,9 +148,9 @@ const MobileOverlay = styled.header`
 
 	.mobile-lang {
 		position: absolute;
-		bottom: 60px;
+		top: 10px;
 		right: 0;
-		width: 80%;
+		width: 90%;
 		li {
 			display: inline-block;
 			position: relative;
