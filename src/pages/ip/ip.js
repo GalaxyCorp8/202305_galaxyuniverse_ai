@@ -47,7 +47,16 @@ import ArrLeft from '../../assets/image/business/media/arr-l.svg'
 import ArrRight from '../../assets/image/business/media/arr-r.svg'
 import PopupCloseImg from '../../assets/image/common/popupClose.svg'
 
+import SubVisual from '../../assets/image/ava_poster.png'
+import SUbVisualXs from '../../assets/image/ava_poster.jpg'
+import { setDefaultLanguage } from 'react-multi-lang'
+
+import { useWindowSize } from '@react-hook/window-size'
+
 import ReactHammer from 'react-hammerjs'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -215,8 +224,20 @@ const PopupContainer = styled.div`
 `
 
 const Ip = () => {
+	const language = useSelector(selectLanguage)
 	const [popup, setPopup] = useState(false)
 	const imageRefs = useRef([])
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
+
+	useEffect(() => {
+		setDefaultLanguage(language ? language : 'ko')
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
 
 	const NextArrow = (props) => {
 		const { className, style, onClick } = props
@@ -358,7 +379,7 @@ const Ip = () => {
 				<ParallaxBanner
 					layers={[
 						{
-							image: Bg,
+							image: isXs ? SUbVisualXs : SubVisual,
 							speed: -5,
 						},
 					]}
@@ -370,9 +391,9 @@ const Ip = () => {
 					{imgArr.map((img, index) => (
 						<ReactHammer
 							key={index}
-							onSwipeLeft={() => handleSwipeLeft(index)}
-							onSwipeRight={() => handleswipeRight(index)}
-							onTap={() => handleClick(index)}
+							// onSwipeLeft={() => handleSwipeLeft(index)}
+							// onSwipeRight={() => handleswipeRight(index)}
+							// onTap={() => handleClick(index)}
 							className="px-1"
 						>
 							<img
