@@ -577,6 +577,8 @@ const Company = () => {
 								2022.10
 								<br />
 								{t("cmp1_7")}
+								<br />
+								{t("cmp1_7_1")}
 							</p>
 							<br />
 							<br />
