@@ -11,6 +11,8 @@ import { setDefaultLanguage } from 'react-multi-lang'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
 
+import { useWindowSize } from '@react-hook/window-size'
+
 const Banner = styled.div`
 	height: 464px;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -21,20 +23,27 @@ const NewView = () => {
 	const [activeDropdown, setActiveDropdown] = useState(false)
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
-	}, [language])
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
 	return (
 		<>
-			<div className="container p-4 lg:p-0 mt-30 md:mt-60">
-				{/* <h2 className="text-2xl lg:text-4xl eng text-center mt-0 md:mt-14 mb-10">
+			<div className="container p-4 lg:p-0 mt-24 lg:mt-60">
+				<h2 className="text-2xl lg:text-4xl eng text-center mt-0 md:mt-14 mb-10">
 					GALAXY NEWS
 				</h2>
-				<p className="text-lg lg:text-4xl text-center mb-20 md:mb-40">
-					갤럭시 뉴스
+				<p className="text-lg lg:text-4xl text-center mb-8 lg:mb-40">
+					{t('news1')}
 				</p>
-				<ul className="tabBtns text-center flex items-center justify-center gap-10 mb-9 md:mb-28">
+				<ul className="tabBtns text-center flex items-center justify-center gap-5 lg:gap-10 mb-20 lg:mb-28">
 					<li>
 						<button
 							type="button"
@@ -48,7 +57,7 @@ const NewView = () => {
 							보도자료
 						</button>
 					</li>
-					<li>
+					{/* <li>
 						<button
 							type="button"
 							className={
@@ -86,8 +95,8 @@ const NewView = () => {
 						>
 							IR
 						</button>
-					</li>
-				</ul> */}
+					</li> */}
+				</ul>
 				<article className="relative boardView border-t-4">
 					<header className="boardView__header text-center p-4 mb-14">
 						<h2 className="text-sm md:text-3xl mb-4">{t('news13')}</h2>

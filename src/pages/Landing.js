@@ -1,10 +1,10 @@
-import Bg from "../assets/image/landing/landing_bg.png";
-import styled from "styled-components";
-import React, { useEffect } from "react";
-import { Parallax } from "react-scroll-parallax";
-import { osName } from "react-device-detect";
+import Bg from '../assets/image/landing/landing_bg.png'
+import styled from 'styled-components'
+import React, { useEffect } from 'react'
+import { Parallax } from 'react-scroll-parallax'
+import { osName } from 'react-device-detect'
 
-// import video from "../assets/video/main.webm";
+import Video from '../assets/video/main.mp4'
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -13,7 +13,7 @@ const VideoBackground = styled.video`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-`;
+`
 const VideoWrapper = styled.div`
 	position: relative;
 	height: 100vh;
@@ -25,7 +25,7 @@ const VideoWrapper = styled.div`
 	.main-visual-inner {
 		z-index: 1;
 	}
-`;
+`
 
 const PostContainer = styled.div`
 	position: absolute;
@@ -36,14 +36,14 @@ const PostContainer = styled.div`
 	background-image: url(${Bg});
 	background-size: cover;
 	background-position: center;
-`;
+`
 
 const Landing = () => {
-	const [isMobile, setIsMobile] = React.useState(false);
+	const [isMobile, setIsMobile] = React.useState(false)
 	useEffect(() => {
-		console.log(osName);
-		if (osName === "iOS" || osName === "Android") setIsMobile(true);
-	}, []);
+		console.log(osName)
+		if (osName === 'iOS' || osName === 'Android') setIsMobile(true)
+	}, [])
 	return (
 		<VideoWrapper>
 			<div className="main-visual-inner">
@@ -76,17 +76,23 @@ const Landing = () => {
 				</VideoBackground>
 			)} */}
 			{/* 안동현 코드, 모바일에서 영상 배경이 되지 않도록 한 것은 지우고, 항상 배경이 영상이 되도록. */}
-			<VideoBackground muted autoPlay loop>
+			<VideoBackground
+				playsInline
+				muted
+				autoPlay
+				loop
+				webkit-playsinline="true"
+			>
 				<source
-					// src={Video}
-					src={
-						"https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/main.webm"
-					}
-					type="video/webm"
+					src={Video}
+					// src={
+					// 	'https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/main.webm'
+					// }
+					type="video/mp4"
 				/>
 			</VideoBackground>
 		</VideoWrapper>
-	);
-};
+	)
+}
 
-export default Landing;
+export default Landing
