@@ -1,10 +1,10 @@
-import Bg from '../assets/image/landing/landing_bg.png'
-import styled from 'styled-components'
-import React, { useEffect } from 'react'
-import { Parallax } from 'react-scroll-parallax'
-import { osName } from 'react-device-detect'
+import Bg from "../assets/image/landing/landing_bg.png";
+import styled from "styled-components";
+import React, { useEffect } from "react";
+import { Parallax } from "react-scroll-parallax";
+import { osName } from "react-device-detect";
 
-import Video from '../assets/video/main.mp4'
+import Video from "../assets/video/intro_30sec_10mb.mp4";
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -13,7 +13,7 @@ const VideoBackground = styled.video`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-`
+`;
 const VideoWrapper = styled.div`
 	position: relative;
 	height: 100vh;
@@ -25,7 +25,7 @@ const VideoWrapper = styled.div`
 	.main-visual-inner {
 		z-index: 1;
 	}
-`
+`;
 
 const PostContainer = styled.div`
 	position: absolute;
@@ -36,14 +36,14 @@ const PostContainer = styled.div`
 	background-image: url(${Bg});
 	background-size: cover;
 	background-position: center;
-`
+`;
 
 const Landing = () => {
-	const [isMobile, setIsMobile] = React.useState(false)
+	const [isMobile, setIsMobile] = React.useState(false);
 	useEffect(() => {
-		console.log(osName)
-		if (osName === 'iOS' || osName === 'Android') setIsMobile(true)
-	}, [])
+		console.log(osName);
+		if (osName === "iOS" || osName === "Android") setIsMobile(true);
+	}, []);
 	return (
 		<VideoWrapper>
 			<div className="main-visual-inner">
@@ -92,7 +92,7 @@ const Landing = () => {
 				/>
 			</VideoBackground>
 		</VideoWrapper>
-	)
-}
+	);
+};
 
-export default Landing
+export default Landing;
