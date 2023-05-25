@@ -2,13 +2,16 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ParallaxBanner } from 'react-scroll-parallax'
 import styled from 'styled-components'
-import Bg from '../../assets/image/investors/bg.png'
+import Bg from '../../assets/image/WEB_image/x1/4_investors/INVESTORS_1.jpg'
+import BgXs from '../../assets/image/MOBILE_image/x1/8_investor/investor.jpg'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import { setDefaultLanguage } from 'react-multi-lang'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
+
+import { useWindowSize } from '@react-hook/window-size'
 
 const Banner = styled.div`
 	height: 464px;
@@ -20,10 +23,18 @@ const Investors = () => {
 	const [activeDropdown, setActiveDropdown] = useState(false)
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
-	}, [language])
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
+
 	return (
 		<>
 			<div className="sub-visual">
@@ -34,26 +45,26 @@ const Investors = () => {
 				<ParallaxBanner
 					layers={[
 						{
-							image: Bg,
+							image: isXs ? BgXs : Bg,
 							speed: -5,
 						},
 					]}
 					style={{ height: 680 }}
 				/>
 			</div>
-			<div className="container p-4 lg:p-0 mt-56">
+			<div className="container p-4 lg:p-0 mt-0 lg:mt-56">
 				<h2 className="text-2xl lg:text-5xl eng text-center mt-14 mb-5 tracking-tighter lg:leading-tight">
 					metaverse company leaping
 					<br />
 					into the world
 				</h2>
-				<p className="text-lg lg:text-4xl text-center mb-20 md:mb-40">
+				<p className="text-lg lg:text-4xl text-center mb-8 lg:mb-40">
 					{t('invest1')}
 				</p>
 				<h2 className="text-2xl lg:text-4xl eng text-center mt-0 md:mt-14 mb-10">
 					INVESTORS
 				</h2>
-				<ul className="tabBtns text-center flex items-center justify-center gap-10 mb-28">
+				<ul className="tabBtns text-center flex items-center justify-center gap-5 lg:gap-10 mb-20 lg:mb-28">
 					<li>
 						<button
 							type="button"

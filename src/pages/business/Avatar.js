@@ -3,24 +3,32 @@ import { Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax'
 import { Link } from 'react-router-dom'
 import mBgImg from '../../assets/image/company/mirinae_bg.png'
 import mTextImg from '../../assets/image/company/mirinae_texxt.png'
-import mirinaeImg1 from '../../assets/image/business/avatar/ava.png'
 import Human from '../../assets/image/business/avatar/human.png'
-import SubVisualImage from '../../assets/image/business/avatar/bg.png'
-import Av1 from '../../assets/image/business/avatar/av1.png'
-import Av1Over from '../../assets/image/business/avatar/av1_over.png'
-import Av2 from '../../assets/image/business/avatar/av2.png'
-import Av2Over from '../../assets/image/business/avatar/av2_over.png'
-import Av3 from '../../assets/image/business/avatar/av3.png'
-import Av3Over from '../../assets/image/business/avatar/av3_over.png'
-import MsXs from '../../assets/image/business/avatar/ms-xs.svg'
-import MsMd from '../../assets/image/business/avatar/ms-md.svg'
-import AvaXs from '../../assets/image/business/avatar/ava-xs.svg'
-import AvaMd from '../../assets/image/business/avatar/ava-md.svg'
-import HpXs from '../../assets/image/business/avatar/hp-xs.svg'
-import HpMd from '../../assets/image/business/avatar/hp-md.svg'
-import Mirinae from '../../assets/image/business/avatar/mirinae.png'
 
+import SubVisualImage from '../../assets/image/WEB_image/x1/2_1avatar/avatar_1.jpg'
+import SubVisualImageXs from '../../assets/image/MOBILE_image/x1/3_business_avatar/business-avatar_1.jpg'
+import Img1 from '../../assets/image/WEB_image/x1/2_1avatar/avatar_2.jpg'
+import Img1Xs from '../../assets/image/MOBILE_image/x1/3_business_avatar/business-avatar_2.jpg'
+import Img2 from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3.jpg'
+import Img2Xs from '../../assets/image/MOBILE_image/x1/3_business_avatar/business-avatar_3.jpg'
+import Img3 from '../../assets/image/WEB_image/x1/2_1avatar/avatar_4.jpg'
+import Img3Xs from '../../assets/image/MOBILE_image/x1/3_business_avatar/business-avatar_7.jpg'
+
+import Av1 from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3_1(black).png'
+import Av1Over from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3_1.png'
+import Av2 from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3_2(black).png'
+import Av2Over from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3_2.png'
+import Av3 from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3_3(black).png'
+import Av3Over from '../../assets/image/WEB_image/x1/2_1avatar/avatar_3_3.png'
+
+import MsXs from '../../assets/image/MOBILE_image/x1/3_business_avatar/ms-xs.png'
+import MsMd from '../../assets/image/business/avatar/ms-md.svg'
+import AvaXs from '../../assets/image/MOBILE_image/x1/3_business_avatar/ava-xs.png'
+import AvaMd from '../../assets/image/business/avatar/ava-md.svg'
+import HpXs from '../../assets/image/MOBILE_image/x1/3_business_avatar/hp-xs.png'
+import HpMd from '../../assets/image/business/avatar/hp-md.svg'
 import Txt1 from '../../assets/image/business/avatar/txt1.svg'
+
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import { setDefaultLanguage } from 'react-multi-lang'
@@ -29,6 +37,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
 
 import { useState } from 'react'
+
+import { useWindowSize } from '@react-hook/window-size'
 
 const ListItem = styled.div`
 	border-top: 1px solid #606060;
@@ -103,8 +113,6 @@ const MirinaeText = {
 
 const MContainer = styled.div`
 	position: relative;
-	margin-top: 30px;
-	height: 330px;
 `
 
 const MirineaOverlay = {
@@ -121,6 +129,8 @@ const MirineaOverlay = {
 const Avatar = () => {
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
 
 	const [av1State, setAv1State] = useState(false)
 	const [av2State, setAv2State] = useState(false)
@@ -128,7 +138,12 @@ const Avatar = () => {
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
-	}, [language])
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
 
 	return (
 		<>
@@ -136,7 +151,7 @@ const Avatar = () => {
 				<ParallaxBanner
 					layers={[
 						{
-							image: SubVisualImage,
+							image: isXs ? SubVisualImageXs : SubVisualImage,
 							speed: -5,
 						},
 					]}
@@ -144,46 +159,45 @@ const Avatar = () => {
 				/>
 			</div>
 			<div className="container p-4 lg:p-0">
-				<h2 className="flex justify-center mt-32 mb-10">
+				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
 					<img
 						src={Txt1}
 						alt=""
 					/>
 				</h2>
-				<h3 className="text-lg lg:text-3xl text-center font-bold lg:font-light mb-36">
+				<h3 className="text-lg lg:text-3xl text-center font-light lg:mb-36 mb-10">
 					{t('ava1_1')}
 				</h3>
-				<div className="w-auto md:w-4/5 mx-auto">
-					<p
-						className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 break-keep"
-						style={{ marginBottom: '600px' }}
-					>
+				<div className="w-auto md:w-3/5 mx-auto">
+					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
 						{t('ava1_2')}
 					</p>
 				</div>
-				<h2 className="text-2xl lg:text-5xl eng text-center mb-5">MIRINAE</h2>
-				<p className="text-lg lg:text-2xl text-center font-bold mb-16">
-					{t('ava1_3')}
-				</p>
+				<div className="container px-4 lg:p-0 mt-72 lg:mt-96">
+					<h2 className="text-2xl lg:text-5xl eng text-center mb-0 lg:mb-5">
+						MIRINAE
+					</h2>
+					<p className="text-lg lg:text-2xl text-center font-bold mb-5 lg:mb-16">
+						{t('ava1_3')}
+					</p>
+				</div>
 			</div>
-			<MContainer>
-				<ParallaxBanner
-					// layers={[MirinaeBg, MirineaOverlay, MirinaeText]}
-					layers={[{ image: Mirinae, speed: -5 }]}
-					className="bg-gray-900"
-					style={{ height: '330px' }}
-				/>
-			</MContainer>
+			<ParallaxBanner
+				// layers={[MirinaeBg, MirineaOverlay, MirinaeText]}
+				layers={[{ image: isXs ? Img1Xs : Img1, speed: -5 }]}
+				className="bg-gray-900"
+				style={{ height: isXs ? '235px' : '300px' }}
+			/>
 			<div className="container p-4 lg:p-0">
 				<div className="w-auto md:w-4/5 mx-auto">
-					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-20 break-keep">
+					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-20 lg:mb-20 break-keep">
 						{t('ava1_4')}
 					</p>
 				</div>
 			</div>
 			<div
 				className="container flex justify-center"
-				style={{ marginBottom: '500px' }}
+				style={{ marginBottom: isXs ? '270px' : '500px' }}
 			>
 				<a
 					href="https://galaxyava.com/"
@@ -202,29 +216,29 @@ const Avatar = () => {
 					/>
 				</a>
 			</div>
-			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-2">
+			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-0 lg:mb-2">
 				AVA
 			</h2>
-			<h3 className="lg:text-3xl text-center font-bold mb-20">
+			<h3 className="lg:text-3xl text-center font-bold mb-5 lg:mb-20">
 				Another Vision Alpha
 			</h3>
 			<ParallaxBanner
 				layers={[
 					{
-						image: mirinaeImg1,
+						image: isXs ? Img2Xs : Img2,
 						speed: -5,
 					},
 				]}
-				style={{ height: 330 }}
+				style={{ height: isXs ? 235 : 330 }}
 			/>
 			<div className="container p-4 lg:p-0">
 				<div className="w-auto md:w-4/5 mx-auto">
-					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-48 break-keep">
+					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-20 lg:mb-20 break-keep">
 						{t('ava1_5')}
 					</p>
 				</div>
 			</div>
-			<div className="container mb-10">
+			<div className="container mb-28 lg:mb-10">
 				<div className="block md:flex justify-center items-center gap-10">
 					<img
 						src={av1State ? Av1Over : Av1}
@@ -251,7 +265,7 @@ const Avatar = () => {
 			</div>
 			<div
 				className="container flex justify-center"
-				style={{ marginBottom: '580px' }}
+				style={{ marginBottom: isXs ? 277 : 580 }}
 			>
 				<Link to="/page/ip">
 					<img
@@ -266,22 +280,24 @@ const Avatar = () => {
 					/>
 				</Link>
 			</div>
-			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-2">
+			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-0 lg:mb-2">
 				HUMAN
 			</h2>
-			<h3 className="lg:text-2xl text-center font-bold mb-16">{t('ava1_6')}</h3>
+			<h3 className="lg:text-2xl text-center font-bold mb-5 lg:mb-16">
+				{t('ava1_6')}
+			</h3>
 			<ParallaxBanner
 				layers={[
 					{
-						image: Human,
+						image: isXs ? Img3Xs : Img3,
 						speed: -5,
 					},
 				]}
-				style={{ height: 330 }}
+				style={{ height: isXs ? '235px' : '300px' }}
 			/>
 			<div className="container p-4 lg:p-0">
 				<div className="w-auto md:w-4/5 mx-auto">
-					<p className="text-lg text-center font-extralight lg:leading-9 mt-14 mb-16 break-keep">
+					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-16 lg:mb-20 break-keep">
 						{t('ava1_7')}
 					</p>
 				</div>

@@ -8,19 +8,25 @@ import StepM from '../../assets/image/career/step_m.svg'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { setDefaultLanguage } from 'react-multi-lang'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
 
-import StepKo from '../../assets/image/career/step-ko.png'
-import StepJp from '../../assets/image/career/step-jp.png'
-import StepEn from '../../assets/image/career/step-en.png'
+import StepKo from '../../assets/image/WEB_image/x1/3_career/CAREER_2_kr.png'
+import StepJp from '../../assets/image/WEB_image/x1/3_career/CAREER_2_jp.png'
+import StepEn from '../../assets/image/WEB_image/x1/3_career/CAREER_2_eng.png'
+
+import StepKoXs from '../../assets/image/MOBILE_image/x1/7_career/career_kr.png'
+import StepJpXs from '../../assets/image/MOBILE_image/x1/7_career/career_jp.png'
+import StepEnXs from '../../assets/image/MOBILE_image/x1/7_career/career_eng.png'
 
 import BtnKo from '../../assets/image/career/btn-ko.png'
 import BtnJp from '../../assets/image/career/btn-jp.png'
 import BtnEn from '../../assets/image/career/btn-en.png'
+
+import { useWindowSize } from '@react-hook/window-size'
 
 const Injesang = styled.div`
 	position: relative;
@@ -37,6 +43,7 @@ const Injesang = styled.div`
         width: 100% !important;
         justify-content: flex-start;
         padding-left: 3rem;
+		margin-bottom: 45px;
         // &.slash {
         //     &::before,
         //     &::after {
@@ -58,9 +65,11 @@ const Injesang = styled.div`
             height: 15px;
             background: url(${Dot}) no-repeat;
             @media (max-width: 767px) {
-                width: 10px;
-                height: 12px;
-                background-size: 10px 12px;
+                width: 8px;
+                height: 10px;
+				top: -5px;
+				left: -10px;
+                background-size: 8px 10px;
             }
         }
         @media (max-width: 767px) {
@@ -107,9 +116,18 @@ const Career = () => {
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
 
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
+
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
-	}, [language])
+		if (width < 767) {
+			setIsXs(true)
+		} else {
+			setIsXs(false)
+		}
+	}, [language, width])
+
 	return (
 		<>
 			<div className="container p-4 lg:p-0">
@@ -118,12 +136,12 @@ const Career = () => {
 					alt=""
 					className="mt-20 block md:hidden lg:hidden"
 				/>
-				<h2 className="text-2xl lg:text-5xl eng text-center mt-20 lg:mt-80 mb-2 lg:mb-9">
+				<h2 className="text-2xl lg:text-5xl eng text-center mt-20 lg:mt-80 mb-10 lg:mb-9">
 					Galaxy
 					<br />
 					growing together
 				</h2>
-				<p className="text-lg lg:text-4xl text-center font-bold lg:font-light mb-5 lg:mb-40">
+				<p className="text-lg lg:text-4xl text-center font-bold lg:font-light mb-10 lg:mb-40">
 					{t('care1_1')}
 				</p>
 				<img
@@ -132,287 +150,310 @@ const Career = () => {
 					className="mt-20 hidden md:block lg:block"
 				/>
 			</div>
-			<div className="container p-4 lg:p-0 mb-16 border-t-2">
-				<h3 className="text-base md:text-3xl mt-0 md:mt-5 mb-16 font-bold">
-					{t('care1_2')}
-				</h3>
-				<Injesang className="">
-					<h4>
-						<span className="dot"></span>
-						{t('care1_3')}
-					</h4>
-					<p className="text-lg font-light">{t('care1_4')}</p>
-				</Injesang>
-				<Injesang className="slash">
-					<h4>
-						<span className="dot"></span>
-						{t('care1_5')}
-					</h4>
-					<p className="text-lg font-light">{t('care1_6')}</p>
-				</Injesang>
-				<Injesang className="">
-					<h4>
-						<span className="dot"></span>
-						{t('care1_7')}
-					</h4>
-					<p className="text-lg font-light">{t('care1_8')}</p>
-				</Injesang>
-				<div className="clear-both"></div>
-			</div>
-			<div className="container p-4 lg:p-0 mt-16 border-t-2">
-				<div className="block md:flex">
-					<h3 className="text-base md:text-3xl mt-0 md:mt-5 md:w-2/5 w-full font-bold">
-						{t('care1_9')}
+			<div className="p-6 lg:p-0">
+				<div
+					className="container p-4 lg:p-0 mb-16"
+					style={{ borderTop: '1px solid #fff' }}
+				>
+					<h3 className="text-base md:text-3xl mt-0 md:mt-5 mb-16 font-bold">
+						{t('care1_2')}
 					</h3>
-					<ul className="md:w-3/5 mt-6 md:mt-12 list-disc w-full pl-6 md:pl-0">
-						<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-							{t('care1_10')}
-						</li>
-						<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-							{t('care1_10_1')}
-						</li>
-						<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-							{t('care1_10_2')}
-						</li>
-						<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-							{t('care1_10_3')}
-						</li>
-						<li className="text-base md:text-lg font-light">{t('care1_10_4')}</li>
-					</ul>
+					<Injesang className="">
+						<h4>
+							<span className="dot"></span>
+							{t('care1_3')}
+						</h4>
+						<p className="text-lg font-light">{t('care1_4')}</p>
+					</Injesang>
+					<Injesang className="slash">
+						<h4>
+							<span className="dot"></span>
+							{t('care1_5')}
+						</h4>
+						<p className="text-lg font-light">{t('care1_6')}</p>
+					</Injesang>
+					<Injesang className="">
+						<h4>
+							<span className="dot"></span>
+							{t('care1_7')}
+						</h4>
+						<p className="text-lg font-light">{t('care1_8')}</p>
+					</Injesang>
+					<div className="clear-both"></div>
 				</div>
-			</div>
-			<div className="container p-4 lg:p-0 mt-16 border-t-2 hidden md:block">
-				<h3 className="text-3xl mt-5 mb-16">{t('care1_11')}</h3>
-				<div className="flex mb-20">
-					<h4 className="text-4xl w-1/4 font-thin eng">LIFE</h4>
-					<div className="w-3/4">
-						<table className="table-auto text-lg font-light">
-							<colgroup>
-								<col style={{ width: 200 }} />
-								<col />
-							</colgroup>
-							<tbody>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_12')}</b>
-									</td>
-									<td className="p-2">{t('care1_13')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_14')}</b>
-									</td>
-									<td className="p-2">{t('care1_15')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_16')}</b>
-									</td>
-									<td className="p-2">{t('care1_17')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_18')}</b>
-									</td>
-									<td className="p-2">{t('care1_19')}</td>
-								</tr>
-							</tbody>
-						</table>
+				<div
+					className="container p-4 lg:p-0 mt-16"
+					style={{ borderTop: '1px solid #fff' }}
+				>
+					<div className="block md:flex">
+						<h3 className="text-base md:text-3xl mt-0 md:mt-5 md:w-2/5 w-full font-bold">
+							{t('care1_9')}
+						</h3>
+						<ul className="md:w-3/5 mt-6 md:mt-12 list-disc w-full pl-6 md:pl-0">
+							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
+								{t('care1_10')}
+							</li>
+							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
+								{t('care1_10_1')}
+							</li>
+							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
+								{t('care1_10_2')}
+							</li>
+							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
+								{t('care1_10_3')}
+							</li>
+							<li className="text-base md:text-lg font-light">{t('care1_10_4')}</li>
+						</ul>
 					</div>
 				</div>
+				<div
+					className="container p-4 lg:p-0 mt-16 hidden md:block"
+					style={{ borderTop: '1px solid #fff' }}
+				>
+					<h3 className="text-3xl mt-5 mb-16">{t('care1_11')}</h3>
+					<div className="flex mb-20">
+						<h4 className="text-4xl w-1/4 font-thin eng">LIFE</h4>
+						<div className="w-3/4">
+							<table className="table-auto text-lg font-light">
+								<colgroup>
+									<col style={{ width: 200 }} />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_12')}</b>
+										</td>
+										<td className="p-2">{t('care1_13')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_14')}</b>
+										</td>
+										<td className="p-2">{t('care1_15')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_16')}</b>
+										</td>
+										<td className="p-2">{t('care1_17')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_18')}</b>
+										</td>
+										<td className="p-2">{t('care1_19')}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 
-				<div className="flex relative">
-					<h4
-						className="text-4xl w-1/4 font-thin eng"
-						style={{ transform: 'translateY(-20px)' }}
-					>
-						WORK
-					</h4>
-					<div className="w-3/4 border-t-2 border-white">
-						<table className="table-auto text-lg font-light my-20">
-							<colgroup>
-								<col style={{ width: 200 }} />
-								<col />
-							</colgroup>
-							<tbody>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_20')}</b>
-									</td>
-									<td className="p-2">{t('care1_21')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_22')}</b>
-									</td>
-									<td className="p-2">{t('care1_23')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_24')}</b>
-									</td>
-									<td className="p-2">{t('care1_25')}</td>
-								</tr>
-							</tbody>
-						</table>
+					<div className="flex relative">
+						<h4
+							className="text-4xl w-1/4 font-thin eng"
+							style={{ transform: 'translateY(-20px)' }}
+						>
+							WORK
+						</h4>
+						<div
+							className="w-3/4  border-white"
+							style={{ borderTop: '1px solid #fff' }}
+						>
+							<table className="table-auto text-lg font-light my-20">
+								<colgroup>
+									<col style={{ width: 200 }} />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_20')}</b>
+										</td>
+										<td className="p-2">{t('care1_21')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_22')}</b>
+										</td>
+										<td className="p-2">{t('care1_23')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_24')}</b>
+										</td>
+										<td className="p-2">{t('care1_25')}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div className="flex relative">
+						<h4
+							className="text-4xl w-1/4 font-thin eng"
+							style={{ transform: 'translateY(-20px)' }}
+						>
+							HEALTH
+						</h4>
+						<div
+							className="w-3/4 border-white"
+							style={{ borderTop: '1px solid #fff' }}
+						>
+							<table className="table-auto text-lg font-light my-20">
+								<colgroup>
+									<col style={{ width: 200 }} />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_26')}</b>
+										</td>
+										<td className="p-2">{t('care1_27')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_28')}</b>
+										</td>
+										<td className="p-2">{t('care1_29')}</td>
+									</tr>
+									<tr>
+										<td className="p-2">
+											<b className="font-bold">{t('care1_30')}</b>
+										</td>
+										<td className="p-2">{t('care1_31')}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
-				<div className="flex relative">
-					<h4
-						className="text-4xl w-1/4 font-thin eng"
-						style={{ transform: 'translateY(-20px)' }}
-					>
-						HEALTH
-					</h4>
-					<div className="w-3/4 border-t-2 border-white">
-						<table className="table-auto text-lg font-light my-20">
-							<colgroup>
-								<col style={{ width: 200 }} />
-								<col />
-							</colgroup>
-							<tbody>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_26')}</b>
-									</td>
-									<td className="p-2">{t('care1_27')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_28')}</b>
-									</td>
-									<td className="p-2">{t('care1_29')}</td>
-								</tr>
-								<tr>
-									<td className="p-2">
-										<b className="font-bold">{t('care1_30')}</b>
-									</td>
-									<td className="p-2">{t('care1_31')}</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+				<div
+					className="container p-4 lg:p-0 mt-16 block md:hidden"
+					style={{ borderTop: '1px solid #fff' }}
+				>
+					<h3 className="text-base font-bold">{t('care1_11')}</h3>
+					<h4 className="text-3xl eng my-16">LIFE</h4>
+					<h3 className="text-base font-bold">{t('care1_12')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_13')}</p>
+					<h3 className="text-base font-bold">{t('care1_14')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_15')}</p>
+					<h3 className="text-base font-bold">{t('care1_16')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_17')}</p>
+					<h3 className="text-base font-bold">{t('care1_18')}</h3>
+					<p className="text-base font-light mb-48">{t('care1_19')}</p>
+
+					<h4 className="text-3xl eng my-16">WORK</h4>
+					<h3 className="text-base font-bold">{t('care1_20')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_21')}</p>
+					<h3 className="text-base font-bold">{t('care1_22')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_23')}</p>
+					<h3 className="text-base font-bold">{t('care1_24')}</h3>
+					<p className="text-base font-light mb-48">{t('care1_25')}</p>
+
+					<h4 className="text-3xl eng my-16">HEALTH</h4>
+					<h3 className="text-base font-bold">{t('care1_26')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_27')}</p>
+					<h3 className="text-base font-bold">{t('care1_28')}</h3>
+					<p className="text-base font-light mb-16">{t('care1_29')}</p>
+					<h3 className="text-base font-bold">{t('care1_30')}</h3>
+					<p className="text-base font-light mb-48">{t('care1_31')}</p>
 				</div>
-			</div>
-			<div className="container p-4 lg:p-0 mt-16 border-t-2 block md:hidden">
-				<h3 className="text-base font-bold">{t('care1_11')}</h3>
-				<h4 className="text-3xl eng my-16">LIFE</h4>
-				<h3 className="text-base font-bold">{t('care1_12')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_13')}</p>
-				<h3 className="text-base font-bold">{t('care1_14')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_15')}</p>
-				<h3 className="text-base font-bold">{t('care1_16')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_17')}</p>
-				<h3 className="text-base font-bold">{t('care1_18')}</h3>
-				<p className="text-base font-light mb-48">{t('care1_19')}</p>
-
-				<h4 className="text-3xl eng my-16">WORK</h4>
-				<h3 className="text-base font-bold">{t('care1_20')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_21')}</p>
-				<h3 className="text-base font-bold">{t('care1_22')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_23')}</p>
-				<h3 className="text-base font-bold">{t('care1_24')}</h3>
-				<p className="text-base font-light mb-48">{t('care1_25')}</p>
-
-				<h4 className="text-3xl eng my-16">HEALTH</h4>
-				<h3 className="text-base font-bold">{t('care1_26')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_27')}</p>
-				<h3 className="text-base font-bold">{t('care1_28')}</h3>
-				<p className="text-base font-light mb-16">{t('care1_29')}</p>
-				<h3 className="text-base font-bold">{t('care1_30')}</h3>
-				<p className="text-base font-light mb-48">{t('care1_31')}</p>
-			</div>
-			<div className="container p-4 lg:p-0 border-t-2">
-				<h3 className="text-base font-bold md:text-3xl mt-0 md:mt-5 mb-16">
-					{t('care1_32')}
-				</h3>
-				{i18n.language === 'jp' ? (
-					<>
-						<img
-							src={StepJp}
-							alt="채용절차"
-							className="hidden md:block lg:block"
-						/>
-						<div className="md:hidden lg:hidden flex justify-center">
-							<img
-								src={StepJp}
-								alt="채용절차"
-							/>
-						</div>
-					</>
-				) : i18n.language === 'en' ? (
-					<>
-						<img
-							src={StepEn}
-							alt="채용절차"
-							className="hidden md:block lg:block"
-						/>
-						<div className="md:hidden lg:hidden flex justify-center">
-							<img
-								src={StepEn}
-								alt="채용절차"
-							/>
-						</div>
-					</>
-				) : (
-					<>
-						<img
-							src={StepKo}
-							alt="채용절차"
-							className="hidden md:block lg:block"
-						/>
-						<div className="md:hidden lg:hidden flex justify-center">
-							<img
-								src={StepKo}
-								alt="채용절차"
-							/>
-						</div>
-					</>
-				)}
-			</div>
-			<div className="container p-4 lg:p-0 flex justify-center align-center mb-96 mt-32">
-				<Link to="/">
+				<div
+					className="container p-4 lg:p-0"
+					style={{ borderTop: '1px solid #fff' }}
+				>
+					<h3 className="text-base font-bold md:text-3xl mt-0 md:mt-5 mb-16">
+						{t('care1_32')}
+					</h3>
 					{i18n.language === 'jp' ? (
 						<>
 							<img
-								src={BtnJp}
-								alt="지원하기"
+								src={StepJp}
+								alt="채용절차"
 								className="hidden md:block lg:block"
 							/>
-							<img
-								src={BtnJp}
-								alt="지원하기"
-								className="block md:hidden lg:hidden"
-							/>
+							<div className="md:hidden lg:hidden flex justify-center">
+								<img
+									src={StepJpXs}
+									alt="채용절차"
+								/>
+							</div>
 						</>
 					) : i18n.language === 'en' ? (
 						<>
 							<img
-								src={BtnEn}
-								alt="지원하기"
+								src={StepEn}
+								alt="채용절차"
 								className="hidden md:block lg:block"
 							/>
-							<img
-								src={BtnEn}
-								alt="지원하기"
-								className="block md:hidden lg:hidden"
-							/>
+							<div className="md:hidden lg:hidden flex justify-center">
+								<img
+									src={StepEnXs}
+									alt="채용절차"
+								/>
+							</div>
 						</>
 					) : (
 						<>
 							<img
-								src={BtnKo}
-								alt="지원하기"
+								src={StepKo}
+								alt="채용절차"
 								className="hidden md:block lg:block"
 							/>
-							<img
-								src={BtnKo}
-								alt="지원하기"
-								className="block md:hidden lg:hidden"
-							/>
+							<div className="md:hidden lg:hidden flex justify-center">
+								<img
+									src={StepKoXs}
+									alt="채용절차"
+								/>
+							</div>
 						</>
 					)}
-				</Link>
+				</div>
+				{/* <div className="container p-4 lg:p-0 flex justify-center align-center mb-96 mt-32">
+					<Link to="/">
+						{i18n.language === 'jp' ? (
+							<>
+								<img
+									src={BtnJp}
+									alt="지원하기"
+									className="hidden md:block lg:block"
+								/>
+								<img
+									src={BtnJp}
+									alt="지원하기"
+									className="block md:hidden lg:hidden"
+								/>
+							</>
+						) : i18n.language === 'en' ? (
+							<>
+								<img
+									src={BtnEn}
+									alt="지원하기"
+									className="hidden md:block lg:block"
+								/>
+								<img
+									src={BtnEn}
+									alt="지원하기"
+									className="block md:hidden lg:hidden"
+								/>
+							</>
+						) : (
+							<>
+								<img
+									src={BtnKo}
+									alt="지원하기"
+									className="hidden md:block lg:block"
+								/>
+								<img
+									src={BtnKo}
+									alt="지원하기"
+									className="block md:hidden lg:hidden"
+								/>
+							</>
+						)}
+					</Link>
+				</div> */}
 			</div>
 		</>
 	)
