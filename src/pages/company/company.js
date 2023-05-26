@@ -474,13 +474,14 @@ const Company = () => {
 					</div> */}
 				</div>
 				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
+					{/* 두줄인 히스토리 중 아래것 제거 */}
 					{/* "history..." 이미지 타이틀 */}
-					<span className="hidden lg:block">
+					{/* <span className="hidden lg:block">
 						<img src={Txt5} alt="" />
 					</span>
 					<span className="block lg:hidden">
 						<img src={Txt5Xs} alt="" />
-					</span>
+					</span> */}
 				</h2>
 				<div className="container">
 					<ParallaxBanner
