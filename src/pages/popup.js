@@ -61,14 +61,28 @@ const Popup = () => {
 					>
 						다운로드
 					</button>
-					<div>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "row",
+							alignItems: "center",
+							justifyContent: "center",
+						}}
+					>
 						<button
 							onClick={handleClose}
 							className="text-xs text-center bg-white text-black py-1 px-1 mx-2 rounded-full shadow-xl"
 						>
 							닫기
 						</button>
-						<label className="text-xs text-center bg-white text-black py-1 px-1 mx-2 rounded-full shadow-xl">
+						<label
+							className="text-xs text-center bg-white text-black py-1 px-1 mx-2 rounded-full shadow-xl"
+							style={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+							}}
+						>
 							<input type="checkbox" onChange={handleNeverShowAgain} />
 							&nbsp; Don't show again
 						</label>
