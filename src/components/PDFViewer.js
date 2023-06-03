@@ -58,7 +58,7 @@ const PDFViewer = ({ url }) => {
 					&lt; &nbsp;&nbsp;&nbsp;&nbsp;
 				</button>
 				<span>
-					{currentPage} / {numPages} Page
+					{currentPage} / {numPages} Pages
 				</span>
 				<button onClick={goToNextPage} disabled={currentPage === numPages}>
 					&nbsp;&nbsp;&nbsp;&nbsp; &gt;
