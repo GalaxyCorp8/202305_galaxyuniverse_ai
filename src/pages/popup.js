@@ -22,6 +22,8 @@ const PopupStyle = styled.div`
 `;
 const PopupContentStyle = styled.div`
 	background-color: darkgray;
+	width: fit-content;
+	height: fit-content;
 	padding: 18px;
 	border-radius: 8px;
 `;
@@ -48,20 +50,35 @@ const Popup = () => {
 
 	return (
 		<PopupStyle>
-			<PopupContentStyle>
+			<PopupContentStyle className="flex flex-col initial">
+				<div className="flex justify-between mb-2">
+					<button
+						onClick={() => window.open(pdfUrl, "_blank")}
+						className="text-xs text-center bg-white text-black py-1 px-1 mx-2 rounded-full shadow-xl"
+					>
+						다운로드
+					</button>
+					<div>
+						<button
+							onClick={handleClose}
+							className="text-xs text-center bg-white text-black py-1 px-1 mx-2 rounded-full shadow-xl"
+						>
+							닫기
+						</button>
+						<label className="text-xs text-center bg-white text-black py-1 px-1 mx-2 rounded-full shadow-xl">
+							<input type="checkbox" onChange={handleNeverShowAgain} />
+							&nbsp; Don't show again
+						</label>
+					</div>
+				</div>
+
 				{/* iframe은 모바일에서는 작동하지 않음 */}
 				{/* <iframe src={Pdf} width="100%" height="100%"></iframe> */}
 				{/* <source src={Pdf} type="application/pdf" /> */}
 
 				{/* <img src={Test} alt="slash" /> */}
 
-				<PDFViewer url={pdfUrl} />
-
-				<button onClick={handleClose}>[닫기]&nbsp;&nbsp;&nbsp;&nbsp;</button>
-				<label>
-					<input type="checkbox" onChange={handleNeverShowAgain} />
-					Don't show again
-				</label>
+				<PDFViewer pdfUrl={pdfUrl} />
 			</PopupContentStyle>
 		</PopupStyle>
 	);

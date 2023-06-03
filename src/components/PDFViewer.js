@@ -15,18 +15,13 @@ const PDFViewerStyle = styled.div`
 	align-items: center;
 `;
 
-const pdfContainer = styled.div`
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-`;
+const pdfContainer = styled.div``;
 const pdfPage = styled.div`
 	display: block;
 	margin: 0 auto;
-	max-width: 100%;
 `;
 
-const PDFViewer = ({ url }) => {
+const PDFViewer = ({ pdfUrl }) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [numPages, setNumPages] = useState(null);
 
@@ -49,7 +44,7 @@ const PDFViewer = ({ url }) => {
 	return (
 		<PDFViewerStyle>
 			<pdfContainer>
-				<Document file={url} onLoadSuccess={handleDocumentLoadSuccess}>
+				<Document file={pdfUrl} onLoadSuccess={handleDocumentLoadSuccess}>
 					<Page pageNumber={currentPage} className="pdf-page" />
 				</Document>
 			</pdfContainer>
