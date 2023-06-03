@@ -3,7 +3,6 @@ import styled from "styled-components";
 import React, { useEffect } from "react";
 import { Parallax } from "react-scroll-parallax";
 import { osName } from "react-device-detect";
-
 // import Video from "../assets/video/intro_30sec_10mb.mp4";
 
 const VideoBackground = styled.video`
