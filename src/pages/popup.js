@@ -5,8 +5,8 @@ import PDFViewer from "./../components/PDFViewer";
 import styled from "styled-components";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 
-import Pdf from "../assets/pdf/testpdf.pdf";
-import Test from "../assets/pdf/test.jpg";
+// import Pdf from "../assets/pdf/testpdf.pdf";
+// import Test from "../assets/pdf/test.jpg";
 
 const PopupStyle = styled.div`
 	position: fixed;
@@ -27,6 +27,8 @@ const PopupContentStyle = styled.div`
 `;
 
 const Popup = () => {
+	const pdfUrl =
+		"https://s3.ap-northeast-2.amazonaws.com/202305-galaxyuniverse.ai-assets/s3_assets/pdfs/5.%EC%B1%84%EA%B6%8C%EC%9E%90%EC%9D%B4%EC%9D%98%EC%A0%9C%EC%B6%9C%EB%B0%8F%EA%B5%AC%EC%A3%BC%EA%B6%8C%EC%A0%9C%EC%B6%9C%EA%B3%B5%EA%B3%A0(%EA%B0%A4%EB%9F%AD%EC%8B%9C%2C%EB%B9%85%ED%94%8C%EB%9E%98%EC%89%AC%EA%B3%B5%ED%86%B5%EB%AC%B8%EA%B5%AC)23.6.5.pdf";
 	const [showPopup, setShowPopup] = useState(true);
 
 	const handleClose = () => {
@@ -53,7 +55,7 @@ const Popup = () => {
 
 				{/* <img src={Test} alt="slash" /> */}
 
-				<PDFViewer url={Pdf} />
+				<PDFViewer url={pdfUrl} />
 
 				<button onClick={handleClose}>[닫기]&nbsp;&nbsp;&nbsp;&nbsp;</button>
 				<label>
