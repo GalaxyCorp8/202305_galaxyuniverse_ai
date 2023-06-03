@@ -71,7 +71,6 @@ const Popup = () => {
 						</label>
 					</div>
 				</div>
-
 				{/* iframe은 모바일에서는 작동하지 않음 */}
 				{/* <iframe src={Pdf} width="100%" height="100%"></iframe> */}
 				{/* <source src={Pdf} type="application/pdf" /> */}
