@@ -32,6 +32,7 @@ const Popup = () => {
 	// 맨 뒤에 빈 배열을 넣어주면, 컴포넌트가 처음 렌더링 될 때만 실행된다.
 	useEffect(() => {
 		// 로컬 스토리지에서 isPDFHidden을 가져온다.
+		// 아래 코드는 로컬에서 가져온 isPDFHidden이 true이면 isPDFHidden을 true로 설정하고, false이면 false로 설정한다.
 		const isPDFHidden = localStorage.getItem("isPDFHidden") === "true";
 		setiIsPDFHidden(isPDFHidden);
 	}, []);
