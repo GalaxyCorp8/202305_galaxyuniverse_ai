@@ -38,9 +38,7 @@ const Popup = () => {
 
 	const pdfUrl =
 		"https://s3.ap-northeast-2.amazonaws.com/202305-galaxyuniverse.ai-assets/s3_assets/pdfs/5.%EC%B1%84%EA%B6%8C%EC%9E%90%EC%9D%B4%EC%9D%98%EC%A0%9C%EC%B6%9C%EB%B0%8F%EA%B5%AC%EC%A3%BC%EA%B6%8C%EC%A0%9C%EC%B6%9C%EA%B3%B5%EA%B3%A0(%EA%B0%A4%EB%9F%AD%EC%8B%9C%2C%EB%B9%85%ED%94%8C%EB%9E%98%EC%89%AC%EA%B3%B5%ED%86%B5%EB%AC%B8%EA%B5%AC)23.6.5.pdf";
-	// pdf 공지 팝업을 보여줄지 여부를 저장하는 상태
-	// const [showPopup, setShowPopup] = useState(true);
-	const [showPopup, setShowPopup] = useState(false);
+	const [showPopup, setShowPopup] = useState(true);
 
 	const [isPDFHidden, setiIsPDFHidden] = useState(false);
 
@@ -96,6 +94,7 @@ const Popup = () => {
 						</label>
 					</div>
 				</div>
+
 				{/* iframe은 모바일에서는 작동하지 않음 */}
 				{/* <iframe src={Pdf} width="100%" height="100%"></iframe> */}
 				{/* <source src={Pdf} type="application/pdf" /> */}
