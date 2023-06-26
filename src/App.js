@@ -34,7 +34,7 @@ import Landing from "./pages/Landing";
 // import Human from './pages/human/human'
 
 import NotFound from "./pages/notfound/notFound";
-import Popup from "./pages/popup";
+import PdfNoticePopup from "./pages/PdfNoticePopup";
 
 const Company = React.lazy(() => import("./pages/company/company"));
 const Business = React.lazy(() => import("./pages/business/business"));
@@ -61,7 +61,7 @@ function App() {
 						element={
 							<HeaderLayout>
 								{/* 팝업 컴포넌트 */}
-								<Popup />
+								<PdfNoticePopup />
 								<Landing />
 							</HeaderLayout>
 						}

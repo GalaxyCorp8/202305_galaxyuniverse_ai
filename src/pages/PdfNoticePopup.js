@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 // import { Document, Page } from "react-pdf";
-import PDFViewer from "./../components/PDFViewer";
+import PDFViewer from "../components/PDFViewer";
 
 import styled from "styled-components";
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
@@ -28,33 +28,68 @@ const PopupContentStyle = styled.div`
 	border-radius: 8px;
 `;
 
-const Popup = () => {
-	// 맨 뒤에 빈 배열을 넣어주면, 컴포넌트가 처음 렌더링 될 때만 실행된다.
+const PdfNoticePopup = () => {
+	const currentDate = new Date();
+	let activateNoticePopup = false;
+
 	useEffect(() => {
-		// 로컬 스토리지에서 isPDFHidden을 가져온다.
-		// 아래 코드는 로컬에서 가져온 isPDFHidden이 true이면 isPDFHidden을 true로 설정하고, false이면 false로 설정한다.
-		const isPDFHidden = localStorage.getItem("isPDFHidden") === "true";
-		setiIsPDFHidden(isPDFHidden);
+		// 팝업 활성화 여부를 정의한다.
+		activateNoticePopup = false;
+
+		const disabledDate = localStorage.getItem("modalLastDisabledDate");
+
+		// 로컬 스토리지에서 가져온 disabledDate가 오늘 날짜와 같지 않으면 모달을 보여준다.
+		if (
+			!disabledDate ||
+			disabledDate !== currentDate.toISOString().split("T")[0]
+		) {
+			setIsPdfDisabledToday(false);
+		} else {
+			setIsPdfDisabledToday(true);
+		}
+
+		console.log(
+			"@PadNoticePopup.js / currentDate : ",
+			currentDate.toISOString().split("T")[0]
+		);
+		console.log(
+			"                   / isPdfDisabledToday : ",
+			isPdfDisabledToday
+		);
+
+		// // 로컬 스토리지에서 isPdfDisabledForever Bool값을 가져온다.
+		// // 아래 코드는 로컬에서 가져온 isPDFHidden이 true이면 isPDFHidden을 true로 설정하고, false이면 false로 설정한다.
+		// const isPDFHidden = localStorage.getItem("isPdfDisabledForever") === "true";
+		// setIsPdfDisabledForever(isPDFHidden);
 	}, []);
 
+	// S3에 올린 PDF 파일의 URL
 	const pdfUrl =
 		"https://s3.ap-northeast-2.amazonaws.com/202305-galaxyuniverse.ai-assets/s3_assets/pdfs/5.%EC%B1%84%EA%B6%8C%EC%9E%90%EC%9D%B4%EC%9D%98%EC%A0%9C%EC%B6%9C%EB%B0%8F%EA%B5%AC%EC%A3%BC%EA%B6%8C%EC%A0%9C%EC%B6%9C%EA%B3%B5%EA%B3%A0(%EA%B0%A4%EB%9F%AD%EC%8B%9C%2C%EB%B9%85%ED%94%8C%EB%9E%98%EC%89%AC%EA%B3%B5%ED%86%B5%EB%AC%B8%EA%B5%AC)23.6.5.pdf";
-	const [showPopup, setShowPopup] = useState(true);
 
-	const [isPDFHidden, setiIsPDFHidden] = useState(false);
+	const [showPopup, setShowPopup] = useState(true);
+	const [isPdfDisabledToday, setIsPdfDisabledToday] = useState(false);
 
 	const handleClose = () => {
 		setShowPopup(false);
 	};
 
 	const handleNotShowAgainToday = () => {
-		setiIsPDFHidden(true);
+		setIsPdfDisabledToday(true);
 
 		// 로컬 스토리지에 저장
-		localStorage.setItem("isPDFHidden", true);
+		localStorage.setItem(
+			"modalLastDisabledDate",
+			currentDate.toISOString().split("T")[0]
+		);
+		console.log(
+			"@PadNoticePopup.js / modalLastDisabledDate : ",
+			localStorage.getItem("modalLastDisabledDate")
+		);
 	};
 
-	if (!showPopup || isPDFHidden) {
+	// showPopup이 false이거나(사용자가 직접 '닫기'로 닫았을 경우) isPdfDisabledForever가 true이면 렌더링을 중지한다.
+	if (!showPopup || isPdfDisabledToday || activateNoticePopup) {
 		return null; // 팝업이 숨겨진 경우 null을 반환하여 렌더링을 중지합니다.
 	}
 
@@ -108,4 +143,4 @@ const Popup = () => {
 	);
 };
 
-export default Popup;
+export default PdfNoticePopup;
