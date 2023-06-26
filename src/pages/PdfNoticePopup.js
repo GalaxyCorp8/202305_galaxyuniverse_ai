@@ -49,19 +49,14 @@ const PdfNoticePopup = () => {
 		}
 
 		console.log(
-			"@PadNoticePopup.js / lastDisabled & currentDate : ",
-			disabledDate,
-			" & ",
+			"@PadNoticePopup.js / currentDate : ",
 			currentDate.toISOString().split("T")[0]
 		);
 		console.log(
 			"                   / isPdfDisabledToday : ",
 			isPdfDisabledToday
 		);
-		console.log(
-			"                   / activateNoticePopup : ",
-			activateNoticePopup
-		);
+
 		// // 로컬 스토리지에서 isPdfDisabledForever Bool값을 가져온다.
 		// // 아래 코드는 로컬에서 가져온 isPDFHidden이 true이면 isPDFHidden을 true로 설정하고, false이면 false로 설정한다.
 		// const isPDFHidden = localStorage.getItem("isPdfDisabledForever") === "true";
@@ -93,11 +88,8 @@ const PdfNoticePopup = () => {
 		);
 	};
 
-	// 1. showPopup이 false이거나 (사용자가 직접 '닫기'로 닫았을 경우)
-	// 2. isPdfDisabledForever가 true이거나 ('오늘 다시 보지 않기'를 클릭한 경우)
-	// 3. activateNoticePopup이 false 이면
-	// 렌더링을 중지한다.
-	if (!showPopup || isPdfDisabledToday || !activateNoticePopup) {
+	// showPopup이 false이거나(사용자가 직접 '닫기'로 닫았을 경우) isPdfDisabledForever가 true이면 렌더링을 중지한다.
+	if (!showPopup || isPdfDisabledToday || activateNoticePopup) {
 		return null; // 팝업이 숨겨진 경우 null을 반환하여 렌더링을 중지합니다.
 	}
 
