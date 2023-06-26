@@ -40,7 +40,7 @@ const PostContainer = styled.div`
 const Landing = () => {
 	const [isMobile, setIsMobile] = React.useState(false);
 	useEffect(() => {
-		console.log(osName);
+		console.log("@Landing.js / osName : ", osName);
 		if (osName === "iOS" || osName === "Android") setIsMobile(true);
 	}, []);
 	return (
