@@ -16,7 +16,7 @@ const PDFViewerStyle = styled.div`
 `;
 
 const pdfContainer = styled.div``;
-const pdfPage = styled.div`
+const PdfPage = styled.div`
 	display: block;
 	margin: 0 auto;
 `;
@@ -48,7 +48,7 @@ const PDFViewer = ({ pdfUrl }) => {
 					<Page pageNumber={currentPage} className="pdf-page" />
 				</Document>
 			</pdfContainer>
-			<pdfPage className="text-center">
+			<PdfPage className="text-center">
 				<button onClick={goToPreviousPage} disabled={currentPage === 1}>
 					&lt; &nbsp;&nbsp;&nbsp;&nbsp;
 				</button>
@@ -58,7 +58,7 @@ const PDFViewer = ({ pdfUrl }) => {
 				<button onClick={goToNextPage} disabled={currentPage === numPages}>
 					&nbsp;&nbsp;&nbsp;&nbsp; &gt;
 				</button>
-			</pdfPage>
+			</PdfPage>
 		</PDFViewerStyle>
 	);
 };
