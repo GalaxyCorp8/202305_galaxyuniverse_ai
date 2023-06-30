@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import IconFb from "../assets/image/common/ico-fb.svg";
-import IconYoutube from "../assets/image/common/ico-youtube.svg";
-import IconInsta from "../assets/image/common/ico-insta.svg";
-import IconIn from "../assets/image/common/ico-in.svg";
-import IconTw from "../assets/image/common/ico-tw.svg";
-import FooterLogo from "../assets/image/common/footer-logo.svg";
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import IconFb from '../assets/image/common/ico-fb.svg'
+import IconYoutube from '../assets/image/common/ico-youtube.svg'
+import IconInsta from '../assets/image/common/ico-insta.svg'
+import IconIn from '../assets/image/common/ico-in.svg'
+import IconTw from '../assets/image/common/ico-tw.svg'
+import FooterLogo from '../assets/image/common/footer-logo.svg'
 
 const Container = styled.footer`
 	border-top: 1px solid #fff;
-`;
+`
 const PrivacyList = styled.ul`
   li {
     position: relative;
@@ -28,7 +28,7 @@ const PrivacyList = styled.ul`
         // opacity: 0.2;
       }
   }
-`;
+`
 
 const Footer = () => {
 	return (
@@ -96,28 +96,37 @@ const Footer = () => {
 				<div>
 					<img
 						src={FooterLogo}
-						className="footer-logo mb-3.5"
+						className="footer-logo mb-3"
 						alt="GALAXY CORP."
 					/>
-					<p className="text-xs font-extralight">
+					<p
+						className="text-xs font-extralight"
+						style={{ fontSize: 10 }}
+					>
 						2023 GALAXY corporation. CO., LTD. All rights reserved.
 					</p>
 				</div>
 				<PrivacyList className="text-sm flex md:justify-end">
 					<li>
-						<Link to="/" className="font-extralight">
+						<Link
+							to="/"
+							className="font-extralight"
+						>
 							개인정보처리방침
 						</Link>
 					</li>
 					<li>
-						<Link to="/" className="font-extralight">
+						<Link
+							to="/"
+							className="font-extralight"
+						>
 							문의하기
 						</Link>
 					</li>
 				</PrivacyList>
 			</Container>
 		</div>
-	);
-};
+	)
+}
 
-export default Footer;
+export default Footer
