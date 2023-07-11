@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PDFViewer from "../components/PDFViewer";
 
 import styled from "styled-components";
-import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
+// import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from "react-icons/ai";
 
 // import Pdf from "../assets/pdf/testpdf.pdf";
 // import Test from "../assets/pdf/test.jpg";
@@ -30,11 +30,11 @@ const PopupContentStyle = styled.div`
 
 const PdfNoticePopup = () => {
 	const currentDate = new Date();
-	let activateNoticePopup = false;
+	// 팝업 활성화 여부를 정의한다.
+	let activateNoticePopup = true;
 
 	useEffect(() => {
-		// 팝업 활성화 여부를 정의한다.
-		activateNoticePopup = false;
+		// activateNoticePopup = true;
 
 		const disabledDate = localStorage.getItem("modalLastDisabledDate");
 
@@ -69,8 +69,9 @@ const PdfNoticePopup = () => {
 	}, []);
 
 	// S3에 올린 PDF 파일의 URL
+	// const pdfUrl = 'https://s3.ap-northeast-2.amazonaws.com/202305-galaxyuniverse.ai-assets/s3_assets/pdfs/5.%EC%B1%84%EA%B6%8C%EC%9E%90%EC%9D%B4%EC%9D%98%EC%A0%9C%EC%B6%9C%EB%B0%8F%EA%B5%AC%EC%A3%BC%EA%B6%8C%EC%A0%9C%EC%B6%9C%EA%B3%B5%EA%B3%A0(%EA%B0%A4%EB%9F%AD%EC%8B%9C%2C%EB%B9%85%ED%94%8C%EB%9E%98%EC%89%AC%EA%B3%B5%ED%86%B5%EB%AC%B8%EA%B5%AC)23.6.5.pdf'
 	const pdfUrl =
-		"https://s3.ap-northeast-2.amazonaws.com/202305-galaxyuniverse.ai-assets/s3_assets/pdfs/5.%EC%B1%84%EA%B6%8C%EC%9E%90%EC%9D%B4%EC%9D%98%EC%A0%9C%EC%B6%9C%EB%B0%8F%EA%B5%AC%EC%A3%BC%EA%B6%8C%EC%A0%9C%EC%B6%9C%EA%B3%B5%EA%B3%A0(%EA%B0%A4%EB%9F%AD%EC%8B%9C%2C%EB%B9%85%ED%94%8C%EB%9E%98%EC%89%AC%EA%B3%B5%ED%86%B5%EB%AC%B8%EA%B5%AC)23.6.5.pdf";
+		"https://s3.ap-northeast-2.amazonaws.com/202305-galaxyuniverse.ai-assets/s3_assets/pdfs/7.%ED%95%A9%EB%B3%91%EB%B3%B4%EA%B3%A0%EC%9D%98%EA%B3%B5%EA%B3%A0(%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%EA%B3%B5%EA%B3%A0-%EA%B0%A4%EB%9F%AD%EC%8B%9C)23.7.11.pdf";
 
 	const [showPopup, setShowPopup] = useState(true);
 	const [isPdfDisabledToday, setIsPdfDisabledToday] = useState(false);

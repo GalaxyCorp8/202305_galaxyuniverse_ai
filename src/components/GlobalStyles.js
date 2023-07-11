@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import galaxy from '../assets/fonts/galaxy.woff'
-import BoardNext from '../assets/image/common/board_next.svg'
 import BoardNextInvert from '../assets/image/common/board_next_invert.svg'
 import ArrPrev from '../assets/image/common/arr_prev.svg'
 import ArrNext from '../assets/image/common/arr_next.svg'
@@ -77,6 +76,139 @@ const GlobalStyles = createGlobalStyle`
         }
         @media (max-width: 767px) {
             height: 475px;
+        }
+    }
+    .linkButton {
+        position: relative;
+        width: 400px;
+        line-height: 64px;
+        text-align: center;
+        font-size: 24px;
+        display: block;
+        background: #000;
+        overflow: hidden;
+        z-index: 1;
+        cursor: pointer;
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 64px;
+            background: #fff;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: width 0.3s ease-in-out;
+            z-index: 2;
+        }
+        .tp {
+            position: absolute;
+            z-index: 9;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 2px solid #fff;
+        }
+        .bt {
+            position: absolute;
+            z-index: 9;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 2px solid #fff;
+        }
+        .lt {
+            position: absolute;
+            z-index: 10;
+            top: -24px;
+            left: -24px;
+            background: #000;
+            border-right: 2px solid #fff;
+            width: 48px;
+            height: 48px;
+            transform-origin: 50% 50%;
+            transform: rotate(45deg);
+        }
+        .lb {
+            position: absolute;
+            z-index: 10;
+            bottom: -24px;
+            left: -24px;
+            background: #000;
+            border-top: 2px solid #fff;
+            width: 48px;
+            height: 48px;
+            transform-origin: 50% 50%;
+            transform: rotate(45deg);
+        }
+        .rt {
+            position: absolute;
+            z-index: 10;
+            top: -24px;
+            right: -24px;
+            background: #000;
+            border-bottom: 2px solid #fff;
+            width: 48px;
+            height: 48px;
+            transform-origin: 50% 50%;
+            transform: rotate(45deg);
+        }
+        .rb {
+            position: absolute;
+            z-index: 10;
+            bottom: -24px;
+            right: -24px;
+            background: #000;
+            border-left: 2px solid #fff;
+            width: 48px;
+            height: 48px;
+            transform-origin: 50% 50%;
+            transform: rotate(45deg);
+        }
+        span {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            letter-spacing: -2px;
+            transform: translateY(-3px);
+            display: inline-block;
+            color: #fff;
+            z-index: 11;
+            transition: color 0.3s ease-in-out;
+        }
+        &:hover {
+            &:after {
+                width: 100%;
+            }
+            span {
+                color: #000;
+            }
+        }
+        @media (max-width: 767px) {
+            width: 230px;
+            line-height: 36px;
+            font-size: 16px;
+            .lt, .lb, .rt, .rb {
+                width: 26px;
+                height: 26px;
+            }
+            .lt {
+                top: -12px;
+                left: -12px;
+            }
+            .lb {
+                bottom: -12px;
+                left: -12px;
+            }
+            .rt {
+                top: -12px;
+                right: -12px;
+            }
+            .rb {
+                bottom: -12px;
+                right: -12px;
+            }
         }
     }
     .sub-split {
@@ -214,6 +346,7 @@ const GlobalStyles = createGlobalStyle`
 			}
 		}
 	}
+    
 `
 
 export default GlobalStyles

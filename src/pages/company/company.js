@@ -1,70 +1,70 @@
-import styled from "styled-components";
-import { Parallax, useParallax, ParallaxBanner } from "react-scroll-parallax";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
-import { setDefaultLanguage } from "react-multi-lang";
+import styled from 'styled-components'
+import { Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import { setDefaultLanguage } from 'react-multi-lang'
 
-import { useDispatch, useSelector } from "react-redux";
-import { selectLanguage, setLang } from "../../hooks/language";
+import { useDispatch, useSelector } from 'react-redux'
+import { selectLanguage, setLang } from '../../hooks/language'
 
-import Txt1 from "../../assets/image/company/txt1.svg";
-import Txt2 from "../../assets/image/company/txt2.svg";
-import Txt3 from "../../assets/image/company/txt3.svg";
-import Txt4 from "../../assets/image/company/txt4.svg";
-import Txt5 from "../../assets/image/company/txt5.svg";
+import Txt1 from '../../assets/image/company/txt1.svg'
+import Txt2 from '../../assets/image/company/txt2.svg'
+import Txt3 from '../../assets/image/company/txt3.svg'
+import Txt4 from '../../assets/image/company/txt4.svg'
+import Txt5 from '../../assets/image/company/txt5.svg'
 
-import Txt2Xs from "../../assets/image/company/txt2xs.svg";
-import Txt3Xs from "../../assets/image/company/txt3xs.svg";
-import Txt4Xs from "../../assets/image/company/txt4xs.svg";
-import Txt5Xs from "../../assets/image/company/txt5xs.svg";
+import Txt2Xs from '../../assets/image/company/txt2xs.svg'
+import Txt3Xs from '../../assets/image/company/txt3xs.svg'
+import Txt4Xs from '../../assets/image/company/txt4xs.svg'
+import Txt5Xs from '../../assets/image/company/txt5xs.svg'
 
-import y2019n from "../../assets/image/company/y-2019_n.svg";
-import y2019a from "../../assets/image/company/y-2019_a.svg";
-import y2021n from "../../assets/image/company/y-2021_n.svg";
-import y2021a from "../../assets/image/company/y-2021_a.svg";
-import y2022n from "../../assets/image/company/y-2022_n.svg";
-import y2022a from "../../assets/image/company/y-2022_a.svg";
-import y2023n from "../../assets/image/company/y-2023_n.svg";
-import y2023a from "../../assets/image/company/y-2023_a.svg";
+import y2019n from '../../assets/image/company/y-2019_n.svg'
+import y2019a from '../../assets/image/company/y-2019_a.svg'
+import y2021n from '../../assets/image/company/y-2021_n.svg'
+import y2021a from '../../assets/image/company/y-2021_a.svg'
+import y2022n from '../../assets/image/company/y-2022_n.svg'
+import y2022a from '../../assets/image/company/y-2022_a.svg'
+import y2023n from '../../assets/image/company/y-2023_n.svg'
+import y2023a from '../../assets/image/company/y-2023_a.svg'
 
-import Img1 from "../../assets/image/WEB_image/x1/1_company/COMPANY_2.jpg";
-import Img2 from "../../assets/image/WEB_image/x1/1_company/COMPANY_3.jpg";
-import Img3 from "../../assets/image/WEB_image/x1/1_company/COMPANY_4.jpg";
+import Img1 from '../../assets/image/WEB_image/x1/1_company/COMPANY_2.jpg'
+import Img2 from '../../assets/image/WEB_image/x1/1_company/COMPANY_3.jpg'
+import Img3 from '../../assets/image/WEB_image/x1/1_company/COMPANY_4.jpg'
 
-import Img1xs from "../../assets/image/MOBILE_image/x1/1_company/company_2.jpg";
-import Img2xs from "../../assets/image/MOBILE_image/x1/1_company/company_3.jpg";
-import Img3xs from "../../assets/image/MOBILE_image/x1/1_company/company_4.jpg";
+import Img1xs from '../../assets/image/MOBILE_image/x1/1_company/company_2.jpg'
+import Img2xs from '../../assets/image/MOBILE_image/x1/1_company/company_3.jpg'
+import Img3xs from '../../assets/image/MOBILE_image/x1/1_company/company_4.jpg'
 
-import y2019 from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_1.jpg";
-import y2021 from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_2.jpg";
-import y2022 from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_3.jpg";
-import y2023 from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_4.jpg";
+import y2019 from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_1.jpg'
+import y2021 from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_2.jpg'
+import y2022 from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_3.jpg'
+import y2023 from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_4.jpg'
 
-import y2019Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_1.jpg";
-import y2021Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_2.jpg";
-import y2022Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_3.jpg";
-import y2023Xs from "../../assets/image/WEB_image/x1/1_company/COMPANY_5_4.jpg";
+import y2019Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_1.jpg'
+import y2021Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_2.jpg'
+import y2022Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_3.jpg'
+import y2023Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_4.jpg'
 
 // 각 섹션의 이미지 위에 있는 타이틀이 있는데, 그 이미지 타이틀 위의 라벨 이미지!
 // MISSION
-import img_1_mob_MISSION from "../../assets/image/company/1_mob_MISSION.png";
-import img_1_web_MISSION from "../../assets/image/company/1_web_MISSION.png";
+import img_1_mob_MISSION from '../../assets/image/company/1_mob_MISSION.png'
+import img_1_web_MISSION from '../../assets/image/company/1_web_MISSION.png'
 // VISION
-import img_2_mob_VISION from "../../assets/image/company/2_mob_VISION.png";
-import img_2_web_VISION from "../../assets/image/company/2_web_VISION.png";
+import img_2_mob_VISION from '../../assets/image/company/2_mob_VISION.png'
+import img_2_web_VISION from '../../assets/image/company/2_web_VISION.png'
 // CORE VALUE
-import img_3_mob_COREVALUE from "../../assets/image/company/3_mob_COREVALUE.png";
-import img_3_web_COREVALUE from "../../assets/image/company/3_web_COREVALUE.png";
+import img_3_mob_COREVALUE from '../../assets/image/company/3_mob_COREVALUE.png'
+import img_3_web_COREVALUE from '../../assets/image/company/3_web_COREVALUE.png'
 // HISTORY
-import img_4_mob_HISTORY from "../../assets/image/company/4_mob_HISTORY.png";
-import img_4_web_HISTORY from "../../assets/image/company/4_web_HISTORY.png";
+import img_4_mob_HISTORY from '../../assets/image/company/4_mob_HISTORY.png'
+import img_4_web_HISTORY from '../../assets/image/company/4_web_HISTORY.png'
 
 // import Video from "../../assets/video/company_5mb.mp4";
 
-import { useState } from "react";
+import { useState } from 'react'
 
-import { useWindowSize } from "@react-hook/window-size";
+import { useWindowSize } from '@react-hook/window-size'
 
 const YearTabButton = styled.button`
 	color: rgba(255, 255, 255, 0.25);
@@ -77,15 +77,15 @@ const YearTabButton = styled.button`
 			max-width: 55px;
 		}
 	}
-`;
+`
 
-const TabContents = styled.div``;
+const TabContents = styled.div``
 const TabContent = styled.div`
 	display: none;
 	&.active {
 		display: block;
 	}
-`;
+`
 
 const VideoContainer = styled.div`
 	position: relative;
@@ -105,46 +105,46 @@ const VideoContainer = styled.div`
 	@media (max-width: 767px) {
 		height: 300px;
 	}
-`;
+`
 
 const Company = () => {
-	const language = useSelector(selectLanguage);
-	const { t, i18n } = useTranslation();
-	const [width, height] = useWindowSize({ fps: 60 });
-	const [isXs, setIsXs] = useState(false);
+	const language = useSelector(selectLanguage)
+	const { t, i18n } = useTranslation()
+	const [width, height] = useWindowSize({ fps: 60 })
+	const [isXs, setIsXs] = useState(false)
 
-	const [activeTabNum, setActiveTabNum] = useState(3);
+	const [activeTabNum, setActiveTabNum] = useState(3)
 
-	const [activeImg, setActiveImg] = useState(isXs ? y2023Xs : y2023);
+	const [activeImg, setActiveImg] = useState(isXs ? y2023Xs : y2023)
 
 	const activeImgHandler = (num) => {
-		setActiveTabNum(num);
+		setActiveTabNum(num)
 		switch (num) {
 			case 0:
-				setActiveImg(isXs ? y2019Xs : y2019);
-				break;
+				setActiveImg(isXs ? y2019Xs : y2019)
+				break
 			case 1:
-				setActiveImg(isXs ? y2021Xs : y2021);
-				break;
+				setActiveImg(isXs ? y2021Xs : y2021)
+				break
 			case 2:
-				setActiveImg(isXs ? y2022Xs : y2022);
-				break;
+				setActiveImg(isXs ? y2022Xs : y2022)
+				break
 			case 3:
-				setActiveImg(isXs ? y2023Xs : y2023);
-				break;
+				setActiveImg(isXs ? y2023Xs : y2023)
+				break
 			default:
-				break;
+				break
 		}
-	};
+	}
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : "ko");
+		setDefaultLanguage(language ? language : 'ko')
 		if (width < 767) {
-			setIsXs(true);
+			setIsXs(true)
 		} else {
-			setIsXs(false);
+			setIsXs(false)
 		}
-	}, [language, width]);
+	}, [language, width])
 
 	return (
 		<>
@@ -162,7 +162,13 @@ const Company = () => {
 					style={{ height: 680 }}
 				/> */}
 			<VideoContainer>
-				<video playsInline muted autoPlay loop webkit-playsinline="true">
+				<video
+					playsInline
+					muted
+					autoPlay
+					loop
+					webkit-playsinline="true"
+				>
 					<source
 						// src={Video}
 						// src="https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/company.webm"
@@ -171,26 +177,35 @@ const Company = () => {
 					/>
 				</video>
 			</VideoContainer>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:px-4 lg:p-0">
 				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
-					<img src={Txt1} alt="" />
+					<img
+						src={Txt1}
+						alt=""
+					/>
 				</h2>
 				<h3 className="text-lg lg:text-3xl text-center font-light lg:mb-36 mb-10">
-					{t("cmp1")}
+					{t('cmp1')}
 				</h3>
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
-						{t("cmp1_1")}
+						{t('cmp1_1')}
 					</p>
 				</div>
 			</div>
-			<div className="container px-4 lg:p-0 mt-72 lg:mt-96">
+			<div className="container px-7 lg:px-4 lg:px-4 lg:p-0 mt-72 lg:mt-96">
 				{/* MISSION 라벨 (lg:hidden 작은 화면)*/}
 				<span className="block md:hidden lg:hidden">
-					<img src={img_1_mob_MISSION} alt="" />
+					<img
+						src={img_1_mob_MISSION}
+						alt=""
+					/>
 				</span>
 				<span className="hidden md:block lg:block">
-					<img src={img_1_web_MISSION} alt="" />
+					<img
+						src={img_1_web_MISSION}
+						alt=""
+					/>
 				</span>
 				{/* <span className="block md:hidden lg:hidden">
 					<svg
@@ -238,14 +253,20 @@ const Company = () => {
 				{/* "BEYOND THE NEW WORLD" 이미지 타이틀 */}
 				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-6 lg:mb-8">
 					<span className="hidden lg:block">
-						<img src={Txt2} alt="" />
+						<img
+							src={Txt2}
+							alt=""
+						/>
 					</span>
 					<span className="block lg:hidden">
-						<img src={Txt2Xs} alt="" />
+						<img
+							src={Txt2Xs}
+							alt=""
+						/>
 					</span>
 				</h2>
 			</div>
-			<div className="container px-4 lg:p-0">
+			<div className="container px-7 lg:px-4 lg:p-0">
 				<ParallaxBanner
 					layers={[
 						{
@@ -253,20 +274,26 @@ const Company = () => {
 							speed: -5,
 						},
 					]}
-					style={{ height: isXs ? "195px" : "300px" }}
+					style={{ height: isXs ? '195px' : '300px' }}
 				/>
 			</div>
-			<div className="container px-4 lg:p-0">
+			<div className="container px-7 lg:px-4 lg:p-0">
 				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
-					{t("cmp1_2")}
+					{t('cmp1_2')}
 				</p>
 				<div className="mt-72 lg:mt-96">
 					{/* VISSION 라벨 (lg:hidden 작은 화면)*/}
 					<span className="block md:hidden lg:hidden">
-						<img src={img_2_mob_VISION} alt="" />
+						<img
+							src={img_2_mob_VISION}
+							alt=""
+						/>
 					</span>
 					<span className="hidden md:block lg:block">
-						<img src={img_2_web_VISION} alt="" />
+						<img
+							src={img_2_web_VISION}
+							alt=""
+						/>
 					</span>
 					{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
 						<svg
@@ -321,14 +348,20 @@ const Company = () => {
 				{/* "REALIZER OF IN..." 이미지 타이틀 */}
 				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
 					<span className="hidden lg:block">
-						<img src={Txt3} alt="" />
+						<img
+							src={Txt3}
+							alt=""
+						/>
 					</span>
 					<span className="block lg:hidden">
-						<img src={Txt3Xs} alt="" />
+						<img
+							src={Txt3Xs}
+							alt=""
+						/>
 					</span>
 				</h2>
 			</div>
-			<div className="container px-4 lg:p-0">
+			<div className="container px-7 lg:px-4 lg:p-0">
 				<ParallaxBanner
 					layers={[
 						{
@@ -336,20 +369,26 @@ const Company = () => {
 							speed: -5,
 						},
 					]}
-					style={{ height: isXs ? "195px" : "300px" }}
+					style={{ height: isXs ? '195px' : '300px' }}
 				/>
 			</div>
-			<div className="container px-4 lg:p-0">
+			<div className="container px-7 lg:px-4 lg:p-0">
 				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
-					{t("cmp1_3")}
+					{t('cmp1_3')}
 				</p>
 				<div className="mt-72 lg:mt-96">
 					{/* CORE VALUE 라벨 (lg:hidden 작은 화면)*/}
 					<span className="block md:hidden lg:hidden">
-						<img src={img_3_mob_COREVALUE} alt="" />
+						<img
+							src={img_3_mob_COREVALUE}
+							alt=""
+						/>
 					</span>
 					<span className="hidden md:block lg:block">
-						<img src={img_3_web_COREVALUE} alt="" />
+						<img
+							src={img_3_web_COREVALUE}
+							alt=""
+						/>
 					</span>
 					{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
 						<svg
@@ -399,14 +438,20 @@ const Company = () => {
 				{/* "MULTI METAVERSE DR..." 이미지 타이틀 */}
 				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
 					<span className="hidden lg:block">
-						<img src={Txt4} alt="" />
+						<img
+							src={Txt4}
+							alt=""
+						/>
 					</span>
 					<span className="block lg:hidden">
-						<img src={Txt4Xs} alt="" />
+						<img
+							src={Txt4Xs}
+							alt=""
+						/>
 					</span>
 				</h2>
 			</div>
-			<div className="container px-4 lg:px-0">
+			<div className="container px-7 lg:px-4 lg:px-0">
 				<ParallaxBanner
 					layers={[
 						{
@@ -414,21 +459,27 @@ const Company = () => {
 							speed: -5,
 						},
 					]}
-					style={{ height: isXs ? "195px" : "300px" }}
+					style={{ height: isXs ? '195px' : '300px' }}
 				/>
 			</div>
-			<div className="container px-4 lg:px-0">
+			<div className="container px-7 lg:px-4 lg:px-0">
 				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
-					{t("cmp1_4")}
+					{t('cmp1_4')}
 				</p>
 				<div className="mt-72 lg:mt-96">
 					{/* HISTORY 라벨 (lg:hidden 작은 화면)*/}
 
 					<span className="block md:hidden lg:hidden">
-						<img src={img_4_mob_HISTORY} alt="" />
+						<img
+							src={img_4_mob_HISTORY}
+							alt=""
+						/>
 					</span>
 					<span className="hidden md:block lg:block">
-						<img src={img_4_web_HISTORY} alt="" />
+						<img
+							src={img_4_web_HISTORY}
+							alt=""
+						/>
 					</span>
 					{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
 						<svg
@@ -491,156 +542,167 @@ const Company = () => {
 								speed: -5,
 							},
 						]}
-						style={{ height: isXs ? "195px" : "300px" }}
+						style={{ height: isXs ? '195px' : '300px' }}
 					/>
 				</div>
-				<div className="container p-4 lg:p-0">
+				<div className="container px-7 lg:px-4 lg:p-0">
 					{/* 2019, 2021, 2022, 2023 년 표시, 클릭 가능 */}
 					<div className="flex mt-14 mb-16 lg:mb-32 ">
 						<div className="flex-1 text-center">
 							<YearTabButton
 								type="button"
-								className={`text-4xl ${activeTabNum === 0 && "active"}`}
+								className={`text-4xl ${activeTabNum === 0 && 'active'}`}
 								onClick={() => activeImgHandler(0)}
 							>
-								<img src={activeTabNum === 0 ? y2019a : y2019n} alt="" />
+								<img
+									src={activeTabNum === 0 ? y2019a : y2019n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 						<div className="flex-1 text-center">
 							<YearTabButton
 								type="button"
-								className={`text-4xl ${activeTabNum === 1 && "active"}`}
+								className={`text-4xl ${activeTabNum === 1 && 'active'}`}
 								onClick={() => activeImgHandler(1)}
 							>
-								<img src={activeTabNum === 1 ? y2021a : y2021n} alt="" />
+								<img
+									src={activeTabNum === 1 ? y2021a : y2021n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 						<div className="flex-1 text-center">
 							<YearTabButton
 								type="button"
-								className={`text-4xl ${activeTabNum === 2 && "active"}`}
+								className={`text-4xl ${activeTabNum === 2 && 'active'}`}
 								onClick={() => activeImgHandler(2)}
 							>
-								<img src={activeTabNum === 2 ? y2022a : y2022n} alt="" />
+								<img
+									src={activeTabNum === 2 ? y2022a : y2022n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 						<div className="flex-1 text-center">
 							<YearTabButton
 								type="button"
-								className={`text-4xl ${activeTabNum === 3 && "active"}`}
+								className={`text-4xl ${activeTabNum === 3 && 'active'}`}
 								onClick={() => activeImgHandler(3)}
 							>
-								<img src={activeTabNum === 3 ? y2023a : y2023n} alt="" />
+								<img
+									src={activeTabNum === 3 ? y2023a : y2023n}
+									alt=""
+								/>
 							</YearTabButton>
 						</div>
 					</div>
 					{/* 각 년도 별 하부 내용들 영역 시작 */}
-					<TabContents>
-						<TabContent className={`${activeTabNum === 0 && "active"}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+					<TabContents style={{ height: !isXs ? 1572 : 'auto' }}>
+						<TabContent className={`${activeTabNum === 0 && 'active'}`}>
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2019.08
 								<br />
-								{t("cmp1_17")}
+								{t('cmp1_17')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2020.01 <br />
-								{t("cmp1_18")}
+								{t('cmp1_18')}
 							</p>
-							<br />
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2020.08 <br />
-								{t("cmp1_19")}
+								{t('cmp1_19')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2020.09 <br />
-								{t("cmp1_20")}
+								{t('cmp1_20')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2020.10 <br />
-								{t("cmp1_21")}
+								{t('cmp1_21')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2020.12 <br />
-								{t("cmp1_22")}
+								{t('cmp1_22')}
 							</p>
 						</TabContent>
-						<TabContent className={`${activeTabNum === 1 && "active"}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+						<TabContent className={`${activeTabNum === 1 && 'active'}`}>
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.01
 								<br />
-								{t("cmp1_9")}
+								{t('cmp1_9')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.04
 								<br />
-								{t("cmp1_10")}
+								{t('cmp1_10')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.06
 								<br />
-								{t("cmp1_11")}
+								{t('cmp1_11')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.07
 								<br />
-								{t("cmp1_12")}
+								{t('cmp1_12')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.08
 								<br />
-								{t("cmp1_13")}
+								{t('cmp1_13')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.09
 								<br />
-								{t("cmp1_14")}
+								{t('cmp1_14')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.10
 								<br />
-								{t("cmp1_15")}
+								{t('cmp1_15')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2021.12
 								<br />
-								{t("cmp1_16")}
+								{t('cmp1_16')}
 								<br />
-								{t("cmp1_16_1")}
+								{t('cmp1_16_1')}
 								<br />
-								{t("cmp1_16_2")}
+								{t('cmp1_16_2')}
 							</p>
 						</TabContent>
-						<TabContent className={`${activeTabNum === 2 && "active"}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+						<TabContent className={`${activeTabNum === 2 && 'active'}`}>
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2022.05
 								<br />
-								{t("cmp1_6")}
+								{t('cmp1_6')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2022.10
 								<br />
-								{t("cmp1_7")}
+								{t('cmp1_7')}
 							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2022.12
 								<br />
-								{t("cmp1_8")}
+								{t('cmp1_8')}
 								<br />
-								{t("cmp1_8_1")}
+								{t('cmp1_8_1')}
 							</p>
 						</TabContent>
-						<TabContent className={`${activeTabNum === 3 && "active"}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-14">
+						<TabContent className={`${activeTabNum === 3 && 'active'}`}>
+							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
 								2023.01
 								<br />
-								{t("cmp1_5")}
+								{t('cmp1_5')}
 							</p>
 						</TabContent>
 					</TabContents>
 				</div>
 			</div>
 		</>
-	);
-};
+	)
+}
 
-export default Company;
+export default Company
