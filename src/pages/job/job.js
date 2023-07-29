@@ -6,6 +6,7 @@ import { setDefaultLanguage } from 'react-multi-lang'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
 import { useWindowSize } from '@react-hook/window-size'
+import { useNavigate } from 'react-router-dom'
 
 const Sidebar = styled.aside`
 	ul {
@@ -73,6 +74,7 @@ const JobList = styled.ul`
 `
 
 const Job = () => {
+	const navigate = useNavigate()
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
 
@@ -80,6 +82,10 @@ const Job = () => {
 	const [isXs, setIsXs] = useState(false)
 
 	const [activeTabNumbrer, setActiveTabNumber] = useState(0)
+
+	const movePage = () => {
+		navigate(`/page/job/${1}`)
+	}
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
@@ -150,7 +156,10 @@ const Job = () => {
 					<div className="lg:basis-3/4 px-6 lg:px-0">
 						<JobList className="mb-44">
 							<li className="mb-16">
-								<button type="button">
+								<button
+									type="button"
+									onClick={() => movePage()}
+								>
 									<h3 className="text-2xl lg:text-5xl mb-4 lg:mb-5">
 										마케팅/콘텐츠 디자이너
 									</h3>

@@ -35,6 +35,7 @@ import Landing from './pages/Landing'
 
 import NotFound from './pages/notfound/notFound'
 import PdfNoticePopup from './pages/PdfNoticePopup'
+import Apply from './pages/job/apply'
 
 const Company = React.lazy(() => import('./pages/company/company'))
 const Business = React.lazy(() => import('./pages/business/business'))
@@ -51,6 +52,7 @@ const Investors = React.lazy(() => import('./pages/subs/investors'))
 const InvestorsView = React.lazy(() => import('./pages/subs/investors_view'))
 const Job = React.lazy(() => import('./pages/job/job'))
 const JobView = React.lazy(() => import('./pages/job/jobView'))
+const JobApply = React.lazy(() => import('./pages/job/apply'))
 
 function App() {
 	return (
@@ -185,6 +187,14 @@ function App() {
 						element={
 							<Layout>
 								<JobView />
+							</Layout>
+						}
+					/>
+					<Route
+						path="/page/job/apply/:id"
+						element={
+							<Layout>
+								<Apply />
 							</Layout>
 						}
 					/>
