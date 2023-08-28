@@ -22,6 +22,11 @@ import StepKoXs from '../../assets/image/MOBILE_image/x1/7_career/career_kr.png'
 import StepJpXs from '../../assets/image/MOBILE_image/x1/7_career/career_jp.png'
 import StepEnXs from '../../assets/image/MOBILE_image/x1/7_career/career_eng.png'
 
+import C1 from '../../assets/image/WEB_image/x1/3_career/c1.png'
+import C2 from '../../assets/image/WEB_image/x1/3_career/c2.png'
+import C3 from '../../assets/image/WEB_image/x1/3_career/c3.png'
+import BoxImg from '../../assets/image/WEB_image/x1/3_career/box.png'
+
 import BtnKo from '../../assets/image/career/btn-ko.png'
 import BtnJp from '../../assets/image/career/btn-jp.png'
 import BtnEn from '../../assets/image/career/btn-en.png'
@@ -151,7 +156,87 @@ const Career = () => {
 				/>
 			</div>
 			<div className="p-6 lg:p-0">
-				<div
+				<div className="container p-4 lg:p-0 md:mt-16">
+					<div className="block md:flex md:flex-row">
+						<div className="md:basis-2/6 px-4 md:p-10">
+							<h3 className="text-lg md:text-6xl">
+								<b>갤럭시 DNA</b>
+							</h3>
+							<div className="flex justify-between mt-4 md:mt-14 mb-12">
+								<h4 className="text-5xl font-light mt-6">탐험</h4>
+								<img
+									src={C1}
+									alt=""
+									className="hidden md:block"
+								/>
+							</div>
+							<p className="md:text-lg font-light leading-9 mb-10 md:mb-0">
+								우리는 탐험을 통한 성장을 추구합니다.
+								<br />
+								독특한 사고와 창의력을 발휘하여 무한한 아이디어를 실행하고 도전합니다.
+								<br />
+								실패를 두려워하지 않고 끊임없는 탐험을 통해 더 나은 결과와 성과를
+								이끌어냅니다.
+							</p>
+						</div>
+						<div className="md:basis-2/6 px-4 md:p-10">
+							<h4 className="text-5xl font-light mb-8">실행</h4>
+							<p className="md:text-lg font-light leading-9 mb-14">
+								우리는 끊임없는 실행으로 가치를 증명합니다.
+								<br />
+								스스로 몰입하고 주도적으로 일하며, 일의 원동력을 자체적으로
+								만들어냅니다.
+								<br />
+								일에 끌려다니지 않고 주도적으로 움직여 실행하고 나아갑니다.
+							</p>
+							<img
+								src={C2}
+								alt=""
+								className="hidden md:block"
+							/>
+						</div>
+						<div className="md:basis-2/6 px-4 md:p-10">
+							<h4 className="text-5xl font-light mb-8">행복</h4>
+							<img
+								src={C3}
+								alt=""
+								className="hidden md:block mb-28"
+							/>
+							<p className="md:text-lg font-light leading-9">
+								우리는 더 나은 행복을 위해 노력합니다.
+								<br />
+								자신의 일에 열정을 가지고 즐거움을 느끼며, 긍정적인 시각으로 더 나은
+								변화를 추구합니다.
+								<br />
+								오늘보다 더 행복한 나와 세상을 만들어갑니다.
+							</p>
+						</div>
+					</div>
+					<div className="container flex justify-center">
+						<img
+							src={BoxImg}
+							alt=""
+							style={{
+								marginTop: isXs ? 58 : 330,
+								marginBottom: 108,
+							}}
+						/>
+					</div>
+					<div className="container flex justify-center mb-96">
+						<Link to="/page/job">
+							<div className="linkButton">
+								<div className="tp" />
+								<div className="lt" />
+								<div className="lb" />
+								<span className="text-3xl kor">채용공고 보러가기</span>
+								<div className="rt" />
+								<div className="rb" />
+								<div className="bt" />
+							</div>
+						</Link>
+					</div>
+				</div>
+				{/* <div
 					className="container p-4 lg:p-0 mb-16"
 					style={{ borderTop: '1px solid #fff' }}
 				>
@@ -409,7 +494,7 @@ const Career = () => {
 							</div>
 						</>
 					)}
-				</div>
+				</div> */}
 				{/* <div className="container p-4 lg:p-0 flex justify-center align-center mb-96 mt-32">
 					<Link to="/">
 						{i18n.language === 'jp' ? (

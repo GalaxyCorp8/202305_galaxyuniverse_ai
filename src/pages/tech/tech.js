@@ -70,7 +70,8 @@ const Tech = () => {
 					</p>
 				</div>
 				<h2 className="text-2xl lg:text-6xl eng text-center mt-14 mb-1 lg:mb-10">
-					Avatar Creation Tech
+					Avatar <br className="block md:hidden" />
+					Creation Tech
 				</h2>
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-5 lg:mb-32 break-keep">

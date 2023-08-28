@@ -177,6 +177,10 @@ const GlobalStyles = createGlobalStyle`
             z-index: 11;
             transition: color 0.3s ease-in-out;
         }
+        .kor {
+            line-height: 62px;
+            transform: tranlateY(0);
+        }
         &:hover {
             &:after {
                 width: 100%;
@@ -208,6 +212,11 @@ const GlobalStyles = createGlobalStyle`
             .rb {
                 bottom: -12px;
                 right: -12px;
+            }
+            .kor {
+                font-size: 16px;
+                line-height: 1 !important;
+                transform: translateY(0px);
             }
         }
     }

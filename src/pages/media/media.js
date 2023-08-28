@@ -305,7 +305,7 @@ const Media = () => {
 					{t('media1_6')}
 				</p>
 			</div>
-			<div className="mb-10">
+			<div style={{ marginBottom: isXs ? 86 : 460 }}>
 				<Slider {...settings}>
 					<div className="px-1">
 						<img

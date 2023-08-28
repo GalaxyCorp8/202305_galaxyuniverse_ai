@@ -16,19 +16,6 @@ import MainTxtXs from '../../assets/image/business/biz_main_txtxs.svg'
 
 import { useWindowSize } from '@react-hook/window-size'
 
-import BtnMore from '../../assets/image/business/btn_more.svg'
-import BtnMoreXs from '../../assets/image/business/btn_more_xs.svg'
-
-import bizMn1 from '../../assets/image/business/biz_mn1.svg'
-import bizMn2 from '../../assets/image/business/biz_mn2.svg'
-import bizMn3 from '../../assets/image/business/biz_mn3.svg'
-import bizMn4 from '../../assets/image/business/biz_mn4.svg'
-
-import bizMn1Xs from '../../assets/image/business/biz_mn1_xs.svg'
-import bizMn2Xs from '../../assets/image/business/biz_mn2_xs.svg'
-import bizMn3Xs from '../../assets/image/business/biz_mn3_xs.svg'
-import bizMn4Xs from '../../assets/image/business/biz_mn4_xs.svg'
-
 const ListItem = styled.div`
 	position: relative;
 	border-top: 1px solid #606060;
