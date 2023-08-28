@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { ParallaxBanner } from 'react-scroll-parallax'
-import SubVisualImage from '../../assets/image/WEB_image/x1/2_2commerce/commerce_1.jpg'
-import SubVisualImageXs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_1.jpg'
+import SubVisualImage from '../../assets/image/WEB_image/x1/2_2commerce/commerce_1_1.png'
+import SubVisualImageXs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_1_1.png'
 import Img1 from '../../assets/image/WEB_image/x1/2_2commerce/commerce_2.jpg'
 import Img1Xs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_2.jpg'
-import Img2 from '../../assets/image/WEB_image/x1/2_2commerce/commerce_3.jpg'
-import Img2Xs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_3.jpg'
+import Img2 from '../../assets/image/WEB_image/x1/2_2commerce/commerce_3.png'
+import Img2Xs from '../../assets/image/MOBILE_image/x1/5_business_commerce/business-commerce_3.png'
 
 import Lg1 from '../../assets/image/business/commerce/lg1.png'
 import Lg2 from '../../assets/image/business/commerce/lg2.png'
@@ -142,7 +142,7 @@ const Commerce = () => {
 					{t('cms1_7')}
 				</h3>
 				<div className="flex flex-row flex-wrap">
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -153,7 +153,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -164,7 +164,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -175,7 +175,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -186,7 +186,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -197,7 +197,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -208,7 +208,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -219,7 +219,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -230,7 +230,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -241,7 +241,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -252,7 +252,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -263,7 +263,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -274,7 +274,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -285,7 +285,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -296,7 +296,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}
@@ -307,7 +307,7 @@ const Commerce = () => {
 							/>
 						</div>
 					</div>
-					<div className="basis-1/3 p-2">
+					<div className="basis-1/3 px-6 md:p-2">
 						<div
 							className="flex justify-center items-center"
 							style={{ height: isXs ? 100 : 200 }}

@@ -1,14 +1,14 @@
-import React, { Suspense, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Suspense, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 
-import Layout from "./layout/Layout";
-import HeaderLayout from "./layout/HeaderLayout";
+import Layout from './layout/Layout'
+import HeaderLayout from './layout/HeaderLayout'
 
-import { ParallaxProvider } from "react-scroll-parallax";
+import { ParallaxProvider } from 'react-scroll-parallax'
 
-import Loader from "./components/Loader";
+import Loader from './components/Loader'
 
-import Landing from "./pages/Landing";
+import Landing from './pages/Landing'
 // import Main from './pages/Main'
 // sub pages
 // import Sub02 from './pages/subs/p_02'
@@ -33,22 +33,26 @@ import Landing from "./pages/Landing";
 // import Ip from './pages/ip/ip'
 // import Human from './pages/human/human'
 
-import NotFound from "./pages/notfound/notFound";
-import PdfNoticePopup from "./pages/PdfNoticePopup";
+import NotFound from './pages/notfound/notFound'
+import PdfNoticePopup from './pages/PdfNoticePopup'
+import Apply from './pages/job/apply'
 
-const Company = React.lazy(() => import("./pages/company/company"));
-const Business = React.lazy(() => import("./pages/business/business"));
-const Career = React.lazy(() => import("./pages/career/career"));
-const Commerce = React.lazy(() => import("./pages/commerce/commerce"));
-const Media = React.lazy(() => import("./pages/media/media"));
-const Tech = React.lazy(() => import("./pages/tech/tech"));
-const Ip = React.lazy(() => import("./pages/ip/ip"));
-const Human = React.lazy(() => import("./pages/human/human"));
-const Avatar = React.lazy(() => import("./pages/business/Avatar"));
-const News = React.lazy(() => import("./pages/subs/news"));
-const NewsView = React.lazy(() => import("./pages/subs/news_view"));
-const Investors = React.lazy(() => import("./pages/subs/investors"));
-const InvestorsView = React.lazy(() => import("./pages/subs/investors_view"));
+const Company = React.lazy(() => import('./pages/company/company'))
+const Business = React.lazy(() => import('./pages/business/business'))
+const Career = React.lazy(() => import('./pages/career/career'))
+const Commerce = React.lazy(() => import('./pages/commerce/commerce'))
+const Media = React.lazy(() => import('./pages/media/media'))
+const Tech = React.lazy(() => import('./pages/tech/tech'))
+const Ip = React.lazy(() => import('./pages/ip/ip'))
+const Human = React.lazy(() => import('./pages/human/human'))
+const Avatar = React.lazy(() => import('./pages/business/Avatar'))
+const News = React.lazy(() => import('./pages/subs/news'))
+const NewsView = React.lazy(() => import('./pages/subs/news_view'))
+const Investors = React.lazy(() => import('./pages/subs/investors'))
+const InvestorsView = React.lazy(() => import('./pages/subs/investors_view'))
+const Job = React.lazy(() => import('./pages/job/job'))
+const JobView = React.lazy(() => import('./pages/job/jobView'))
+const JobApply = React.lazy(() => import('./pages/job/apply'))
 
 function App() {
 	return (
@@ -170,6 +174,30 @@ function App() {
 							</Layout>
 						}
 					/>
+					<Route
+						path="/page/job"
+						element={
+							<Layout>
+								<Job />
+							</Layout>
+						}
+					/>
+					<Route
+						path="/page/job/:id"
+						element={
+							<Layout>
+								<JobView />
+							</Layout>
+						}
+					/>
+					<Route
+						path="/page/job/apply/:id"
+						element={
+							<Layout>
+								<Apply />
+							</Layout>
+						}
+					/>
 					{/* <Route
 						path="/page/main"
 						element={<Main />}
@@ -234,11 +262,14 @@ function App() {
 						path="/page/avaip"
 						element={<AvaIp />}
 					/> */}
-					<Route path="*" element={<NotFound />} />
+					<Route
+						path="*"
+						element={<NotFound />}
+					/>
 				</Routes>
 			</Suspense>
 		</ParallaxProvider>
-	);
+	)
 }
 
-export default App;
+export default App
