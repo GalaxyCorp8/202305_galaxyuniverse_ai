@@ -30,9 +30,10 @@ const PopupContentStyle = styled.div`
 
 const PdfNoticePopup = () => {
 	const currentDate = new Date();
+
 	// 팝업 활성화 여부를 정의한다.
-	let activateNoticePopup = true; // true로 설정하면 팝업이 뜬다.
-	// let activateNoticePopup = false;   // false로 설정하면 팝업이 뜨지 않는다.
+	// let activateNoticePopup = true; // true로 설정하면 팝업이 뜬다.
+	let activateNoticePopup = false; // false로 설정하면 팝업이 뜨지 않는다.
 
 	useEffect(() => {
 		// activateNoticePopup = true;
