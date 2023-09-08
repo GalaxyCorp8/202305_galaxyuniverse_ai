@@ -264,13 +264,13 @@ const Media = () => {
 							style={{ width: isXs ? 200 : 'auto' }}
 						/>
 					</div>
-					<div className="px-1">
+					{/* <div className="px-1">
 						<img
 							src={Sl5}
 							alt=""
 							style={{ width: isXs ? 200 : 'auto' }}
 						/>
-					</div>
+					</div> */}
 					<div className="px-1">
 						<img
 							src={Sl6}
