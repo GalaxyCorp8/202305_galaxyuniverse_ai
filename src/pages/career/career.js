@@ -14,9 +14,9 @@ import { setDefaultLanguage } from 'react-multi-lang'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
 
-import StepKo from '../../assets/image/WEB_image/x1/3_career/CAREER_2_kr.png'
-import StepJp from '../../assets/image/WEB_image/x1/3_career/CAREER_2_jp.png'
-import StepEn from '../../assets/image/WEB_image/x1/3_career/CAREER_2_eng.png'
+import Tmp1 from '../../assets/image/WEB_image/x1/3_career/career_tmp1.png'
+import Tmp2 from '../../assets/image/WEB_image/x1/3_career/career_tmp2.png'
+import Tmp3 from '../../assets/image/WEB_image/x1/3_career/career_tmp3.png'
 
 import StepKoXs from '../../assets/image/MOBILE_image/x1/7_career/career_kr.png'
 import StepJpXs from '../../assets/image/MOBILE_image/x1/7_career/career_jp.png'
@@ -154,391 +154,105 @@ const Career = () => {
 					alt=""
 					className="mt-20 hidden md:block lg:block"
 				/>
-			</div>
-			<div className="p-6 lg:p-0">
-				<div className="container p-4 lg:p-0 md:mt-16">
-					<div className="block md:flex md:flex-row">
-						<div className="md:basis-2/6 px-4 md:p-10">
-							<h3 className="text-lg md:text-6xl">
-								<b>갤럭시 DNA</b>
-							</h3>
-							<div className="flex justify-between mt-4 md:mt-14 mb-12">
-								<h4 className="text-5xl font-light mt-6">탐험</h4>
-								<img
-									src={C1}
-									alt=""
-									className="hidden md:block"
-								/>
-							</div>
-							<p className="md:text-lg font-light leading-9 mb-10 md:mb-0">
-								우리는 탐험을 통한 성장을 추구합니다.
-								<br />
-								독특한 사고와 창의력을 발휘하여 무한한 아이디어를 실행하고 도전합니다.
-								<br />
-								실패를 두려워하지 않고 끊임없는 탐험을 통해 더 나은 결과와 성과를
-								이끌어냅니다.
-							</p>
-						</div>
-						<div className="md:basis-2/6 px-4 md:p-10">
-							<h4 className="text-5xl font-light mb-8">실행</h4>
-							<p className="md:text-lg font-light leading-9 mb-14">
-								우리는 끊임없는 실행으로 가치를 증명합니다.
-								<br />
-								스스로 몰입하고 주도적으로 일하며, 일의 원동력을 자체적으로
-								만들어냅니다.
-								<br />
-								일에 끌려다니지 않고 주도적으로 움직여 실행하고 나아갑니다.
-							</p>
-							<img
-								src={C2}
-								alt=""
-								className="hidden md:block"
-							/>
-						</div>
-						<div className="md:basis-2/6 px-4 md:p-10">
-							<h4 className="text-5xl font-light mb-8">행복</h4>
-							<img
-								src={C3}
-								alt=""
-								className="hidden md:block mb-28"
-							/>
-							<p className="md:text-lg font-light leading-9">
-								우리는 더 나은 행복을 위해 노력합니다.
-								<br />
-								자신의 일에 열정을 가지고 즐거움을 느끼며, 긍정적인 시각으로 더 나은
-								변화를 추구합니다.
-								<br />
-								오늘보다 더 행복한 나와 세상을 만들어갑니다.
-							</p>
-						</div>
+				<h3 className="text-xl md:text-5xl mt-24 md:mt-0 font-medium pb-6 md:pb-12 border-b-2 border-white">
+					갤럭시 DNA
+				</h3>
+				<div className="column-1 md:columns-2 border-b-2 border-white">
+					<div className="w-full">
+						<h4 className="text-3xl md:text-6xl font-light pt-20">탐험</h4>
+						<p className="text-xl md:text-5xl leading-7 mt-7 md:mt-16">
+							열정과 호기심으로
+							<br />
+							무한 세상을 탐험하는 인재
+						</p>
+						<p className="md:text-2xl font-light leading-7 md:leading-9 mt-5 md:mt-16 pb-20">
+							우리는 탐험을 통한 성장을 추구합니다.
+							<br />
+							독특한 사고와 창의력을 발휘하여 무한한
+							<br />
+							아이디어를 실행하고 도전합니다.
+							<br />
+							실패를 두려워하지 않고 끊임없는
+							<br />
+							탐험을 통해 더 나은 결과와 성과를
+							<br />
+							이끌어냅니다.
+						</p>
 					</div>
-					<div className="container flex justify-center">
+					<div className="w-full">
 						<img
-							src={BoxImg}
+							src={Tmp1}
 							alt=""
-							style={{
-								marginTop: isXs ? 58 : 330,
-								marginBottom: 108,
-							}}
 						/>
 					</div>
-					<div className="container flex justify-center mb-96">
-						<Link to="/page/job">
-							<div className="linkButton">
-								<div className="tp" />
-								<div className="lt" />
-								<div className="lb" />
-								<span className="text-3xl kor">채용공고 보러가기</span>
-								<div className="rt" />
-								<div className="rb" />
-								<div className="bt" />
-							</div>
-						</Link>
+				</div>
+				<div className="column-1 md:columns-2 border-b-2 border-white">
+					<div className="w-full">
+						<h4 className="text-3xl md:text-6xl font-light pt-20">실행</h4>
+						<p className="text-xl md:text-5xl leading-7 mt-7 md:mt-16">
+							불가능을 창의적
+							<br />
+							<br />
+							도전으로 실행하는 인재
+						</p>
+						<p className="md:text-2xl font-light leading-7 md:leading-9 mt-5 md:mt-16 pb-20">
+							우리는 끊임없는 실행으로 가치를 증명합니다.
+							<br />
+							스스로 몰입하고 주도적으로 일하며,
+							<br />
+							일의 원동력을 자체적으로 만들어냅니다.
+							<br />
+							일에 끌려다니지 않고 주도적으로 움직여
+							<br />
+							실행하고 나아갑니다.
+						</p>
+					</div>
+					<div className="w-full">
+						<img
+							src={Tmp2}
+							alt=""
+						/>
 					</div>
 				</div>
-				{/* <div
-					className="container p-4 lg:p-0 mb-16"
-					style={{ borderTop: '1px solid #fff' }}
-				>
-					<h3 className="text-base md:text-3xl mt-0 md:mt-5 mb-16 font-bold">
-						{t('care1_2')}
-					</h3>
-					<Injesang className="">
-						<h4>
-							<span className="dot"></span>
-							{t('care1_3')}
-						</h4>
-						<p className="text-lg font-light">{t('care1_4')}</p>
-					</Injesang>
-					<Injesang className="slash">
-						<h4>
-							<span className="dot"></span>
-							{t('care1_5')}
-						</h4>
-						<p className="text-lg font-light">{t('care1_6')}</p>
-					</Injesang>
-					<Injesang className="">
-						<h4>
-							<span className="dot"></span>
-							{t('care1_7')}
-						</h4>
-						<p className="text-lg font-light">{t('care1_8')}</p>
-					</Injesang>
-					<div className="clear-both"></div>
-				</div>
-				<div
-					className="container p-4 lg:p-0 mt-16"
-					style={{ borderTop: '1px solid #fff' }}
-				>
-					<div className="block md:flex">
-						<h3 className="text-base md:text-3xl mt-0 md:mt-5 md:w-2/5 w-full font-bold">
-							{t('care1_9')}
-						</h3>
-						<ul className="md:w-3/5 mt-6 md:mt-12 list-disc w-full pl-6 md:pl-0">
-							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-								{t('care1_10')}
-							</li>
-							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-								{t('care1_10_1')}
-							</li>
-							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-								{t('care1_10_2')}
-							</li>
-							<li className="text-base md:text-lg font-light mb-7 md:mb-3">
-								{t('care1_10_3')}
-							</li>
-							<li className="text-base md:text-lg font-light">{t('care1_10_4')}</li>
-						</ul>
+				<div className="column-1 md:columns-2 border-b-2 border-white">
+					<div className="w-full">
+						<h4 className="text-3xl md:text-6xl font-light pt-20">행복</h4>
+						<p className="text-xl md:text-5xl leading-7 mt-7 md:mt-16">
+							선한 마음으로 세상을
+							<br />
+							<br />
+							행복하게 지어가는 인재
+						</p>
+						<p className="md:text-2xl font-light leading-7 md:leading-9 mt-5 md:mt-16 pb-20">
+							우리는 더 나은 행복을 위해 노력합니다.
+							<br />
+							자신의 일에 열정을 가지고 즐거움을 느끼며,
+							<br />
+							긍정적인 시각으로 더 나은 변화를 추구합니다.
+							<br />
+							오늘보다 더 행복한 나와 세상을 만들어갑니다.
+						</p>
+					</div>
+					<div className="w-full">
+						<img
+							src={Tmp3}
+							alt=""
+						/>
 					</div>
 				</div>
-				<div
-					className="container p-4 lg:p-0 mt-16 hidden md:block"
-					style={{ borderTop: '1px solid #fff' }}
-				>
-					<h3 className="text-3xl mt-5 mb-16">{t('care1_11')}</h3>
-					<div className="flex mb-20">
-						<h4 className="text-4xl w-1/4 font-thin eng">LIFE</h4>
-						<div className="w-3/4">
-							<table className="table-auto text-lg font-light">
-								<colgroup>
-									<col style={{ width: 200 }} />
-									<col />
-								</colgroup>
-								<tbody>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_12')}</b>
-										</td>
-										<td className="p-2">{t('care1_13')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_14')}</b>
-										</td>
-										<td className="p-2">{t('care1_15')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_16')}</b>
-										</td>
-										<td className="p-2">{t('care1_17')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_18')}</b>
-										</td>
-										<td className="p-2">{t('care1_19')}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+			</div>
+			<div className="container flex justify-center mb-96 mt-40">
+				<Link to="/page/job">
+					<div className="linkButton">
+						<div className="tp" />
+						<div className="lt" />
+						<div className="lb" />
+						<span className="text-3xl kor">채용공고 보러가기</span>
+						<div className="rt" />
+						<div className="rb" />
+						<div className="bt" />
 					</div>
-
-					<div className="flex relative">
-						<h4
-							className="text-4xl w-1/4 font-thin eng"
-							style={{ transform: 'translateY(-20px)' }}
-						>
-							WORK
-						</h4>
-						<div
-							className="w-3/4  border-white"
-							style={{ borderTop: '1px solid #fff' }}
-						>
-							<table className="table-auto text-lg font-light my-20">
-								<colgroup>
-									<col style={{ width: 200 }} />
-									<col />
-								</colgroup>
-								<tbody>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_20')}</b>
-										</td>
-										<td className="p-2">{t('care1_21')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_22')}</b>
-										</td>
-										<td className="p-2">{t('care1_23')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_24')}</b>
-										</td>
-										<td className="p-2">{t('care1_25')}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div className="flex relative">
-						<h4
-							className="text-4xl w-1/4 font-thin eng"
-							style={{ transform: 'translateY(-20px)' }}
-						>
-							HEALTH
-						</h4>
-						<div
-							className="w-3/4 border-white"
-							style={{ borderTop: '1px solid #fff' }}
-						>
-							<table className="table-auto text-lg font-light my-20">
-								<colgroup>
-									<col style={{ width: 200 }} />
-									<col />
-								</colgroup>
-								<tbody>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_26')}</b>
-										</td>
-										<td className="p-2">{t('care1_27')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_28')}</b>
-										</td>
-										<td className="p-2">{t('care1_29')}</td>
-									</tr>
-									<tr>
-										<td className="p-2">
-											<b className="font-bold">{t('care1_30')}</b>
-										</td>
-										<td className="p-2">{t('care1_31')}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div
-					className="container p-4 lg:p-0 mt-16 block md:hidden"
-					style={{ borderTop: '1px solid #fff' }}
-				>
-					<h3 className="text-base font-bold">{t('care1_11')}</h3>
-					<h4 className="text-3xl eng my-16">LIFE</h4>
-					<h3 className="text-base font-bold">{t('care1_12')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_13')}</p>
-					<h3 className="text-base font-bold">{t('care1_14')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_15')}</p>
-					<h3 className="text-base font-bold">{t('care1_16')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_17')}</p>
-					<h3 className="text-base font-bold">{t('care1_18')}</h3>
-					<p className="text-base font-light mb-48">{t('care1_19')}</p>
-
-					<h4 className="text-3xl eng my-16">WORK</h4>
-					<h3 className="text-base font-bold">{t('care1_20')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_21')}</p>
-					<h3 className="text-base font-bold">{t('care1_22')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_23')}</p>
-					<h3 className="text-base font-bold">{t('care1_24')}</h3>
-					<p className="text-base font-light mb-48">{t('care1_25')}</p>
-
-					<h4 className="text-3xl eng my-16">HEALTH</h4>
-					<h3 className="text-base font-bold">{t('care1_26')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_27')}</p>
-					<h3 className="text-base font-bold">{t('care1_28')}</h3>
-					<p className="text-base font-light mb-16">{t('care1_29')}</p>
-					<h3 className="text-base font-bold">{t('care1_30')}</h3>
-					<p className="text-base font-light mb-48">{t('care1_31')}</p>
-				</div>
-				<div
-					className="container p-4 lg:p-0"
-					style={{ borderTop: '1px solid #fff' }}
-				>
-					<h3 className="text-base font-bold md:text-3xl mt-0 md:mt-5 mb-16">
-						{t('care1_32')}
-					</h3>
-					{i18n.language === 'jp' ? (
-						<>
-							<img
-								src={StepJp}
-								alt="채용절차"
-								className="hidden md:block lg:block"
-							/>
-							<div className="md:hidden lg:hidden flex justify-center">
-								<img
-									src={StepJpXs}
-									alt="채용절차"
-								/>
-							</div>
-						</>
-					) : i18n.language === 'en' ? (
-						<>
-							<img
-								src={StepEn}
-								alt="채용절차"
-								className="hidden md:block lg:block"
-							/>
-							<div className="md:hidden lg:hidden flex justify-center">
-								<img
-									src={StepEnXs}
-									alt="채용절차"
-								/>
-							</div>
-						</>
-					) : (
-						<>
-							<img
-								src={StepKo}
-								alt="채용절차"
-								className="hidden md:block lg:block"
-							/>
-							<div className="md:hidden lg:hidden flex justify-center">
-								<img
-									src={StepKoXs}
-									alt="채용절차"
-								/>
-							</div>
-						</>
-					)}
-				</div> */}
-				{/* <div className="container p-4 lg:p-0 flex justify-center align-center mb-96 mt-32">
-					<Link to="/">
-						{i18n.language === 'jp' ? (
-							<>
-								<img
-									src={BtnJp}
-									alt="지원하기"
-									className="hidden md:block lg:block"
-								/>
-								<img
-									src={BtnJp}
-									alt="지원하기"
-									className="block md:hidden lg:hidden"
-								/>
-							</>
-						) : i18n.language === 'en' ? (
-							<>
-								<img
-									src={BtnEn}
-									alt="지원하기"
-									className="hidden md:block lg:block"
-								/>
-								<img
-									src={BtnEn}
-									alt="지원하기"
-									className="block md:hidden lg:hidden"
-								/>
-							</>
-						) : (
-							<>
-								<img
-									src={BtnKo}
-									alt="지원하기"
-									className="hidden md:block lg:block"
-								/>
-								<img
-									src={BtnKo}
-									alt="지원하기"
-									className="block md:hidden lg:hidden"
-								/>
-							</>
-						)}
-					</Link>
-				</div> */}
+				</Link>
 			</div>
 		</>
 	)
