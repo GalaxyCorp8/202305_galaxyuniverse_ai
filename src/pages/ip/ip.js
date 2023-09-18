@@ -371,7 +371,7 @@ const Ip = () => {
 						>
 							<span></span>
 						</button>
-						<div className="popup-content">111</div>
+						<div className="popup-content"></div>
 					</div>
 				</PopupContainer>
 			)}
@@ -391,9 +391,9 @@ const Ip = () => {
 					{imgArr.map((img, index) => (
 						<ReactHammer
 							key={index}
-							// onSwipeLeft={() => handleSwipeLeft(index)}
-							// onSwipeRight={() => handleswipeRight(index)}
-							// onTap={() => handleClick(index)}
+							onSwipeLeft={() => handleSwipeLeft(index)}
+							onSwipeRight={() => handleswipeRight(index)}
+							onTap={() => handleClick(index)}
 							className="px-1"
 						>
 							<img

@@ -53,6 +53,7 @@ const InvestorsView = React.lazy(() => import('./pages/subs/investors_view'))
 const Job = React.lazy(() => import('./pages/job/job'))
 const JobView = React.lazy(() => import('./pages/job/jobView'))
 const JobApply = React.lazy(() => import('./pages/job/apply'))
+const Contact = React.lazy(() => import('./pages/contact/contact'))
 
 function App() {
 	return (
@@ -196,6 +197,14 @@ function App() {
 							<Layout>
 								<Apply />
 							</Layout>
+						}
+					/>
+					<Route
+						path="/page/contact"
+						element={
+							<HeaderLayout>
+								<Contact />
+							</HeaderLayout>
 						}
 					/>
 					{/* <Route
