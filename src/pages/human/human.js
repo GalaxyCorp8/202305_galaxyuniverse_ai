@@ -1,4 +1,4 @@
-import Bg from '../../assets/image/ip/bg.png'
+import Bg from '../../assets/image/WEB_image/x1/human/bg.png'
 import styled from 'styled-components'
 import React, { useEffect, useState, useRef } from 'react'
 import { Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax'
@@ -159,7 +159,8 @@ const PopupContainer = styled.div`
 
 const Sb = styled.div`
 	height: 500px;
-	background: #000 !important;
+	background: url(${Bg}) no-repeat center, #000 !important;
+	background-size: cover !important;
 	@media (min-width: 767px) {
 		height: 780px;
 	}
@@ -202,6 +203,8 @@ const Human = () => {
 		variableWidth: true,
 		centerMode: false,
 		arrows: false,
+		autoplay: true,
+		pauseonhover: true,
 		// nextArrow: <NextArrow />,
 		// prevArrow: <PrevArrow />,
 		responsive: [
@@ -271,10 +274,7 @@ const Human = () => {
 				<h3 className="text-lg lg:text-5xl eng text-center font-light mb-10">
 					Metaverse World for People
 				</h3>
-				<div
-					className="w-auto md:w-3/5 mx-auto"
-					style={{ background: '#000' }}
-				>
+				<div className="w-auto md:w-3/5 mx-auto">
 					<p className="text-xs lg:text-2xl text-center font-extralight break-keep lg:leading-9 px-20 md:px-0">
 						갤럭시코퍼레이션은 가상과 현실을 넘나드는 매니지먼트를 통해 아티스트의 폭
 						넓은 활동을 돕습니다.

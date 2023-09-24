@@ -28,6 +28,9 @@ import y2022a from '../../assets/image/company/y-2022_a.svg'
 import y2023n from '../../assets/image/company/y-2023_n.svg'
 import y2023a from '../../assets/image/company/y-2023_a.svg'
 
+import SubVisualImage from '../../assets/image/WEB_image/x1/1_company/COMPANY_1.png'
+import SubVisualImageMobile from '../../assets/image/MOBILE_image/x1/1_company/company_1.png'
+
 import Img1 from '../../assets/image/WEB_image/x1/1_company/COMPANY_2.jpg'
 import Img2 from '../../assets/image/WEB_image/x1/1_company/COMPANY_3.jpg'
 import Img3 from '../../assets/image/WEB_image/x1/1_company/COMPANY_4.jpg'
@@ -45,6 +48,9 @@ import y2019Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_1.jpg'
 import y2021Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_2.jpg'
 import y2022Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_3.jpg'
 import y2023Xs from '../../assets/image/WEB_image/x1/1_company/COMPANY_5_4.jpg'
+
+import ArrLeft from '../../assets/image/MOBILE_image/x1/1_company/history-left.png'
+import ArrRight from '../../assets/image/MOBILE_image/x1/1_company/history-right.png'
 
 // 각 섹션의 이미지 위에 있는 타이틀이 있는데, 그 이미지 타이틀 위의 라벨 이미지!
 // MISSION
@@ -72,7 +78,6 @@ const YearTabButton = styled.button`
 		color: rgba(255, 255, 255, 1);
 	}
 	@media (max-width: 1023px) {
-		font-size: 1.5rem;
 		img {
 			max-width: 55px;
 		}
@@ -107,11 +112,24 @@ const VideoContainer = styled.div`
 	}
 `
 
+const Container1146 = styled.div`
+	position: relative;
+	width: 1146px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	@media (max-width: 1145px) {
+		width: 100%;
+	}
+`
+
 const Company = () => {
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
 	const [width, height] = useWindowSize({ fps: 60 })
 	const [isXs, setIsXs] = useState(false)
+	const [isMd, setIsMd] = useState(false)
+	const [isLg, setIsLg] = useState(false)
 
 	const [activeTabNum, setActiveTabNum] = useState(3)
 
@@ -137,12 +155,62 @@ const Company = () => {
 		}
 	}
 
+	const historyBtnOnClickLeft = () => {
+		switch (activeTabNum) {
+			case 0:
+				setActiveImg(isXs ? y2019Xs : y2019)
+				break
+			case 1:
+				setActiveImg(isXs ? y2021Xs : y2021)
+				break
+			case 2:
+				setActiveImg(isXs ? y2022Xs : y2022)
+				break
+			case 3:
+				setActiveImg(isXs ? y2023Xs : y2023)
+				break
+			default:
+				break
+		}
+		setActiveTabNum(activeTabNum <= 0 ? 3 : activeTabNum - 1)
+	}
+
+	const historyBtnOnClickRight = () => {
+		switch (activeTabNum) {
+			case 0:
+				setActiveImg(isXs ? y2019Xs : y2019)
+				break
+			case 1:
+				setActiveImg(isXs ? y2021Xs : y2021)
+				break
+			case 2:
+				setActiveImg(isXs ? y2022Xs : y2022)
+				break
+			case 3:
+				setActiveImg(isXs ? y2023Xs : y2023)
+				break
+			default:
+				break
+		}
+		setActiveTabNum(activeTabNum >= 3 ? 0 : activeTabNum + 1)
+	}
+
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
 		if (width < 767) {
 			setIsXs(true)
 		} else {
 			setIsXs(false)
+		}
+		if (width > 1024) {
+			setIsLg(true)
+		} else {
+			setIsLg(false)
+		}
+		if (width > 767 && width < 1024) {
+			setIsMd(true)
+		} else {
+			setIsMd(false)
 		}
 	}, [language, width])
 
@@ -152,16 +220,16 @@ const Company = () => {
 					layers={[background, headline, foreground, gradientOverlay]}
 					className="aspect-[2/1] bg-gray-900"
 				/> */}
-			{/* <ParallaxBanner
-					layers={[
-						{
-							image: SubVisualImage,
-							speed: -5,
-						},
-					]}
-					style={{ height: 680 }}
-				/> */}
-			<VideoContainer>
+			<ParallaxBanner
+				layers={[
+					{
+						image: isXs ? SubVisualImageMobile : SubVisualImage,
+						speed: -5,
+					},
+				]}
+				style={{ height: 680 }}
+			/>
+			{/* <VideoContainer>
 				<video
 					playsInline
 					muted
@@ -176,126 +244,85 @@ const Company = () => {
 						type="video/mp4"
 					/>
 				</video>
-			</VideoContainer>
-			<div className="container px-7 lg:px-4 lg:p-0">
-				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
-					<img
-						src={Txt1}
-						alt=""
-					/>
-				</h2>
-				<h3 className="text-lg lg:text-3xl text-center font-light lg:mb-36 mb-10">
-					{t('cmp1')}
-				</h3>
-				<div className="w-auto md:w-3/5 mx-auto">
-					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
-						{t('cmp1_1')}
-					</p>
+			</VideoContainer> */}
+			<Container1146 className="px-7 lg:p-0">
+				<div className="container">
+					<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
+						<img
+							src={Txt1}
+							alt=""
+						/>
+					</h2>
+					<h3 className="text-lg lg:text-3xl text-center font-light lg:mb-36 mb-10">
+						{t('cmp1')}
+					</h3>
+					<div className="w-auto md:w-3/5 mx-auto">
+						<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
+							{t('cmp1_1')}
+						</p>
+					</div>
 				</div>
-			</div>
-			<div className="container px-7 lg:px-4 lg:px-4 lg:p-0 mt-72 lg:mt-96">
-				{/* MISSION 라벨 (lg:hidden 작은 화면)*/}
-				<span className="block md:hidden lg:hidden">
-					<img
-						src={img_1_mob_MISSION}
-						alt=""
-					/>
-				</span>
-				<span className="hidden md:block lg:block">
-					<img
-						src={img_1_web_MISSION}
-						alt=""
-					/>
-				</span>
-				{/* <span className="block md:hidden lg:hidden">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="92.276"
-						height="12.372"
-						viewBox="0 0 92.276 12.372"
-					>
-						<path
-							id="패스_163"
-							data-name="패스 163"
-							d="M16.912-10.672h.016V1.2H13.376V-4.72L10.864-.528h-3.3L5.056-4.736V1.2H1.5V-10.672H5.1l4.112,6.56,4.112-6.56ZM19.808,1.2V-10.672h4.16V1.2ZM29.92-6.288h7.472l2.5,1.776v3.9l-2.5,1.792H26.832v-2.96h9.376V-3.184h-6.88l-2.5-1.792v-3.9l2.5-1.776h9.936V-7.7H29.92Zm14.672,0h7.472l2.5,1.776v3.9l-2.5,1.792H41.5v-2.96H50.88V-3.184H44L41.5-4.976v-3.9L44-10.656h9.936V-7.7H44.592ZM57.376,1.2V-10.672h4.16V1.2Zm11.808-.016h-2.24L64.368-.592V-8.88l2.576-1.776h9.04L78.56-8.88V-.592L75.984,1.184ZM67.92-7.7v5.92h7.088V-7.7Zm21.808-2.96H93.28V1.184H89.5l-5.7-6.144V1.184H80.256v-11.84h3.76l5.712,6.144Z"
-							transform="translate(-1.254 10.922)"
-							fill="none"
-							stroke="#fff"
-							strokeWidth="0.5"
-						/>
-					</svg>
-				</span>
-				<span className="hidden md:block lg:block">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="179.5"
-						height="26.5"
-						viewBox="0 0 179.5 26.5"
-					>
-						<text
-							id="mission"
-							transform="translate(0.75 21.75)"
-							fill="none"
-							stroke="#fff"
-							strokeMiterlimit="10"
-							strokeWidth="0.75"
-							fontSize="28"
-							fontFamily="GALAXY_eng"
-							letterSpacing="-0.075em"
-						>
-							<tspan x="0" y="0">
-								MISSION!!!
-							</tspan>
-						</text>
-					</svg>
-				</span> */}
-
-				{/* "BEYOND THE NEW WORLD" 이미지 타이틀 */}
-				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-6 lg:mb-8">
-					<span className="hidden lg:block">
-						<img
-							src={Txt2}
-							alt=""
-						/>
-					</span>
-					<span className="block lg:hidden">
-						<img
-							src={Txt2Xs}
-							alt=""
-						/>
-					</span>
-				</h2>
-			</div>
-			<div className="container px-7 lg:px-4 lg:p-0">
-				<ParallaxBanner
-					layers={[
-						{
-							image: isXs ? Img1xs : Img1,
-							speed: -5,
-						},
-					]}
-					style={{ height: isXs ? '195px' : '300px' }}
-				/>
-			</div>
-			<div className="container px-7 lg:px-4 lg:p-0">
-				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
-					{t('cmp1_2')}
-				</p>
-				<div className="mt-72 lg:mt-96">
-					{/* VISSION 라벨 (lg:hidden 작은 화면)*/}
+				<div className="container mt-72 lg:mt-96">
+					{/* MISSION 라벨 (lg:hidden 작은 화면)*/}
 					<span className="block md:hidden lg:hidden">
 						<img
-							src={img_2_mob_VISION}
+							src={img_1_mob_MISSION}
 							alt=""
 						/>
 					</span>
 					<span className="hidden md:block lg:block">
 						<img
-							src={img_2_web_VISION}
+							src={img_1_web_MISSION}
 							alt=""
 						/>
 					</span>
-					{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
+					{/* "BEYOND THE NEW WORLD" 이미지 타이틀 */}
+					<h2 className="text-2xl lg:text-5xl eng mt-3 mb-6 lg:mb-8">
+						<span className="hidden md:block">
+							<img
+								src={Txt2}
+								alt=""
+								style={{ width: isLg ? '100%' : '480px' }}
+							/>
+						</span>
+						<span className="block md:hidden">
+							<img
+								src={Txt2Xs}
+								alt=""
+							/>
+						</span>
+					</h2>
+				</div>
+				<div className="container">
+					<ParallaxBanner
+						layers={[
+							{
+								image: isXs ? Img1xs : Img1,
+								speed: 0,
+							},
+						]}
+						style={{ height: isXs ? '195px' : '300px' }}
+					/>
+				</div>
+				<div className="container">
+					<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
+						{t('cmp1_2')}
+					</p>
+					<div className="mt-72 lg:mt-96">
+						{/* VISSION 라벨 (lg:hidden 작은 화면)*/}
+						<span className="block md:hidden lg:hidden">
+							<img
+								src={img_2_mob_VISION}
+								alt=""
+							/>
+						</span>
+						<span className="hidden md:block lg:block">
+							<img
+								src={img_2_web_VISION}
+								alt=""
+							/>
+						</span>
+						{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="76"
@@ -343,54 +370,54 @@ const Company = () => {
 							</text>
 						</svg>
 					</div> */}
-				</div>
+					</div>
 
-				{/* "REALIZER OF IN..." 이미지 타이틀 */}
-				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
-					<span className="hidden lg:block">
-						<img
-							src={Txt3}
-							alt=""
-						/>
-					</span>
-					<span className="block lg:hidden">
-						<img
-							src={Txt3Xs}
-							alt=""
-						/>
-					</span>
-				</h2>
-			</div>
-			<div className="container px-7 lg:px-4 lg:p-0">
-				<ParallaxBanner
-					layers={[
-						{
-							image: isXs ? Img2xs : Img2,
-							speed: -5,
-						},
-					]}
-					style={{ height: isXs ? '195px' : '300px' }}
-				/>
-			</div>
-			<div className="container px-7 lg:px-4 lg:p-0">
-				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
-					{t('cmp1_3')}
-				</p>
-				<div className="mt-72 lg:mt-96">
-					{/* CORE VALUE 라벨 (lg:hidden 작은 화면)*/}
-					<span className="block md:hidden lg:hidden">
-						<img
-							src={img_3_mob_COREVALUE}
-							alt=""
-						/>
-					</span>
-					<span className="hidden md:block lg:block">
-						<img
-							src={img_3_web_COREVALUE}
-							alt=""
-						/>
-					</span>
-					{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
+					{/* "REALIZER OF IN..." 이미지 타이틀 */}
+					<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
+						<span className="hidden lg:block">
+							<img
+								src={Txt3}
+								alt=""
+							/>
+						</span>
+						<span className="block lg:hidden">
+							<img
+								src={Txt3Xs}
+								alt=""
+							/>
+						</span>
+					</h2>
+				</div>
+				<div className="container">
+					<ParallaxBanner
+						layers={[
+							{
+								image: isXs ? Img2xs : Img2,
+								speed: 0,
+							},
+						]}
+						style={{ height: isXs ? '195px' : '300px' }}
+					/>
+				</div>
+				<div className="container">
+					<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
+						{t('cmp1_3')}
+					</p>
+					<div className="mt-72 lg:mt-96">
+						{/* CORE VALUE 라벨 (lg:hidden 작은 화면)*/}
+						<span className="block md:hidden lg:hidden">
+							<img
+								src={img_3_mob_COREVALUE}
+								alt=""
+							/>
+						</span>
+						<span className="hidden md:block lg:block">
+							<img
+								src={img_3_web_COREVALUE}
+								alt=""
+							/>
+						</span>
+						{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="141.156"
@@ -433,55 +460,55 @@ const Company = () => {
 							</text>
 						</svg>
 					</div> */}
+					</div>
+
+					{/* "MULTI METAVERSE DR..." 이미지 타이틀 */}
+					<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
+						<span className="hidden lg:block">
+							<img
+								src={Txt4}
+								alt=""
+							/>
+						</span>
+						<span className="block lg:hidden">
+							<img
+								src={Txt4Xs}
+								alt=""
+							/>
+						</span>
+					</h2>
 				</div>
+				<div className="container">
+					<ParallaxBanner
+						layers={[
+							{
+								image: isXs ? Img3xs : Img3,
+								speed: 0,
+							},
+						]}
+						style={{ height: isXs ? '195px' : '300px' }}
+					/>
+				</div>
+				<div className="container">
+					<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
+						{t('cmp1_4')}
+					</p>
+					<div className="mt-72 lg:mt-96">
+						{/* HISTORY 라벨 (lg:hidden 작은 화면)*/}
 
-				{/* "MULTI METAVERSE DR..." 이미지 타이틀 */}
-				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
-					<span className="hidden lg:block">
-						<img
-							src={Txt4}
-							alt=""
-						/>
-					</span>
-					<span className="block lg:hidden">
-						<img
-							src={Txt4Xs}
-							alt=""
-						/>
-					</span>
-				</h2>
-			</div>
-			<div className="container px-7 lg:px-4 lg:px-0">
-				<ParallaxBanner
-					layers={[
-						{
-							image: isXs ? Img3xs : Img3,
-							speed: -5,
-						},
-					]}
-					style={{ height: isXs ? '195px' : '300px' }}
-				/>
-			</div>
-			<div className="container px-7 lg:px-4 lg:px-0">
-				<p className="text-lg lg:text-xl mt-3 lg:mt-8 font-extralight lg:leading-9 leading-8">
-					{t('cmp1_4')}
-				</p>
-				<div className="mt-72 lg:mt-96">
-					{/* HISTORY 라벨 (lg:hidden 작은 화면)*/}
-
-					<span className="block md:hidden lg:hidden">
-						<img
-							src={img_4_mob_HISTORY}
-							alt=""
-						/>
-					</span>
-					<span className="hidden md:block lg:block">
-						<img
-							src={img_4_web_HISTORY}
-							alt=""
-						/>
-					</span>
-					{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
+						<span className="block md:hidden lg:hidden">
+							<img
+								src={img_4_mob_HISTORY}
+								alt=""
+							/>
+						</span>
+						<span className="hidden md:block lg:block">
+							<img
+								src={img_4_web_HISTORY}
+								alt=""
+							/>
+						</span>
+						{/* <div className="outlined-text xs:block sm:block md:hidden lg:hidden">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="100"
@@ -523,184 +550,224 @@ const Company = () => {
 							/>
 						</svg>
 					</div> */}
-				</div>
-				<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
-					{/* 두줄인 히스토리 중 아래것 제거 */}
-					{/* "history..." 이미지 타이틀 */}
-					{/* <span className="hidden lg:block">
+					</div>
+					<h2 className="text-2xl lg:text-5xl eng mt-3 mb-3 lg:mb-8">
+						{/* 두줄인 히스토리 중 아래것 제거 */}
+						{/* "history..." 이미지 타이틀 */}
+						{/* <span className="hidden lg:block">
 						<img src={Txt5} alt="" />
 					</span>
 					<span className="block lg:hidden">
 						<img src={Txt5Xs} alt="" />
 					</span> */}
-				</h2>
-				<div className="container">
-					<ParallaxBanner
-						layers={[
-							{
-								image: activeImg,
-								speed: -5,
-							},
-						]}
-						style={{ height: isXs ? '195px' : '300px' }}
-					/>
-				</div>
-				<div className="container px-7 lg:px-4 lg:p-0">
-					{/* 2019, 2021, 2022, 2023 년 표시, 클릭 가능 */}
-					<div className="flex mt-14 mb-16 lg:mb-32 ">
-						<div className="flex-1 text-center">
-							<YearTabButton
-								type="button"
-								className={`text-4xl ${activeTabNum === 0 && 'active'}`}
-								onClick={() => activeImgHandler(0)}
-							>
-								<img
-									src={activeTabNum === 0 ? y2019a : y2019n}
-									alt=""
-								/>
-							</YearTabButton>
-						</div>
-						<div className="flex-1 text-center">
-							<YearTabButton
-								type="button"
-								className={`text-4xl ${activeTabNum === 1 && 'active'}`}
-								onClick={() => activeImgHandler(1)}
-							>
-								<img
-									src={activeTabNum === 1 ? y2021a : y2021n}
-									alt=""
-								/>
-							</YearTabButton>
-						</div>
-						<div className="flex-1 text-center">
-							<YearTabButton
-								type="button"
-								className={`text-4xl ${activeTabNum === 2 && 'active'}`}
-								onClick={() => activeImgHandler(2)}
-							>
-								<img
-									src={activeTabNum === 2 ? y2022a : y2022n}
-									alt=""
-								/>
-							</YearTabButton>
-						</div>
-						<div className="flex-1 text-center">
-							<YearTabButton
-								type="button"
-								className={`text-4xl ${activeTabNum === 3 && 'active'}`}
-								onClick={() => activeImgHandler(3)}
-							>
-								<img
-									src={activeTabNum === 3 ? y2023a : y2023n}
-									alt=""
-								/>
-							</YearTabButton>
-						</div>
+					</h2>
+					<div className="container">
+						<ParallaxBanner
+							layers={[
+								{
+									image: activeImg,
+									speed: 0,
+								},
+							]}
+							style={{ height: isXs ? '195px' : '300px' }}
+						/>
 					</div>
-					{/* 각 년도 별 하부 내용들 영역 시작 */}
-					<TabContents style={{ height: !isXs ? 1572 : 'auto' }}>
-						<TabContent className={`${activeTabNum === 0 && 'active'}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2019.08
-								<br />
-								{t('cmp1_17')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2020.01 <br />
-								{t('cmp1_18')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2020.08 <br />
-								{t('cmp1_19')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2020.09 <br />
-								{t('cmp1_20')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2020.10 <br />
-								{t('cmp1_21')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2020.12 <br />
-								{t('cmp1_22')}
-							</p>
-						</TabContent>
-						<TabContent className={`${activeTabNum === 1 && 'active'}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.01
-								<br />
-								{t('cmp1_9')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.04
-								<br />
-								{t('cmp1_10')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.06
-								<br />
-								{t('cmp1_11')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.07
-								<br />
-								{t('cmp1_12')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.08
-								<br />
-								{t('cmp1_13')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.09
-								<br />
-								{t('cmp1_14')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.10
-								<br />
-								{t('cmp1_15')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2021.12
-								<br />
-								{t('cmp1_16')}
-								<br />
-								{t('cmp1_16_1')}
-								<br />
-								{t('cmp1_16_2')}
-							</p>
-						</TabContent>
-						<TabContent className={`${activeTabNum === 2 && 'active'}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2022.05
-								<br />
-								{t('cmp1_6')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2022.10
-								<br />
-								{t('cmp1_7')}
-							</p>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2022.12
-								<br />
-								{t('cmp1_8')}
-								<br />
-								{t('cmp1_8_1')}
-							</p>
-						</TabContent>
-						<TabContent className={`${activeTabNum === 3 && 'active'}`}>
-							<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
-								2023.01
-								<br />
-								{t('cmp1_5')}
-							</p>
-						</TabContent>
-					</TabContents>
+					<div className="container">
+						<div className="flex justify-center lg:hidden mt-10 mb-12">
+							<button
+								className=""
+								type="button"
+								style={{ marginRight: 30 }}
+								onClick={historyBtnOnClickLeft}
+							>
+								<img
+									src={ArrLeft}
+									alt=""
+								/>
+							</button>
+							<button
+								className=""
+								type="button"
+								onClick={historyBtnOnClickRight}
+							>
+								<img
+									src={ArrRight}
+									alt=""
+								/>
+							</button>
+						</div>
+						{/* 2019, 2021, 2022, 2023 년 표시, 클릭 가능 */}
+						<div className="flex mt-14 mb-16 lg:mb-32 ">
+							<div className="flex-1 text-center">
+								<YearTabButton
+									type="button"
+									className={`text-lg lg:text-4xl ${activeTabNum === 0 && 'active'}`}
+									onClick={() => activeImgHandler(0)}
+								>
+									{isLg ? (
+										<img
+											src={activeTabNum === 0 ? y2019a : y2019n}
+											alt=""
+										/>
+									) : (
+										2019
+									)}
+								</YearTabButton>
+							</div>
+							<div className="flex-1 text-center">
+								<YearTabButton
+									type="button"
+									className={`text-lg lg:text-4xl ${activeTabNum === 1 && 'active'}`}
+									onClick={() => activeImgHandler(1)}
+								>
+									{isLg ? (
+										<img
+											src={activeTabNum === 1 ? y2021a : y2021n}
+											alt=""
+										/>
+									) : (
+										2021
+									)}
+								</YearTabButton>
+							</div>
+							<div className="flex-1 text-center">
+								<YearTabButton
+									type="button"
+									className={`text-lg lg:text-4xl ${activeTabNum === 2 && 'active'}`}
+									onClick={() => activeImgHandler(2)}
+								>
+									{isLg ? (
+										<img
+											src={activeTabNum === 2 ? y2022a : y2022n}
+											alt=""
+										/>
+									) : (
+										2022
+									)}
+								</YearTabButton>
+							</div>
+							<div className="flex-1 text-center">
+								<YearTabButton
+									type="button"
+									className={`text-lg lg:text-4xl ${activeTabNum === 3 && 'active'}`}
+									onClick={() => activeImgHandler(3)}
+								>
+									{isLg ? (
+										<img
+											src={activeTabNum === 3 ? y2023a : y2023n}
+											alt=""
+										/>
+									) : (
+										2023
+									)}
+								</YearTabButton>
+							</div>
+						</div>
+						{/* 각 년도 별 하부 내용들 영역 시작 */}
+						<TabContents style={{ height: !isXs ? 1572 : 'auto' }}>
+							<TabContent className={`${activeTabNum === 0 && 'active'}`}>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2019.08
+									<br />
+									{t('cmp1_17')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2020.01 <br />
+									{t('cmp1_18')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2020.08 <br />
+									{t('cmp1_19')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2020.09 <br />
+									{t('cmp1_20')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2020.10 <br />
+									{t('cmp1_21')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2020.12 <br />
+									{t('cmp1_22')}
+								</p>
+							</TabContent>
+							<TabContent className={`${activeTabNum === 1 && 'active'}`}>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.01
+									<br />
+									{t('cmp1_9')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.04
+									<br />
+									{t('cmp1_10')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.06
+									<br />
+									{t('cmp1_11')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.07
+									<br />
+									{t('cmp1_12')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.08
+									<br />
+									{t('cmp1_13')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.09
+									<br />
+									{t('cmp1_14')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.10
+									<br />
+									{t('cmp1_15')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2021.12
+									<br />
+									{t('cmp1_16')}
+									<br />
+									{t('cmp1_16_1')}
+									<br />
+									{t('cmp1_16_2')}
+								</p>
+							</TabContent>
+							<TabContent className={`${activeTabNum === 2 && 'active'}`}>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2022.05
+									<br />
+									{t('cmp1_6')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2022.10
+									<br />
+									{t('cmp1_7')}
+								</p>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2022.12
+									<br />
+									{t('cmp1_8')}
+									<br />
+									{t('cmp1_8_1')}
+								</p>
+							</TabContent>
+							<TabContent className={`${activeTabNum === 3 && 'active'}`}>
+								<p className="text-xs lg:text-lg font-extralight mb-10 lg:mb-12">
+									2023.01
+									<br />
+									{t('cmp1_5')}
+								</p>
+							</TabContent>
+						</TabContents>
+					</div>
 				</div>
-			</div>
+			</Container1146>
 		</>
 	)
 }

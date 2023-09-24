@@ -48,15 +48,13 @@ const Landing = () => {
 			<div className="main-visual-inner">
 				<h1 className="eng lg:text-5xl text-lg">
 					<span className="xs:block sm:block md:hidden lg:hidden">
-						ENJOY
+						HUMAN
 						<br />
 						OUR
 						<br />
-						METAVERSE
+						GALAXY
 					</span>
-					<span className="hidden sm:hidden md:block lg:block">
-						ENJOY OUR METAVERSE
-					</span>
+					<span className="hidden sm:hidden md:block lg:block">HUMAN IS GALAXY</span>
 				</h1>
 			</div>
 

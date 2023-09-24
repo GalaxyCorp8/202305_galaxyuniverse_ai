@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import galaxy from '../assets/fonts/galaxy.woff'
 import BoardNextInvert from '../assets/image/common/board_next_invert.svg'
+import BoardPrevInvert from '../assets/image/common/board_prev_invert.svg'
 import ArrPrev from '../assets/image/common/arr_prev.svg'
 import ArrNext from '../assets/image/common/arr_next.svg'
 
@@ -294,6 +295,7 @@ const GlobalStyles = createGlobalStyle`
         }
         .boardView__section {
             border-bottom: 1px solid #fff;
+            padding-bottom: 230px;
             img {
                 max-width: 100%;
             }
@@ -314,7 +316,7 @@ const GlobalStyles = createGlobalStyle`
                 transition: all 0.15s ease-in-out;
                 &:focus, &:hover {
                     color: #000;
-                    background: url(${BoardNextInvert}), #fff;
+                    background: url(${BoardPrevInvert}), #fff;
                     background-repeat: no-repeat;
                     background-position: center;
                 }

@@ -51,7 +51,7 @@ const Tech = () => {
 					style={{ height: 680 }}
 				/>
 			</div>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
 					<img
 						src={Txt1}
@@ -74,7 +74,7 @@ const Tech = () => {
 					Creation Tech
 				</h2>
 				<div className="w-auto md:w-3/5 mx-auto">
-					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-5 lg:mb-32 break-keep">
+					<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-5 lg:mb-16 break-keep">
 						{t('tech1_3')}
 					</p>
 				</div>
@@ -89,7 +89,7 @@ const Tech = () => {
 				className="bg-gray-900"
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p
 						className="text-lg lg:text-xl text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 break-keep"
@@ -108,7 +108,7 @@ const Tech = () => {
 			<h2 className="text-2xl lg:text-6xl eng text-center mb-1 lg:mb-10">
 				Avatar Portal Platform
 			</h2>
-			<p className="text-lg lg:text-2xl text-center mb-8 lg:mb-14">
+			<p className="text-lg lg:text-2xl text-center mb-8 lg:mb-16">
 				One Avatar - Multi Platform(OAMP)
 			</p>
 			<ParallaxBanner
@@ -120,7 +120,7 @@ const Tech = () => {
 				]}
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p className="text-lg lg:text-2xl text-center font-extralight leading-8 lg:leading-9 mb-5 lg:mb-32 break-keep">
 						{t('tech1_5')}

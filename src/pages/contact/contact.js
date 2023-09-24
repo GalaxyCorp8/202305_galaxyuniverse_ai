@@ -99,6 +99,20 @@ const WrapperInside = styled.div`
 		padding-left: 2rem;
 		padding-right: 2rem;
 		height: 100%;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 160px;
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 0.8) 100%
+			);
+		}
 		.isdiv {
 			height: 100%;
 			display: flex;
@@ -112,6 +126,7 @@ const WrapperInside = styled.div`
 		}
 		.enjoy {
 			width: 320px;
+			z-index: 1;
 		}
 	}
 `
@@ -133,7 +148,7 @@ const Contact = () => {
 	return (
 		<>
 			<Wrapper>
-				<WrapperInside className="container p-4 flex justify-center items-center">
+				<WrapperInside className="container px-7 lg:p-0 flex justify-center items-center">
 					<div className="isdiv">
 						<div className="flex justify-start align-top">
 							<img

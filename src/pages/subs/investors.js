@@ -52,7 +52,7 @@ const Investors = () => {
 					style={{ height: 680 }}
 				/>
 			</div>
-			<div className="container p-4 lg:p-0 mt-0 lg:mt-56">
+			<div className="container px-7 lg:p-0 mt-0 lg:mt-56">
 				<h2 className="text-2xl lg:text-5xl eng text-center mt-14 mb-5 tracking-tighter lg:leading-tight">
 					metaverse company leaping
 					<br />

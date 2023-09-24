@@ -70,7 +70,7 @@ const Commerce = () => {
 					style={{ height: 680 }}
 				/>
 			</div>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
 					<img
 						src={isXs ? Txt1Xs : Txt1}
@@ -108,7 +108,7 @@ const Commerce = () => {
 				className="bg-gray-900"
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-80 break-keep">
 						{t('cms1_4')}
@@ -130,7 +130,7 @@ const Commerce = () => {
 				]}
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
 					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-60 lg:mb-80 break-keep">
 						{t('cms1_6')}

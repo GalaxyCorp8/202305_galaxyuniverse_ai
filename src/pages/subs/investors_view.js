@@ -33,7 +33,7 @@ const InvestorsView = () => {
 	return (
 		<>
 			<div className="mb-28 mt-44" />
-			<div className="container p-4 lg:p-0 mt-0 lg:mt-56">
+			<div className="container px-7 lg:p-0 mt-0 lg:mt-56">
 				<h2 className="text-2xl lg:text-4xl eng text-center mt-0 md:mt-14 mb-10">
 					Investors
 				</h2>
@@ -87,7 +87,7 @@ const InvestorsView = () => {
 						</h2>
 						<p className="text-xl flex justify-center gap-x-10">
 							<span>발행일 : 2023.01.19</span>
-							<span>갤럭시 코퍼레이션</span>
+							<span>갤럭시코퍼레이션</span>
 						</p>
 					</header>
 					<section className="boardView__section pb-10 mb-5">
