@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
-import { setDefaultLanguage } from 'react-multi-lang'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectLanguage, setLang } from '../../hooks/language'
-import { useWindowSize } from '@react-hook/window-size'
-import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import { setDefaultLanguage } from "react-multi-lang";
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage, setLang } from "../../hooks/language";
+import { useWindowSize } from "@react-hook/window-size";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = styled.aside`
 	ul {
@@ -40,7 +40,7 @@ const Sidebar = styled.aside`
 			}
 		}
 	}
-`
+`;
 
 const JobList = styled.ul`
 	li {
@@ -71,30 +71,30 @@ const JobList = styled.ul`
 			padding: 25px;
 		}
 	}
-`
+`;
 
 const Job = () => {
-	const navigate = useNavigate()
-	const language = useSelector(selectLanguage)
-	const { t, i18n } = useTranslation()
+	const navigate = useNavigate();
+	const language = useSelector(selectLanguage);
+	const { t, i18n } = useTranslation();
 
-	const [width, height] = useWindowSize({ fps: 60 })
-	const [isXs, setIsXs] = useState(false)
+	const [width, height] = useWindowSize({ fps: 60 });
+	const [isXs, setIsXs] = useState(false);
 
-	const [activeTabNumbrer, setActiveTabNumber] = useState(0)
+	const [activeTabNumbrer, setActiveTabNumber] = useState(0);
 
 	const movePage = () => {
-		navigate(`/page/job/${1}`)
-	}
+		navigate(`/page/job/${1}`);
+	};
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : 'ko')
+		setDefaultLanguage(language ? language : "ko");
 		if (width < 767) {
-			setIsXs(true)
+			setIsXs(true);
 		} else {
-			setIsXs(false)
+			setIsXs(false);
 		}
-	}, [language, width])
+	}, [language, width]);
 	return (
 		<>
 			<div className="container">
@@ -108,7 +108,9 @@ const Job = () => {
 								<li className="mb-8">
 									<button
 										type="button"
-										className={activeTabNumbrer === 0 ? 'active text-2xl' : 'text-2xl'}
+										className={
+											activeTabNumbrer === 0 ? "active text-2xl" : "text-2xl"
+										}
 										onClick={() => setActiveTabNumber(0)}
 									>
 										전체보기
@@ -117,7 +119,9 @@ const Job = () => {
 								<li className="mb-8">
 									<button
 										type="button"
-										className={activeTabNumbrer === 1 ? 'active text-2xl' : 'text-2xl'}
+										className={
+											activeTabNumbrer === 1 ? "active text-2xl" : "text-2xl"
+										}
 										onClick={() => setActiveTabNumber(1)}
 									>
 										경영 / 전략
@@ -126,7 +130,9 @@ const Job = () => {
 								<li className="mb-8">
 									<button
 										type="button"
-										className={activeTabNumbrer === 2 ? 'active text-2xl' : 'text-2xl'}
+										className={
+											activeTabNumbrer === 2 ? "active text-2xl" : "text-2xl"
+										}
 										onClick={() => setActiveTabNumber(2)}
 									>
 										개발 / 테크
@@ -135,7 +141,9 @@ const Job = () => {
 								<li className="mb-8">
 									<button
 										type="button"
-										className={activeTabNumbrer === 3 ? 'active text-2xl' : 'text-2xl'}
+										className={
+											activeTabNumbrer === 3 ? "active text-2xl" : "text-2xl"
+										}
 										onClick={() => setActiveTabNumber(3)}
 									>
 										디자인
@@ -144,7 +152,9 @@ const Job = () => {
 								<li className="mb-8">
 									<button
 										type="button"
-										className={activeTabNumbrer === 4 ? 'active text-2xl' : 'text-2xl'}
+										className={
+											activeTabNumbrer === 4 ? "active text-2xl" : "text-2xl"
+										}
 										onClick={() => setActiveTabNumber(4)}
 									>
 										커머스
@@ -155,7 +165,8 @@ const Job = () => {
 					</div>
 					<div className="lg:basis-3/4 px-6 lg:px-0">
 						<JobList className="mb-44">
-							<li className="mb-16">
+							{/* 2023.09.18(월) 안동현 작업, 최정수 요청 샘플 공고 정보 제거 */}
+							{/* <li className="mb-16">
 								<button
 									type="button"
 									onClick={() => movePage()}
@@ -173,13 +184,13 @@ const Job = () => {
 										<p className="text-sm lg:text-3xl font-light">GX / 지식경영팀</p>
 									</div>
 								</button>
-							</li>
+							</li> */}
 						</JobList>
 					</div>
 				</div>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Job
+export default Job;
