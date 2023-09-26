@@ -116,6 +116,8 @@ const Media = () => {
 		slidesToShow: 1,
 		initialSlide: 0,
 		variableWidth: true,
+		autoplay: true,
+		pauseonhover: true,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
 		responsive: [
@@ -165,7 +167,7 @@ const Media = () => {
 					style={{ height: 680 }}
 				/>
 			</div>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
 					<img
 						src={Txt1}
@@ -202,19 +204,26 @@ const Media = () => {
 				className="bg-gray-900 mb-54"
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div style={{ marginTop: 50 }}>
+			<div
+				className="container flex justify-center"
+				style={{ marginTop: 100 }}
+			>
 				<a
+					className="linkButton"
 					href="https://www.avadream.co.kr/"
 					target="_blank"
 					rel="noreferrer"
-					style={{ display: 'block', width: 225, margin: '0 auto' }}
 				>
-					<img
-						src={BtnSite}
-						alt="사이트 보러가기"
-					/>
+					<div className="tp" />
+					<div className="lt" />
+					<div className="lb" />
+					<span className="eng">CONTENTS VIEW</span>
+					<div className="rt" />
+					<div className="rb" />
+					<div className="bt" />
 				</a>
 			</div>
+
 			{/* <h2
 				className="text-2xl lg:text-6xl eng text-center eng mb-5"
 				style={{ marginTop: '700px' }}
@@ -298,7 +307,9 @@ const Media = () => {
 				style={{ height: isXs ? '235px' : '400px' }}
 			/>
 			<h2 className="text-3xl lg:text-5xl eng text-center eng mb-3 mt-48 lg:mt-80 break-keep">
-				rudolph studio
+				rudolph
+				<br />
+				studio
 			</h2>
 			<div className="w-auto md:w-3/5 mx-auto">
 				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-5 lg:mb-32 break-keep">

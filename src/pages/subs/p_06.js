@@ -139,7 +139,7 @@ const p_06 = () => {
 			<div className="container">
 				<h2 className="text-4xl text-center eng mb-7">AVA DREAM</h2>
 				<p className="text-lg text-center mb-6">
-					갤럭시 코퍼레이션의 통합 방송 프로그램 및 드라마, 예능 등 방송 전문 컨텐츠
+					갤럭시코퍼레이션의 통합 방송 프로그램 및 드라마, 예능 등 방송 전문 컨텐츠
 					제작사 콘텐츠IP 메타버스IP까지
 					<br />
 					갤럭시 메타버스 의 궁극저인 메시지를 전달하는 멀티 메타버스 세계관의

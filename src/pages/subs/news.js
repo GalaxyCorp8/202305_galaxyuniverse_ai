@@ -21,6 +21,7 @@ const Banner = styled.div`
 
 const GallItem = styled.li`
 	background-color: rgba(255, 255, 255, 0.08);
+	transition: background-color 0.3s ease;
 	.img {
 		position: relative;
 		height: 200px;
@@ -30,6 +31,9 @@ const GallItem = styled.li`
 			width: 850px;
 			height: 300px;
 		}
+	}
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.25);
 	}
 `
 
@@ -51,7 +55,7 @@ const News = () => {
 	}, [language, width])
 	return (
 		<>
-			<div className="container p-4 lg:p-0 mt-24 md:mt-60">
+			<div className="container px-7 lg:p-0 mt-24 md:mt-60">
 				<h2 className="flex justify-center mt-0 md:mt-14 mb-10">
 					<img
 						src={Txt1}
@@ -117,24 +121,21 @@ const News = () => {
 				</ul>
 				<ul className="grid lg:grid-cols-3 gap-3 md:grid-cols-2 xs:grid-col-2">
 					<GallItem className="p-5">
-						<div className="img mb-5">
-							<img
-								src={TempImg}
-								alt=""
-							/>
-						</div>
-						<div className="mb-4">
-							<Link
-								to="/page/news/1"
-								className="text-base font-light"
-							>
-								{t('news3')}
-							</Link>
-						</div>
-						<div className="flex items-center justify-between">
-							<p className="text-base"></p>
-							<p className="text-base font-extralight">2023.01.01</p>
-						</div>
+						<Link to="/page/news/1">
+							<div className="img mb-5">
+								<img
+									src={TempImg}
+									alt=""
+								/>
+							</div>
+							<div className="mb-4">
+								<p className="text-base font-light">{t('news3')}</p>
+							</div>
+							<div className="flex items-center justify-between">
+								<p className="text-base"></p>
+								<p className="text-base font-extralight">2023.01.01</p>
+							</div>
+						</Link>
 					</GallItem>
 				</ul>
 			</div>

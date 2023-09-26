@@ -36,7 +36,7 @@ const NewView = () => {
 	}, [language, width])
 	return (
 		<>
-			<div className="container p-4 lg:p-0 mt-24 lg:mt-60">
+			<div className="container px-7 lg:p-0 mt-24 lg:mt-60">
 				<h2 className="text-2xl lg:text-4xl eng text-center mt-0 md:mt-14 mb-10">
 					GALAXY NEWS
 				</h2>
@@ -114,7 +114,7 @@ const NewView = () => {
 						</div>
 						<p className="text-right text-base mt-5 font-light">{t('news15')}</p>
 						<p
-							className="text-left text-base font-light mt-32"
+							className="text-left text-base font-light mt-40"
 							dangerouslySetInnerHTML={{ __html: t('news16') }}
 						></p>
 					</section>
@@ -138,7 +138,7 @@ const NewView = () => {
 						<div className="w-full md:w-1/2 text-center md:text-right mt-10 md:mt-0">
 							<Link
 								to="/page/news"
-								className="btnList text-sm md:text-xl py-3 px-12 md:py-1.5 md:px-9 border text-center"
+								className="btnList text-sm md:text-xl py-3 px-8 md:py-1.5 md:px-12 border text-center"
 							>
 								목록
 							</Link>
