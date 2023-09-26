@@ -135,7 +135,7 @@ const Career = () => {
 
 	return (
 		<>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<img
 					src={Box}
 					alt=""
@@ -154,28 +154,35 @@ const Career = () => {
 					alt=""
 					className="mt-20 hidden md:block lg:block"
 				/>
-				<h3 className="text-xl md:text-5xl mt-24 md:mt-0 font-medium pb-6 md:pb-12 border-b-2 border-white">
+				<h3 className="text-xl md:text-5xl mt-28 md:mt-40 font-medium pb-6 md:pb-12 border-b-2 border-slate-700 md:border-white">
 					갤럭시 DNA
 				</h3>
 				<div className="column-1 md:columns-2 border-b-2 border-white">
 					<div className="w-full">
-						<h4 className="text-3xl md:text-6xl font-light pt-20">탐험</h4>
-						<p className="text-xl md:text-5xl leading-7 mt-7 md:mt-16">
+						<h4 className="text-3xl md:text-6xl font-light mt-14 md:pt-20">탐험</h4>
+						<p
+							className="mt-7 md:mt-16"
+							style={{ fontSize: isXs ? 22 : 41, lineHeight: isXs ? 1.5 : 1.3 }}
+						>
 							열정과 호기심으로
-							<br />
+						</p>
+						<p
+							className=""
+							style={{ fontSize: isXs ? 22 : 41, lineHeight: isXs ? 1.5 : 1.3 }}
+						>
 							무한 세상을 탐험하는 인재
 						</p>
 						<p className="md:text-2xl font-light leading-7 md:leading-9 mt-5 md:mt-16 pb-20">
 							우리는 탐험을 통한 성장을 추구합니다.
-							<br />
+							<br className="hidden md:block" />
 							독특한 사고와 창의력을 발휘하여 무한한
-							<br />
+							<br className="hidden md:block" />
 							아이디어를 실행하고 도전합니다.
-							<br />
+							<br className="hidden md:block" />
 							실패를 두려워하지 않고 끊임없는
-							<br />
+							<br className="hidden md:block" />
 							탐험을 통해 더 나은 결과와 성과를
-							<br />
+							<br className="hidden md:block" />
 							이끌어냅니다.
 						</p>
 					</div>
@@ -188,22 +195,28 @@ const Career = () => {
 				</div>
 				<div className="column-1 md:columns-2 border-b-2 border-white">
 					<div className="w-full">
-						<h4 className="text-3xl md:text-6xl font-light pt-20">실행</h4>
-						<p className="text-xl md:text-5xl leading-7 mt-7 md:mt-16">
+						<h4 className="text-3xl md:text-6xl font-light mt-14 md:pt-20">실행</h4>
+						<p
+							className="mt-7 md:mt-16"
+							style={{ fontSize: isXs ? 22 : 41, lineHeight: isXs ? 1.5 : 1.3 }}
+						>
 							불가능을 창의적
-							<br />
-							<br />
+						</p>
+						<p
+							className=""
+							style={{ fontSize: isXs ? 22 : 41, lineHeight: isXs ? 1.5 : 1.3 }}
+						>
 							도전으로 실행하는 인재
 						</p>
 						<p className="md:text-2xl font-light leading-7 md:leading-9 mt-5 md:mt-16 pb-20">
 							우리는 끊임없는 실행으로 가치를 증명합니다.
-							<br />
+							<br className="hidden md:block" />
 							스스로 몰입하고 주도적으로 일하며,
-							<br />
+							<br className="hidden md:block" />
 							일의 원동력을 자체적으로 만들어냅니다.
-							<br />
+							<br className="hidden md:block" />
 							일에 끌려다니지 않고 주도적으로 움직여
-							<br />
+							<br className="hidden md:block" />
 							실행하고 나아갑니다.
 						</p>
 					</div>
@@ -214,22 +227,28 @@ const Career = () => {
 						/>
 					</div>
 				</div>
-				<div className="column-1 md:columns-2 border-b-2 border-white">
+				<div className="column-1 md:columns-2 border-b-2 border-slate-700 md:border-white">
 					<div className="w-full">
-						<h4 className="text-3xl md:text-6xl font-light pt-20">행복</h4>
-						<p className="text-xl md:text-5xl leading-7 mt-7 md:mt-16">
+						<h4 className="text-3xl md:text-6xl font-light mt-14 md:pt-20">행복</h4>
+						<p
+							className="mt-7 md:mt-16"
+							style={{ fontSize: isXs ? 22 : 41, lineHeight: isXs ? 1.5 : 1.3 }}
+						>
 							선한 마음으로 세상을
-							<br />
-							<br />
+						</p>
+						<p
+							className=""
+							style={{ fontSize: isXs ? 22 : 41, lineHeight: isXs ? 1.5 : 1.3 }}
+						>
 							행복하게 지어가는 인재
 						</p>
 						<p className="md:text-2xl font-light leading-7 md:leading-9 mt-5 md:mt-16 pb-20">
 							우리는 더 나은 행복을 위해 노력합니다.
-							<br />
+							<br className="hidden md:block" />
 							자신의 일에 열정을 가지고 즐거움을 느끼며,
-							<br />
+							<br className="hidden md:block" />
 							긍정적인 시각으로 더 나은 변화를 추구합니다.
-							<br />
+							<br className="hidden md:block" />
 							오늘보다 더 행복한 나와 세상을 만들어갑니다.
 						</p>
 					</div>
@@ -241,7 +260,7 @@ const Career = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container flex justify-center mb-96 mt-40">
+			<div className="container flex justify-center mb-96 mt-24 md:mt-40">
 				<Link to="/page/job">
 					<div className="linkButton">
 						<div className="tp" />

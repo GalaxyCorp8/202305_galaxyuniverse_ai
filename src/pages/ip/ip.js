@@ -90,7 +90,11 @@ const PostContainer = styled.div`
 	background-position: center;
 `
 const ImgContainer = styled.ul`
-	position: relative;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-bottom: 45px;
 	&:before {
 		content: '';
 		display: block;
@@ -310,6 +314,8 @@ const Ip = () => {
 		variableWidth: true,
 		centerMode: false,
 		arrows: false,
+		autoplay: true,
+		pauseonhover: true,
 		// nextArrow: <NextArrow />,
 		// prevArrow: <PrevArrow />,
 		responsive: [

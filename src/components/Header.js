@@ -117,6 +117,7 @@ const MobileOverlay = styled.header`
 			right: 15px;
 			width: 20px;
 			text-indent: -9999px;
+			z-index: 100;
 			span {
 				display: block;
 				width: 100%;
@@ -204,6 +205,7 @@ const Header = ({ isScroll }) => {
 
 	// 모바일 메뉴
 	const handleOverlay = () => {
+		console.log(1)
 		setOverlay(!overlay)
 		document.body.style.overflow = overlay ? 'auto' : 'hidden'
 	}

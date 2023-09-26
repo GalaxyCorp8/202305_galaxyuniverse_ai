@@ -164,7 +164,7 @@ const Avatar = () => {
 					style={{ height: 680 }}
 				/>
 			</div>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
 					<img
 						src={Txt1}
@@ -194,7 +194,7 @@ const Avatar = () => {
 				className="bg-gray-900"
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-4/5 mx-auto">
 					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-20 lg:mb-20 break-keep">
 						{t('ava1_4')}
@@ -251,14 +251,14 @@ const Avatar = () => {
 				]}
 				style={{ height: isXs ? 235 : 330 }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-4/5 mx-auto">
 					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-20 lg:mb-20 break-keep">
 						{t('ava1_5')}
 					</p>
 				</div>
 			</div>
-			<div className="container mb-28 lg:mb-10">
+			{/* <div className="container mb-28 lg:mb-10">
 				<div className="block md:flex justify-center items-center gap-10">
 					<img
 						src={av1State ? Av1Over : Av1}
@@ -282,7 +282,7 @@ const Avatar = () => {
 						className="block md:inline-block mx-auto md:mx-0 mb-8 md:mb-0"
 					/>
 				</div>
-			</div>
+			</div> */}
 			<div
 				className="container flex justify-center"
 				style={{ marginBottom: isXs ? 277 : 580 }}
@@ -297,16 +297,6 @@ const Avatar = () => {
 						<div className="rb" />
 						<div className="bt" />
 					</div>
-					{/* <img
-						src={AvaMd}
-						className="hidden sm:block"
-						alt=""
-					/>
-					<img
-						src={AvaXs}
-						alt=""
-						className="block sm:hidden"
-					/> */}
 				</Link>
 			</div>
 			<h2 className="text-2xl lg:text-5xl lg:leading-snug eng text-center mt-32 mb-0 lg:mb-2">
@@ -324,7 +314,7 @@ const Avatar = () => {
 				]}
 				style={{ height: isXs ? '235px' : '300px' }}
 			/>
-			<div className="container p-4 lg:p-0">
+			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-4/5 mx-auto">
 					<p className="text-lg text-center font-extralight leading-8 lg:leading-9 mt-5 lg:mt-14 mb-16 lg:mb-20 break-keep">
 						{t('ava1_7')}

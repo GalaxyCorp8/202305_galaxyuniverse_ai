@@ -36,7 +36,7 @@ const p_02 = () => {
 				</p>
 				<h2 className="text-3xl eng text-center mt-24 mb-7">mirinae</h2>
 				<p className="text-lg text-center mb-7">
-					갤럭시 코퍼레이션의 통합 세계관으로 갤럭시코퍼레이션의 메타버스 콘텐츠IP
+					갤럭시코퍼레이션의 통합 세계관으로 갤럭시코퍼레이션의 메타버스 콘텐츠IP
 					메타버스IP까지
 					<br />
 					갤럭시 메타버스 의 궁극저인 메시지를 전달하는 멀티 메타버스 세계관의
@@ -272,7 +272,7 @@ const p_02 = () => {
 			<div className="container">
 				<h2 className="text-4xl text-center eng mb-7">BUKAE</h2>
 				<p className="text-lg text-center mb-6">
-					갤럭시 코퍼레이션의 아이프는 대체적으로 멀티페르소나를
+					갤럭시코퍼레이션의 아이프는 대체적으로 멀티페르소나를
 					<br />
 					지칭합니다 원소스 멀티 페르소나로 다양한 아이피를 생성합니다.
 				</p>
@@ -362,7 +362,7 @@ const p_02 = () => {
 			<div className="container">
 				<h2 className="text-4xl text-center eng mb-7">HUMAN</h2>
 				<p className="text-lg text-center mb-6">
-					갤럭시 코퍼레이션의 현실을 넘어 다양한 자아의 세계츠IP 메타버스IP까지
+					갤럭시코퍼레이션의 현실을 넘어 다양한 자아의 세계츠IP 메타버스IP까지
 					<br />
 					갤럭시 메타버스 의 궁극저인 메시지를 전달하는 멀티 메타버스 세계관의
 					총칭입니다

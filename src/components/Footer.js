@@ -51,7 +51,7 @@ const FooterInfo = styled.div`
 
 const Footer = () => {
 	return (
-		<div className="container p-4">
+		<div className="container px-7 py-4 lg:px-0">
 			<Container className="container text-center flex justify-between align-top md:text-left mb-20 pt-4">
 				<FooterInfo>
 					<img
