@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import LogoNormal from '../assets/image/common/logo_normal.svg'
-import LogoInvert from '../assets/image/common/logo_invert.svg'
-import MNavLogo from '../assets/image/common/m-nav-logo.svg'
-import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import LogoNormal from "../assets/image/common/logo_normal.svg";
+import LogoInvert from "../assets/image/common/logo_invert.svg";
+import MNavLogo from "../assets/image/common/m-nav-logo.svg";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { selectLanguage, setLang } from '../hooks/language'
-import { setCurrentLanguage, getCurrentLanguage } from '../helpers/storage'
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage, setLang } from "../hooks/language";
+import { setCurrentLanguage, getCurrentLanguage } from "../helpers/storage";
 
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
 const Container = styled.header`
 	position: fixed;
@@ -41,11 +41,11 @@ const Container = styled.header`
 					top: 2px;
 				}
 				&::before {
-					content: '/';
+					content: "/";
 					left: -7px;
 				}
 				&::after {
-					content: '/';
+					content: "/";
 					right: -8px;
 				}
 			}
@@ -65,7 +65,7 @@ const Container = styled.header`
 			width: 26px;
 		}
 	}
-`
+`;
 
 const MobileMenu = styled.button`
 	width: 20px;
@@ -80,7 +80,7 @@ const MobileMenu = styled.button`
 			margin-bottom: 0;
 		}
 	}
-`
+`;
 
 const MobileOverlay = styled.header`
 	position: fixed;
@@ -164,11 +164,11 @@ const MobileOverlay = styled.header`
 					top: 2px;
 				}
 				&::before {
-					content: '/';
+					content: "/";
 					left: -7px;
 				}
 				&::after {
-					content: '/';
+					content: "/";
 					right: -8px;
 				}
 			}
@@ -182,70 +182,66 @@ const MobileOverlay = styled.header`
 			}
 		}
 	}
-`
+`;
 
 const Header = ({ isScroll }) => {
-	const language = useSelector(selectLanguage)
-	const navigate = useNavigate()
-	const dispatch = useDispatch()
-	const { t, i18n } = useTranslation()
+	const language = useSelector(selectLanguage);
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const { t, i18n } = useTranslation();
 
-	const [overlay, setOverlay] = useState(false)
+	const [overlay, setOverlay] = useState(false);
 
 	// 언어 변경
 	const handleLanguage = (lang) => {
 		if (lang) {
-			setCurrentLanguage(lang)
-			dispatch(setLang(lang))
+			setCurrentLanguage(lang);
+			dispatch(setLang(lang));
 			// console.log(lang)
-			i18n.changeLanguage(lang)
-			handleOverlay()
+			i18n.changeLanguage(lang);
+			handleOverlay();
 		}
-	}
+	};
 
 	// 모바일 메뉴
 	const handleOverlay = () => {
-		console.log(1)
-		setOverlay(!overlay)
-		document.body.style.overflow = overlay ? 'auto' : 'hidden'
-	}
+		console.log(1);
+		setOverlay(!overlay);
+		document.body.style.overflow = overlay ? "auto" : "hidden";
+	};
 
 	// 모바일 메뉴 클릭 처리
 	const handleOverlayClick = (link) => {
-		setOverlay(false)
-		document.body.style.overflow = 'auto'
-		navigate(link)
-	}
+		setOverlay(false);
+		document.body.style.overflow = "auto";
+		navigate(link);
+	};
 
 	useEffect(() => {
 		// 언어 설정
 		// storage에 언어가 없으면 한국어로 설정
-		const currentLanguate = getCurrentLanguage()
+		const currentLanguate = getCurrentLanguage();
 		if (!currentLanguate) {
-			setCurrentLanguage('ko')
-			dispatch(setLang('ko'))
+			setCurrentLanguage("ko");
+			dispatch(setLang("ko"));
 		} else {
-			dispatch(setLang(currentLanguate))
+			dispatch(setLang(currentLanguate));
 		}
-	}, [])
+	}, []);
 
 	return (
 		<>
 			<Container
 				className={
 					isScroll
-						? 'flex items-center justify-between eng scrolled'
-						: 'flex items-center justify-between eng'
+						? "flex items-center justify-between eng scrolled"
+						: "flex items-center justify-between eng"
 				}
 				id="headerContainer"
 			>
 				<h1>
 					<Link to="/">
-						<img
-							src={LogoNormal}
-							alt="로고"
-							className="logo"
-						/>
+						<img src={LogoNormal} alt="로고" className="logo" />
 					</Link>
 				</h1>
 				<MobileMenu
@@ -270,41 +266,33 @@ const Header = ({ isScroll }) => {
 					<li className="lg:ml-8 lg:mr-8">
 						<Link to="/page/news">NEWS</Link>
 					</li>
-					<li className="lg:ml-8">
+					{/* 2023.09.25(화) 작업, 미르 요청, 메뉴 비활성화 */}
+					{/* <li className="lg:ml-8">
 						<Link to="/page/investors">INVESTORS</Link>
-					</li>
+					</li> */}
 					<li className="lg:ml-8">
 						<Link to="/page/contact">CONTACT</Link>
 					</li>
 				</ul>
 				<ul className="lang hidden lg:block">
 					<li>
-						<button
-							type="button"
-							onClick={() => handleLanguage('ko')}
-						>
+						<button type="button" onClick={() => handleLanguage("ko")}>
 							KO
 						</button>
 					</li>
 					<li>
-						<button
-							type="button"
-							onClick={() => handleLanguage('en')}
-						>
+						<button type="button" onClick={() => handleLanguage("en")}>
 							EN
 						</button>
 					</li>
 					<li>
-						<button
-							type="button"
-							onClick={() => handleLanguage('jp')}
-						>
+						<button type="button" onClick={() => handleLanguage("jp")}>
 							JP
 						</button>
 					</li>
 				</ul>
 			</Container>
-			<MobileOverlay className={overlay ? 'active' : ''}>
+			<MobileOverlay className={overlay ? "active" : ""}>
 				<div className="overlay-inner">
 					<button
 						type="button"
@@ -316,18 +304,14 @@ const Header = ({ isScroll }) => {
 						<span></span>
 					</button>
 
-					<img
-						src={MNavLogo}
-						alt="GALAXY corp"
-						className="overlay-logo"
-					/>
+					<img src={MNavLogo} alt="GALAXY corp" className="overlay-logo" />
 
 					<ul className="nav-list eng text-xl">
 						<li>
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
-								onClick={() => handleOverlayClick('/page/company')}
+								onClick={() => handleOverlayClick("/page/company")}
 							>
 								COMPANY
 							</button>
@@ -336,7 +320,7 @@ const Header = ({ isScroll }) => {
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
-								onClick={() => handleOverlayClick('/page/business')}
+								onClick={() => handleOverlayClick("/page/business")}
 							>
 								BUSINESS
 							</button>
@@ -345,7 +329,7 @@ const Header = ({ isScroll }) => {
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
-								onClick={() => handleOverlayClick('/page/career')}
+								onClick={() => handleOverlayClick("/page/career")}
 							>
 								CAREER
 							</button>
@@ -354,7 +338,7 @@ const Header = ({ isScroll }) => {
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
-								onClick={() => handleOverlayClick('/page/news')}
+								onClick={() => handleOverlayClick("/page/news")}
 							>
 								NEWS
 							</button>
@@ -363,7 +347,7 @@ const Header = ({ isScroll }) => {
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
-								onClick={() => handleOverlayClick('/page/investors')}
+								onClick={() => handleOverlayClick("/page/investors")}
 							>
 								INVESTORS
 							</button>
@@ -372,7 +356,7 @@ const Header = ({ isScroll }) => {
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
-								onClick={() => handleOverlayClick('/page/contact')}
+								onClick={() => handleOverlayClick("/page/contact")}
 							>
 								CONTACT
 							</button>
@@ -381,26 +365,17 @@ const Header = ({ isScroll }) => {
 
 					<ul className="mobile-lang eng text-xl lg:block">
 						<li>
-							<button
-								type="button"
-								onClick={() => handleLanguage('ko')}
-							>
+							<button type="button" onClick={() => handleLanguage("ko")}>
 								KO
 							</button>
 						</li>
 						<li>
-							<button
-								type="button"
-								onClick={() => handleLanguage('en')}
-							>
+							<button type="button" onClick={() => handleLanguage("en")}>
 								EN
 							</button>
 						</li>
 						<li>
-							<button
-								type="button"
-								onClick={() => handleLanguage('jp')}
-							>
+							<button type="button" onClick={() => handleLanguage("jp")}>
 								JP
 							</button>
 						</li>
@@ -408,7 +383,7 @@ const Header = ({ isScroll }) => {
 				</div>
 			</MobileOverlay>
 		</>
-	)
-}
+	);
+};
 
-export default Header
+export default Header;
