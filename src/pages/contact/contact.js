@@ -20,6 +20,8 @@ import FooterLogo from '../../assets/image/common/footer-logo.svg'
 import FooterYoutube from '../../assets/image/common/footerYoutube.svg'
 import FooterBlog from '../../assets/image/common/footerBlog.svg'
 
+import VideoBg from '../../assets/video/9_Contact_V1.mp4'
+
 const Container = styled.footer`
 	position: relative;
 	border-top: 1px solid #fff;
@@ -82,8 +84,6 @@ const Wrapper = styled.div`
 	position: relative;
 	width: 100vw;
 	height: 100vh;
-	background: url(${Bg}) no-repeat center center;
-	background-size: cover;
 	@media (max-width: 767px) {
 		height: 410px;
 	}
@@ -92,6 +92,11 @@ const Wrapper = styled.div`
 const WrapperInside = styled.div`
 	height: calc(100% - 176px);
 	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	.isdiv {
 		width: 100%;
 	}
@@ -131,6 +136,16 @@ const WrapperInside = styled.div`
 	}
 `
 
+const VideoBackground = styled.video`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+`
+
 const Contact = () => {
 	const language = useSelector(selectLanguage)
 	const { t, i18n } = useTranslation()
@@ -148,6 +163,19 @@ const Contact = () => {
 	return (
 		<>
 			<Wrapper>
+				{/* 안동현 코드, 모바일에서 영상 배경이 되지 않도록 한 것은 지우고, 항상 배경이 영상이 되도록. */}
+				<VideoBackground
+					playsInline
+					muted
+					autoPlay
+					loop
+					webkit-playsinline="true"
+				>
+					<source
+						src={VideoBg}
+						type="video/mp4"
+					/>
+				</VideoBackground>
 				<WrapperInside className="container px-7 lg:p-0 flex justify-center items-center">
 					<div className="isdiv">
 						<div className="flex justify-start align-top">

@@ -122,7 +122,7 @@ const Tech = () => {
 			/>
 			<div className="container px-7 lg:p-0">
 				<div className="w-auto md:w-3/5 mx-auto">
-					<p className="text-lg lg:text-2xl text-center font-extralight leading-8 lg:leading-9 mb-5 lg:mb-32 break-keep">
+					<p className="text-lg lg:text-xl text-center font-extralight leading-8 lg:leading-9 mb-5 lg:mb-32 lg:mt-14 break-keep">
 						{t('tech1_5')}
 						<br />
 						<br />

@@ -36,6 +36,7 @@ import Landing from './pages/Landing'
 import NotFound from './pages/notfound/notFound'
 import PdfNoticePopup from './pages/PdfNoticePopup'
 import Apply from './pages/job/apply'
+import Studeio27HeaderLayout from './layout/Studeio27HeaderLayout'
 
 const Company = React.lazy(() => import('./pages/company/company'))
 const Business = React.lazy(() => import('./pages/business/business'))
@@ -54,6 +55,10 @@ const Job = React.lazy(() => import('./pages/job/job'))
 const JobView = React.lazy(() => import('./pages/job/jobView'))
 const JobApply = React.lazy(() => import('./pages/job/apply'))
 const Contact = React.lazy(() => import('./pages/contact/contact'))
+
+const Studio27Main = React.lazy(() => import('./pages/studio27/studio27Main'))
+const Physical100 = React.lazy(() => import('./pages/studio27/physical100'))
+const Pd = React.lazy(() => import('./pages/studio27/pd'))
 
 function App() {
 	return (
@@ -205,6 +210,30 @@ function App() {
 							<HeaderLayout>
 								<Contact />
 							</HeaderLayout>
+						}
+					/>
+					<Route
+						path="/page/studio27"
+						element={
+							<Studeio27HeaderLayout>
+								<Studio27Main />
+							</Studeio27HeaderLayout>
+						}
+					/>
+					<Route
+						path="/page/physical100"
+						element={
+							<Studeio27HeaderLayout>
+								<Physical100 />
+							</Studeio27HeaderLayout>
+						}
+					/>
+					<Route
+						path="/page/pd"
+						element={
+							<Studeio27HeaderLayout>
+								<Pd />
+							</Studeio27HeaderLayout>
 						}
 					/>
 					{/* <Route
