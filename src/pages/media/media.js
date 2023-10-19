@@ -6,7 +6,9 @@ import Img1Xs from '../../assets/image/MOBILE_image/x1/4_business_media/business
 import Img2 from '../../assets/image/WEB_image/x1/2_3media/media_4.jpg'
 import Img2Xs from '../../assets/image/MOBILE_image/x1/4_business_media/business_media_4.jpg'
 
-import BtnSite from '../../assets/image/MOBILE_image/x1/4_business_media/site.png'
+import Studio27 from '../../assets/image/WEB_image/x1/2_3media/studio27.png'
+import Pysical from '../../assets/image/WEB_image/x1/2_3media/pysical.png'
+import PysicalXs from '../../assets/image/MOBILE_image/x1/4_business_media/pysical.png'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -31,6 +33,8 @@ import Txt1 from '../../assets/image/business/media/txt1.svg'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { setDefaultLanguage } from 'react-multi-lang'
+
+import { Link } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { selectLanguage, setLang } from '../../hooks/language'
@@ -224,18 +228,60 @@ const Media = () => {
 				</a>
 			</div>
 
-			{/* <h2
+			<h2
 				className="text-2xl lg:text-6xl eng text-center eng mb-5"
-				style={{ marginTop: '700px' }}
+				style={{ marginTop: '530px' }}
 			>
 				REAL VARIETY
 			</h2>
-			<div className="w-auto md:w-3/5 mx-auto">
-				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-54">
-					{t('media1_4')}
+			<div className="w-auto md:w-3/5 mx-auto mb-20">
+				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9">
+					국내, 글로벌에서 가장 화제가 되고 있는 콘텐츠를 제작하는 스튜디오로 TV,
+					온라인플랫폼, OTT 등 다양한 채널 별 포트폴리오와 노하우를 갖춘
+					스튜디오입니다.
 				</p>
-			</div> */}
-			<h2 className="text-3xl lg:text-5xl eng text-center eng mb-3 mt-80 break-keep">
+			</div>
+			<h2 className="text-2xl lg:text-3xl eng text-center eng mb-5 mt-64 flex justify-center">
+				<img
+					src={Studio27}
+					alt="studio27"
+				/>
+			</h2>
+			<div className="w-auto md:w-3/5 mx-auto">
+				<p className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 mb-16">
+					글로벌 No.1 크리에이티브 스튜디오
+				</p>
+			</div>
+			<ParallaxBanner
+				layers={[
+					{
+						image: isXs ? PysicalXs : Pysical,
+						speed: -5,
+					},
+				]}
+				className="bg-gray-900"
+				style={{ height: isXs ? '235px' : '300px' }}
+			/>
+			<div
+				className="container flex justify-center"
+				style={{ marginTop: 100 }}
+			>
+				<Link to="/page/studio27">
+					<div className="linkButton">
+						<div className="tp" />
+						<div className="lt" />
+						<div className="lb" />
+						<span className="eng">CONTENTS VIEW</span>
+						<div className="rt" />
+						<div className="rb" />
+						<div className="bt" />
+					</div>
+				</Link>
+			</div>
+			<h2
+				className="text-3xl lg:text-5xl eng text-center eng mb-3 break-keep"
+				style={{ marginTop: 447 }}
+			>
 				lUYWORKS Media
 			</h2>
 			<div className="w-auto md:w-3/5 mx-auto">

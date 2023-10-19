@@ -78,6 +78,22 @@ const GlobalStyles = createGlobalStyle`
         @media (max-width: 767px) {
             height: 475px;
         }
+        &.no-shadow::after {
+            dispaly: none;
+        }
+    }
+    .sub-visual2 {
+        position: relative;
+        height: 680px;
+        background-color: rgba(255,255,255,0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        @media (max-width: 767px) {
+            height: 475px;
+        }
     }
     .linkButton {
         position: relative;
@@ -246,6 +262,9 @@ const GlobalStyles = createGlobalStyle`
             }
         }
     }
+    .studioRed {
+        color: #FF0000;
+    }
     .dropdown {
         position: absolute;
         background: #000;
@@ -357,7 +376,6 @@ const GlobalStyles = createGlobalStyle`
 			}
 		}
 	}
-    
 `
 
 export default GlobalStyles

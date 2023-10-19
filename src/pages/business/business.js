@@ -16,13 +16,14 @@ import MainTxtXs from '../../assets/image/business/biz_main_txtxs.svg'
 
 import { useWindowSize } from '@react-hook/window-size'
 
-const ListItem = styled.div`
+const ListItem = styled(Link)`
 	position: relative;
 	border-top: 1px solid #606060;
 	transition: all 0.3s ease-in-out;
 	z-index: 1;
 	height: 122px;
 	margin-bottom: 20px;
+	display: block;
 	&:after {
 		content: '';
 		position: absolute;
@@ -79,8 +80,6 @@ const ListItem = styled.div`
 		}
 	}
 `
-
-const ListLink = styled(Link)``
 
 const Business = () => {
 	const language = useSelector(selectLanguage)
@@ -158,7 +157,10 @@ const Business = () => {
 			<div className="container">
 				<div className="flex flex-wrap">
 					<div className="basis-full lg:basis-1/2 px-7 lg:px-4 lg:p-0">
-						<ListItem className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2">
+						<ListItem
+							to="/page/business/avatar"
+							className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2"
+						>
 							{/* <img
 								src={isXs ? bizMn1Xs : bizMn1}
 								alt="avatar"
@@ -179,10 +181,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<ListLink
-								to="/page/business/avatar"
-								className="transition ease-in-out hover:-translate-y-1 hover:scale-110"
-							>
+							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img
@@ -227,9 +226,12 @@ const Business = () => {
 										</svg>
 									</span>
 								</span>
-							</ListLink>
+							</div>
 						</ListItem>
-						<ListItem className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2">
+						<ListItem
+							to="/page/business/media"
+							className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2"
+						>
 							<span className="pr-2 text-3xl lg:text-4xl svgMenu svgMedia">
 								{/* <img
 									src={isXs ? bizMn2Xs : bizMn2}
@@ -250,10 +252,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<ListLink
-								to="/page/business/media"
-								className="transition ease-in-out hover:-translate-y-1 hover:scale-110"
-							>
+							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img
@@ -298,11 +297,14 @@ const Business = () => {
 										</svg>
 									</span>
 								</span>
-							</ListLink>
+							</div>
 						</ListItem>
 					</div>
 					<div className="basis-full lg:basis-1/2 px-7 lg:px-4 lg:p-0">
-						<ListItem className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2">
+						<ListItem
+							to="/page/business/commerce"
+							className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2"
+						>
 							<span className="pr-2 text-3xl lg:text-4xl svgMenu svgCommerce">
 								{/* <img
 									src={isXs ? bizMn3Xs : bizMn3}
@@ -323,10 +325,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<ListLink
-								to="/page/business/commerce"
-								className="transition ease-in-out hover:-translate-y-1 hover:scale-110"
-							>
+							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img
@@ -371,9 +370,12 @@ const Business = () => {
 										</svg>
 									</span>
 								</span>
-							</ListLink>
+							</div>
 						</ListItem>
-						<ListItem className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2">
+						<ListItem
+							to="/page/business/tech"
+							className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2"
+						>
 							<span className="pr-2 text-3xl lg:text-4xl svgMenu svgTech">
 								{/* <img
 									src={isXs ? bizMn4Xs : bizMn4}
@@ -394,10 +396,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<ListLink
-								to="/page/business/tech"
-								className="transition ease-in-out hover:-translate-y-1 hover:scale-110 "
-							>
+							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110 ">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img
@@ -442,7 +441,7 @@ const Business = () => {
 										</svg>
 									</span>
 								</span>
-							</ListLink>
+							</div>
 						</ListItem>
 					</div>
 				</div>
