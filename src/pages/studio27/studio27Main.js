@@ -148,6 +148,48 @@ const Dummy = styled.div`
 	background: #ff0000;
 	height: 2px;
 	margin-top: 5px;
+	position: relative;
+	left: 0;
+	&:after {
+		content: '';
+		width: 100%;
+		height: 100px;
+		display: block;
+		margin-bottom: 100px;
+	}
+`
+
+const WorksText = styled.span`
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -7px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: #ff0000;
+	}
+`
+
+const Bar = styled.div`
+	position: relative;
+	margin-bottom: 100px;
+	height: 1px;
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -7px;
+		right: 0;
+		width: 35%;
+		height: 2px;
+		background: #ff0000;
+	}
+	@media (min-width: 499px) and (max-width: 767px) {
+		&:after {
+			width: 70%;
+		}
+	}
 `
 
 const Studio27Main = () => {
@@ -167,11 +209,14 @@ const Studio27Main = () => {
 	const calcPos = () => {
 		const dummyWidth = dummyTextRef.current.offsetWidth
 		const containerLeft = containerRef.current.getBoundingClientRect().left
-		if (isXs && !isSm) {
-			setDummyWidth(containerLeft + dummyWidth + 10)
-		} else if (!isXs && isSm) {
-		} else if (!isXs && !isSm) {
-			setDummyWidth(containerLeft + dummyWidth + 190)
+		console.log('width', width)
+		if (width < 500) {
+			setDummyWidth(containerLeft)
+		} else if (width >= 500 && width < 768) {
+			console.log(1)
+			setDummyWidth(containerLeft + dummyWidth + 60)
+		} else {
+			setDummyWidth(containerLeft + dummyWidth + 60)
 		}
 	}
 
@@ -232,18 +277,22 @@ const Studio27Main = () => {
 					ref={containerRef}
 				>
 					<h2 className="text-2xl lg:text-4xl eng studioRed">
-						<span
-							style={{ display: 'inline-block' }}
+						<WorksText
+							style={{
+								display: 'inline-block',
+							}}
 							ref={dummyTextRef}
 						>
 							WORKS
-						</span>
+						</WorksText>
 					</h2>
 				</div>
 			</BarText>
 			<Dummy
 				className="mb-16 lg:mb-28"
-				style={{ width: isXs || isSm ? '50%' : dummyWidth }}
+				style={{
+					width: isXs || isSm ? '23%' : dummyWidth,
+				}}
 			/>
 			<div className="container px-7 lg:p-0">
 				<MContainer className="mb-28 lg:mb-64">
@@ -290,7 +339,7 @@ const Studio27Main = () => {
 								<br />
 								채널 정보 : 넷플릭스
 							</p>
-							<BtnReadMore to="/page/physical100" />
+							<BtnReadMore to="/studio27/physical100" />
 						</RowItem>
 					</Row>
 				</MContainer>
@@ -369,6 +418,9 @@ const Studio27Main = () => {
 					우리만의 이야기가 아닌 전 세계 모든 사람들이 공감하고 하나가 될 수 있는
 					스토리를 만들어 가고자 합니다.
 				</p>
+			</div>
+			<Bar />
+			<div className="container px-7 lg:p-0">
 				<MContainer style={{ marginBottom: isXs || isSm ? 247 : 519 }}>
 					<div className="block sm:hidden">
 						<h2 className="text-2xl eng studioRed mb-20">
@@ -405,7 +457,7 @@ const Studio27Main = () => {
 							</p>
 							<div>
 								<BtnReadMore
-									to="/page/pd"
+									to="/studio27/pd"
 									style={{ position: 'static' }}
 								/>
 							</div>
@@ -449,7 +501,7 @@ const Studio27Main = () => {
 								</p>
 								<div>
 									<BtnReadMore
-										to="/page/pd"
+										to="/studio27/pd"
 										style={{ position: 'static' }}
 									/>
 								</div>
@@ -480,7 +532,7 @@ const Studio27Main = () => {
 									스튜디오로 나아가려고 합니다.
 								</p>
 								<div>
-									<BtnReadMore to="/page/pd" />
+									<BtnReadMore to="/studio27/pd" />
 								</div>
 							</div>
 						</div>
