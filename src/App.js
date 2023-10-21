@@ -213,7 +213,7 @@ function App() {
 						}
 					/>
 					<Route
-						path="/page/studio27"
+						path="/studio27"
 						element={
 							<Studeio27HeaderLayout>
 								<Studio27Main />
@@ -221,7 +221,7 @@ function App() {
 						}
 					/>
 					<Route
-						path="/page/physical100"
+						path="/studio27/physical100"
 						element={
 							<Studeio27HeaderLayout>
 								<Physical100 />
@@ -229,7 +229,7 @@ function App() {
 						}
 					/>
 					<Route
-						path="/page/pd"
+						path="/studio27/pd"
 						element={
 							<Studeio27HeaderLayout>
 								<Pd />
