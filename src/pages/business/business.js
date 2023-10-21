@@ -32,7 +32,7 @@ const ListItem = styled(Link)`
 		right: 0;
 		height: 0;
 		display: block;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.15s ease-in-out;
 		background: #fff;
 		z-index: -1;
 	}
@@ -42,6 +42,7 @@ const ListItem = styled(Link)`
 		}
 		&:after {
 			height: 100%;
+			z-index: -1;
 		}
 		span.svgMenu svg path {
 			fill: #000;
@@ -50,6 +51,7 @@ const ListItem = styled(Link)`
 	span.textMore {
 		position: absolute;
 		right: 15px;
+		top: 0;
 	}
 	span.svgContainer {
 		position: absolute;
@@ -181,8 +183,10 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110">
-								<span className="absolute top-20 lg:top-4 right-0 clear-both">
+							<div className="">
+								{' '}
+								{/**transition ease-in-out hover:-translate-y-1 hover:scale-110 */}
+								<span className="absolute top-20 lg:top-4 right-0 clear-both block">
 									{/* <span className="block lg:hidden">
 										<img
 											src={BtnMoreXs}
@@ -252,7 +256,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110">
+							<div className="">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img
@@ -325,7 +329,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110">
+							<div className="">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img
@@ -396,7 +400,7 @@ const Business = () => {
 									/>
 								</svg>
 							</span>
-							<div className="transition ease-in-out hover:-translate-y-1 hover:scale-110 ">
+							<div className="">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
 									{/* <span className="block lg:hidden">
 										<img

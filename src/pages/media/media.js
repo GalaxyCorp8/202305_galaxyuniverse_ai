@@ -266,7 +266,7 @@ const Media = () => {
 				className="container flex justify-center"
 				style={{ marginTop: 100 }}
 			>
-				<Link to="/page/studio27">
+				<Link to="/studio27">
 					<div className="linkButton">
 						<div className="tp" />
 						<div className="lt" />
