@@ -156,7 +156,7 @@ const Pd = () => {
 						<div className="clear-both"></div>
 					</div>
 				</div>
-				<img
+				{/* <img
 					src={Img2}
 					alt=""
 					className="mx-auto block mb-7 lg:mb-28"
@@ -165,7 +165,7 @@ const Pd = () => {
 					src={Img3}
 					alt=""
 					className="mx-auto block mb-20 lg:mb-56"
-				/>
+				/> */}
 			</Container960>
 		</>
 	)
