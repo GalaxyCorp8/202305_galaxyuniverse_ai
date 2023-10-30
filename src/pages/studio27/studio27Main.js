@@ -102,21 +102,21 @@ const BtnReadMore = styled(Link)`
 		background-position: 0 -51px;
 	}
 	@media (max-width: 767px) {
-		width: 146px;
-		height: 30px;
-		background-size: 146px auto;
-		&:hover,
-		&:focus {
-			background-position: 0 -32px;
-		}
-	}
-	@media (min-width: 766px) {
 		width: 99px;
 		height: 21px;
 		background-size: 99px auto;
 		&:hover,
 		&:focus {
 			background-position: 0 -22px;
+		}
+	}
+	@media (min-width: 766px) and (max-width: 1199px) {
+		width: 146px;
+		height: 30px;
+		background-size: 146px auto;
+		&:hover,
+		&:focus {
+			background-position: 0 -32px;
 		}
 	}
 `
@@ -161,15 +161,6 @@ const Dummy = styled.div`
 
 const WorksText = styled.span`
 	position: relative;
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: -7px;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background: #ff0000;
-	}
 `
 
 const Bar = styled.div`
@@ -199,26 +190,7 @@ const Studio27Main = () => {
 	const [isXs, setIsXs] = useState(false)
 	const [isSm, setIsSm] = useState(false)
 
-	const dummyTextRef = useRef(null)
-
-	const containerRef = useRef(null)
-	const [containerLeft, setContainerLeft] = useState(0)
-
 	const [dummyWidth, setDummyWidth] = useState(0)
-
-	const calcPos = () => {
-		const dummyWidth = dummyTextRef.current.offsetWidth
-		const containerLeft = containerRef.current.getBoundingClientRect().left
-		console.log('width', width)
-		if (width < 500) {
-			setDummyWidth(containerLeft)
-		} else if (width >= 500 && width < 768) {
-			console.log(1)
-			setDummyWidth(containerLeft + dummyWidth + 60)
-		} else {
-			setDummyWidth(containerLeft + dummyWidth + 60)
-		}
-	}
 
 	useEffect(() => {
 		setDefaultLanguage(language ? language : 'ko')
@@ -232,11 +204,6 @@ const Studio27Main = () => {
 			setIsXs(false)
 			setIsSm(false)
 		}
-		calcPos()
-		// window resize
-		window.addEventListener('resize', () => {
-			calcPos()
-		})
 	}, [language, width])
 
 	return (
@@ -261,7 +228,7 @@ const Studio27Main = () => {
 					/>
 				</h2>
 				<p
-					className="text-lg lg:text-lg studioRed text-center font-light"
+					className="text-lg lg:text-lg text-center font-light"
 					style={{ marginBottom: isXs ? 160 : 380 }}
 				>
 					갤럭시코퍼레이션의 스튜디오27은
@@ -271,29 +238,19 @@ const Studio27Main = () => {
 					넷플릭스 피지컬:100을 시작으로 글로벌 No.1 스튜디오로 나아가고 있습니다.
 				</p>
 			</div>
-			<BarText className="">
-				<div
-					className="container px-7 lg:p-0"
-					ref={containerRef}
-				>
-					<h2 className="text-2xl lg:text-4xl eng studioRed">
-						<WorksText
-							style={{
-								display: 'inline-block',
-							}}
-							ref={dummyTextRef}
-						>
-							WORKS
-						</WorksText>
+			<BarText className="mb-28">
+				<div className="container px-7 lg:p-0">
+					<h2 className="text-2xl lg:text-4xl eng ">
+						<WorksText>WORKS</WorksText>
 					</h2>
 				</div>
 			</BarText>
-			<Dummy
+			{/* <Dummy
 				className="mb-16 lg:mb-28"
 				style={{
 					width: isXs || isSm ? '23%' : dummyWidth,
 				}}
-			/>
+			/> */}
 			<div className="container px-7 lg:p-0">
 				<MContainer className="mb-28 lg:mb-64">
 					<Row>
@@ -409,7 +366,7 @@ const Studio27Main = () => {
 					/>
 				</h2>
 				<p
-					className="text-lg lg:text-lg studioRed text-center font-light"
+					className="text-lg lg:text-lg  text-center font-light"
 					style={{ marginBottom: isXs || isSm ? 160 : 440 }}
 				>
 					우리는 서로 이야기를 하고, 그 이야기를 누구나 즐길 수 있도록 콘텐츠를
@@ -419,11 +376,10 @@ const Studio27Main = () => {
 					스토리를 만들어 가고자 합니다.
 				</p>
 			</div>
-			<Bar />
 			<div className="container px-7 lg:p-0">
 				<MContainer style={{ marginBottom: isXs || isSm ? 247 : 519 }}>
 					<div className="block sm:hidden">
-						<h2 className="text-2xl eng studioRed mb-20">
+						<h2 className="text-2xl eng  mb-20">
 							INSPIRING THROUGH
 							<br />
 							DIVERSE STORIES,
@@ -447,7 +403,7 @@ const Studio27Main = () => {
 								JANG HOGI
 							</h3>
 							<p
-								className="text-sm studioRed mb-5"
+								className="text-sm  mb-5"
 								style={{ lineHeight: '28px' }}
 							>
 								모든 사람들이 공감할 수 있는 이야기를 찾아야합니다. 누구나 이해하고
@@ -464,7 +420,7 @@ const Studio27Main = () => {
 						</div>
 					</div>
 					<div className="hidden sm:block md:block lg:hidden">
-						<h2 className="text-2xl eng studioRed mb-20">
+						<h2 className="text-2xl eng  mb-20">
 							INSPIRING THROUGH
 							<br />
 							DIVERSE STORIES,
@@ -491,7 +447,7 @@ const Studio27Main = () => {
 									JANG HOGI
 								</h3>
 								<p
-									className="text-sm studioRed mb-5"
+									className="text-sm  mb-5"
 									style={{ lineHeight: '28px' }}
 								>
 									모든 사람들이 공감할 수 있는 이야기를 찾아야합니다. 누구나 이해하고
@@ -521,7 +477,7 @@ const Studio27Main = () => {
 									src={Inspire}
 									alt="피지컬100"
 								/>
-								<p className="text-lg studioRed mb-10">
+								<p className="text-lg  mb-10">
 									모든 사람들이 공감할 수 있는 이야기를 찾아야 합니다.
 									<br />
 									누구나 이해하고 공감할 수 있는 이야기로 시작하고,
@@ -577,19 +533,33 @@ const Studio27Main = () => {
 						</p>
 					</div>
 					<div className="basis-1/3">
-						<p className="text-lg">
+						<p className="text-lg mb-10">
 							<span className="text-xl">CONTACT E-MAIL</span>
 							<br />
-							s27_official@galaxyuniverse.ai
+							studio27@galaxyuniverse.ai
+						</p>
+						<p className="text-lg">
+							비즈니스 제안
+							<br />
+							제작 제안
+							<br />
+							작가/피디 상시 지원
 						</p>
 					</div>
 				</div>
 			</div>
 			<div className="block lg:hidden container mt-10 mb-40 px-7">
-				<p className="text-lg mb-12">
+				<p className="text-lg mb-5">
 					<span className="text-xl">CONTACT E-MAIL</span>
 					<br />
-					s27_official@galaxyuniverse.ai
+					studio27@galaxyuniverse.ai
+				</p>
+				<p className="text-lg mb-12">
+					비즈니스 제안
+					<br />
+					제작 제안
+					<br />
+					작가/피디 상시 지원
 				</p>
 				<div className="flex justify-end">
 					<p className="text-lg">
