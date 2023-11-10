@@ -1,46 +1,46 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { ParallaxBanner } from 'react-scroll-parallax'
-import SubVisualImage from '../../assets/image/WEB_image/x1/2_4tech/tech_1.jpg'
-import SubVisualImageXs from '../../assets/image/MOBILE_image/x1/6_business-tech/business-tech_1.jpg'
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { ParallaxBanner } from "react-scroll-parallax";
+import SubVisualImage from "../../assets/image/WEB_image/x1/2_4tech/tech_1.jpg";
+import SubVisualImageXs from "../../assets/image/MOBILE_image/x1/6_business-tech/business-tech_1.jpg";
 
-import Visual1 from '../../assets/image/WEB_image/x1/studio27/visual1.png'
-import Visual1Xs from '../../assets/image/MOBILE_image/x1/studio27/visual1.png'
+import Visual1 from "../../assets/image/WEB_image/x1/studio27/visual1.png";
+import Visual1Xs from "../../assets/image/MOBILE_image/x1/studio27/visual1.png";
 
-import AimingTxt from '../../assets/image/WEB_image/x1/studio27/aiming.png'
-import AimingTxtXs from '../../assets/image/MOBILE_image/x1/studio27/aiming.png'
-import AimingTxtSm from '../../assets/image/MOBILE_image/x1/studio27/aiming_sm.png'
+import AimingTxt from "../../assets/image/WEB_image/x1/studio27/aiming.png";
+import AimingTxtXs from "../../assets/image/MOBILE_image/x1/studio27/aiming.png";
+import AimingTxtSm from "../../assets/image/MOBILE_image/x1/studio27/aiming_sm.png";
 
-import Pysical100Img from '../../assets/image/WEB_image/x1/studio27/img1.png'
-import Pysical100_2Img from '../../assets/image/WEB_image/x1/studio27/img2.png'
+import Pysical100Img from "../../assets/image/WEB_image/x1/studio27/img1.png";
+import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/img2.png";
 
-import Img3 from '../../assets/image/WEB_image/x1/studio27/img3.png'
+import Img3 from "../../assets/image/WEB_image/x1/studio27/img3.png";
 
-import Txt2 from '../../assets/image/WEB_image/x1/studio27/txt2.png'
-import Inspire from '../../assets/image/WEB_image/x1/studio27/inspire.png'
-import InspireXs from '../../assets/image/MOBILE_image/x1/studio27/inspire.png'
-import InspireSm from '../../assets/image/MOBILE_image/x1/studio27/inspire_sm.png'
+import Txt2 from "../../assets/image/WEB_image/x1/studio27/txt2.png";
+import Inspire from "../../assets/image/WEB_image/x1/studio27/inspire.png";
+import InspireXs from "../../assets/image/MOBILE_image/x1/studio27/inspire.png";
+import InspireSm from "../../assets/image/MOBILE_image/x1/studio27/inspire_sm.png";
 
-import Janghogi from '../../assets/image/WEB_image/x1/studio27/janghogi.png'
+import Janghogi from "../../assets/image/WEB_image/x1/studio27/janghogi.png";
 
-import Txt3 from '../../assets/image/WEB_image/x1/studio27/txt3.png'
-import Txt3Xs from '../../assets/image/MOBILE_image/x1/studio27/txt3.png'
+import Txt3 from "../../assets/image/WEB_image/x1/studio27/txt3.png";
+import Txt3Xs from "../../assets/image/MOBILE_image/x1/studio27/txt3.png";
 
-import Map from '../../assets/image/WEB_image/x1/studio27/map.png'
-import Btm from '../../assets/image/WEB_image/x1/studio27/btm.png'
-import BtmXs from '../../assets/image/MOBILE_image/x1/studio27/btm.png'
-import BtmTxt from '../../assets/image/WEB_image/x1/studio27/btmTxt.png'
+import Map from "../../assets/image/WEB_image/x1/studio27/map.png";
+import Btm from "../../assets/image/WEB_image/x1/studio27/btm.png";
+import BtmXs from "../../assets/image/MOBILE_image/x1/studio27/btm.png";
+import BtmTxt from "../../assets/image/WEB_image/x1/studio27/btmTxt.png";
 
-import ReadMore from '../../assets/image/WEB_image/x1/studio27/readmore.png'
+import ReadMore from "../../assets/image/WEB_image/x1/studio27/readmore.png";
 
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState, useRef } from 'react'
-import { setDefaultLanguage } from 'react-multi-lang'
+import { useTranslation } from "react-i18next";
+import { useEffect, useState, useRef } from "react";
+import { setDefaultLanguage } from "react-multi-lang";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { selectLanguage, setLang } from '../../hooks/language'
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage, setLang } from "../../hooks/language";
 
-import { useWindowSize } from '@react-hook/window-size'
+import { useWindowSize } from "@react-hook/window-size";
 
 const MContainer = styled.div`
 	position: relative;
@@ -50,20 +50,20 @@ const MContainer = styled.div`
 		padding-left: 0;
 		padding-right: 0;
 	}
-`
+`;
 
 const Row = styled.div`
 	display: flex;
 	box-sizing: border-box;
-`
+`;
 const RowItem = styled.div`
 	position: relative;
 	width: 50%;
-`
+`;
 const Row2 = styled.div`
 	display: flex;
 	box-sizing: border-box;
-`
+`;
 const RowItem2 = styled.div`
 	position: relative;
 	width: 40%;
@@ -72,14 +72,14 @@ const RowItem2 = styled.div`
 		display: block;
 		width: auto;
 	}
-`
+`;
 const RowItem22 = styled.div`
 	position: relative;
 	display: none;
 	@media (min-width: 500px) and (max-width: 499px) {
 		display: block;
 	}
-`
+`;
 
 const RowItem3 = styled.div`
 	position: relative;
@@ -87,7 +87,7 @@ const RowItem3 = styled.div`
 	@media (max-width: 767px) {
 		width: 100%;
 	}
-`
+`;
 
 const BtnReadMore = styled(Link)`
 	position: absolute;
@@ -119,7 +119,7 @@ const BtnReadMore = styled(Link)`
 			background-position: 0 -32px;
 		}
 	}
-`
+`;
 
 const BarText = styled.div`
 	position: relative;
@@ -141,7 +141,7 @@ const BarText = styled.div`
 			width: 50%;
 		}
 	}
-`
+`;
 
 const Dummy = styled.div`
 	display: block;
@@ -151,24 +151,24 @@ const Dummy = styled.div`
 	position: relative;
 	left: 0;
 	&:after {
-		content: '';
+		content: "";
 		width: 100%;
 		height: 100px;
 		display: block;
 		margin-bottom: 100px;
 	}
-`
+`;
 
 const WorksText = styled.span`
 	position: relative;
-`
+`;
 
 const Bar = styled.div`
 	position: relative;
 	margin-bottom: 100px;
 	height: 1px;
 	&:after {
-		content: '';
+		content: "";
 		position: absolute;
 		bottom: -7px;
 		right: 0;
@@ -181,30 +181,30 @@ const Bar = styled.div`
 			width: 70%;
 		}
 	}
-`
+`;
 
 const Studio27Main = () => {
-	const language = useSelector(selectLanguage)
-	const { t, i18n } = useTranslation()
-	const [width, height] = useWindowSize({ fps: 60 })
-	const [isXs, setIsXs] = useState(false)
-	const [isSm, setIsSm] = useState(false)
+	const language = useSelector(selectLanguage);
+	const { t, i18n } = useTranslation();
+	const [width, height] = useWindowSize({ fps: 60 });
+	const [isXs, setIsXs] = useState(false);
+	const [isSm, setIsSm] = useState(false);
 
-	const [dummyWidth, setDummyWidth] = useState(0)
+	const [dummyWidth, setDummyWidth] = useState(0);
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : 'ko')
+		setDefaultLanguage(language ? language : "ko");
 		if (width < 500) {
-			setIsXs(true)
-			setIsSm(false)
+			setIsXs(true);
+			setIsSm(false);
 		} else if (width >= 500 && width < 768) {
-			setIsXs(false)
-			setIsSm(true)
+			setIsXs(false);
+			setIsSm(true);
 		} else {
-			setIsXs(false)
-			setIsSm(false)
+			setIsXs(false);
+			setIsSm(false);
 		}
-	}, [language, width])
+	}, [language, width]);
 
 	return (
 		<>
@@ -233,9 +233,9 @@ const Studio27Main = () => {
 				>
 					갤럭시코퍼레이션의 스튜디오27은
 					<br />
-					예능 프로그램 제작 스튜디오로 국내 최고의 크리에이터들과 함께
+					TV & OTT를 넘어 다양한 플랫폼의 콘텐츠를 기획하고 제작하는 레이블
+					스튜디오 입니다.
 					<br />
-					넷플릭스 피지컬:100을 시작으로 글로벌 No.1 스튜디오로 나아가고 있습니다.
 				</p>
 			</div>
 			<BarText className="mb-28">
@@ -254,19 +254,16 @@ const Studio27Main = () => {
 			<div className="container px-7 lg:p-0">
 				<MContainer className="mb-28 lg:mb-64">
 					<Row>
-						<RowItem style={{ width: isSm ? '30%' : '50%' }}>
-							<img
-								src={Pysical100Img}
-								alt="피지컬100"
-							/>
+						<RowItem style={{ width: isSm ? "30%" : "50%" }}>
+							<img src={Pysical100Img} alt="피지컬100" />
 						</RowItem>
 						<RowItem
 							className="pl-5 lg:pl-14"
-							style={{ width: isSm ? '70%' : '50%' }}
+							style={{ width: isSm ? "70%" : "50%" }}
 						>
 							<h3
 								className="text-2xl lg:text-5xl font-medium mb-2.5"
-								style={{ lineHeight: isXs || isSm ? '30px' : '60px' }}
+								style={{ lineHeight: isXs || isSm ? "30px" : "60px" }}
 							>
 								피지컬100
 								<br />
@@ -304,19 +301,19 @@ const Studio27Main = () => {
 					<Row>
 						<RowItem
 							style={{
-								width: isSm ? '70%' : '50%',
-								display: isSm ? 'flex' : 'block',
-								justifyContent: 'flex-end',
+								width: isSm ? "70%" : "50%",
+								display: isSm ? "flex" : "block",
+								justifyContent: "flex-end",
 								paddingRight: isSm ? 20 : 0,
 							}}
 						>
 							<div
 								className="block sm:flex sm:items-start sm:flex-col"
-								style={{ width: isSm ? 150 : 'atuo' }}
+								style={{ width: isSm ? 150 : "atuo" }}
 							>
 								<h3
 									className="text-2xl lg:text-5xl font-medium mb-2.5"
-									style={{ lineHeight: isXs || isSm ? '30px' : '60px' }}
+									style={{ lineHeight: isXs || isSm ? "30px" : "60px" }}
 								>
 									피지컬100
 									<br />
@@ -350,20 +347,13 @@ const Studio27Main = () => {
 								</p>
 							</div>
 						</RowItem>
-						<RowItem style={{ width: isSm ? '30%' : '50%' }}>
-							<img
-								src={Pysical100_2Img}
-								alt="피지컬100"
-							/>
+						<RowItem style={{ width: isSm ? "30%" : "50%" }}>
+							<img src={Pysical100_2Img} alt="피지컬100" />
 						</RowItem>
 					</Row>
 				</MContainer>
 				<h2 className="text-2xl lg:text-5xl eng text-center mb-20 lg:mb-32">
-					<img
-						src={Txt2}
-						alt=""
-						className="mx-auto"
-					/>
+					<img src={Txt2} alt="" className="mx-auto" />
 				</h2>
 				<p
 					className="text-lg lg:text-lg  text-center font-light"
@@ -372,8 +362,8 @@ const Studio27Main = () => {
 					우리는 서로 이야기를 하고, 그 이야기를 누구나 즐길 수 있도록 콘텐츠를
 					제작합니다.
 					<br />
-					우리만의 이야기가 아닌 전 세계 모든 사람들이 공감하고 하나가 될 수 있는
-					스토리를 만들어 가고자 합니다.
+					우리만의 이야기가 아닌 전 세계 모든 사람들이 공감하고 하나가 될 수
+					있는 스토리를 만들어 가고자 합니다.
 				</p>
 			</div>
 			<div className="container px-7 lg:p-0">
@@ -393,29 +383,23 @@ const Studio27Main = () => {
 						<img
 							src={Janghogi}
 							alt="장호기PD"
-							style={{ marginLeft: '-28px', width: '70%' }}
+							style={{ marginLeft: "-28px", width: "70%" }}
 						/>
-						<div style={{ transform: 'translateY(-30px)', paddingLeft: '60px' }}>
-							<h3
-								className="text-5xl mb-5"
-								style={{ fontWeight: '500' }}
-							>
+						<div
+							style={{ transform: "translateY(-30px)", paddingLeft: "60px" }}
+						>
+							<h3 className="text-5xl mb-5" style={{ fontWeight: "500" }}>
 								JANG HOGI
 							</h3>
-							<p
-								className="text-sm  mb-5"
-								style={{ lineHeight: '28px' }}
-							>
-								모든 사람들이 공감할 수 있는 이야기를 찾아야합니다. 누구나 이해하고
-								공감할 수 있는 이야기로 시작하고, 우리는 다양한 이야기를 통해 사람들에게
-								새로운 영감을 제공하여 더 진취적인 내일을 위한 새로운 라이프 콘텐츠를
-								만드는 스튜디오로 나아가려고 합니다.
+							<p className="text-sm  mb-5" style={{ lineHeight: "28px" }}>
+								모든 사람들이 공감할 수 있는 이야기를 찾아야합니다. 누구나
+								이해하고 공감할 수 있는 이야기로 시작하고, 우리는 다양한
+								이야기를 통해 사람들에게 새로운 영감을 제공하여 더 진취적인
+								내일을 위한 새로운 라이프 콘텐츠를 만드는 스튜디오로 나아가려고
+								합니다.
 							</p>
 							<div>
-								<BtnReadMore
-									to="/studio27/pd"
-									style={{ position: 'static' }}
-								/>
+								<BtnReadMore to="/studio27/pd" style={{ position: "static" }} />
 							</div>
 						</div>
 					</div>
@@ -433,32 +417,33 @@ const Studio27Main = () => {
 						</h2>
 						<div className="flex flex-row">
 							<div className="basis-1/2">
-								<img
-									src={Janghogi}
-									alt="장호기PD"
-								/>
+								<img src={Janghogi} alt="장호기PD" />
 							</div>
 							<div className="basis-1/2"></div>
 						</div>
 						<div className="flex flex-row">
 							<div className="basis-1/2"></div>
 							<div className="basis-1/2">
-								<h3 style={{ fontSize: 61, fontWeight: '500', letterSpacing: '-5px' }}>
+								<h3
+									style={{
+										fontSize: 61,
+										fontWeight: "500",
+										letterSpacing: "-5px",
+									}}
+								>
 									JANG HOGI
 								</h3>
-								<p
-									className="text-sm  mb-5"
-									style={{ lineHeight: '28px' }}
-								>
-									모든 사람들이 공감할 수 있는 이야기를 찾아야합니다. 누구나 이해하고
-									공감할 수 있는 이야기로 시작하고, 우리는 다양한 이야기를 통해
-									사람들에게 새로운 영감을 제공하여 더 진취적인 내일을 위한 새로운 라이프
-									콘텐츠를 만드는 스튜디오로 나아가려고 합니다.
+								<p className="text-sm  mb-5" style={{ lineHeight: "28px" }}>
+									모든 사람들이 공감할 수 있는 이야기를 찾아야합니다. 누구나
+									이해하고 공감할 수 있는 이야기로 시작하고, 우리는 다양한
+									이야기를 통해 사람들에게 새로운 영감을 제공하여 더 진취적인
+									내일을 위한 새로운 라이프 콘텐츠를 만드는 스튜디오로
+									나아가려고 합니다.
 								</p>
 								<div>
 									<BtnReadMore
 										to="/studio27/pd"
-										style={{ position: 'static' }}
+										style={{ position: "static" }}
 									/>
 								</div>
 							</div>
@@ -467,16 +452,10 @@ const Studio27Main = () => {
 					<div className="hidden lg:block">
 						<div className="flex flex-row">
 							<div className="basis-2/5">
-								<img
-									src={Janghogi}
-									alt="장호기PD"
-								/>
+								<img src={Janghogi} alt="장호기PD" />
 							</div>
 							<div className="basis-3/5 flex flex-col justify-between">
-								<img
-									src={Inspire}
-									alt="피지컬100"
-								/>
+								<img src={Inspire} alt="피지컬100" />
 								<p className="text-lg  mb-10">
 									모든 사람들이 공감할 수 있는 이야기를 찾아야 합니다.
 									<br />
@@ -495,11 +474,7 @@ const Studio27Main = () => {
 					</div>
 				</MContainer>
 				<h2 className="text-2xl lg:text-5xl eng text-center mb-60 lg:mb-64">
-					<img
-						src={isXs || isSm ? Txt3Xs : Txt3}
-						alt=""
-						className="mx-auto"
-					/>
+					<img src={isXs || isSm ? Txt3Xs : Txt3} alt="" className="mx-auto" />
 				</h2>
 				<h2 className="text-2xl lg:text-4xl eng text-center mb-9 lg:mb-10">
 					CONTACT US
@@ -574,7 +549,7 @@ const Studio27Main = () => {
 			<div className="relative mb-32">
 				<div
 					style={{
-						position: 'absolute',
+						position: "absolute",
 						top: isXs || isSm ? 80 : 267,
 						left: 20,
 						right: 20,
@@ -618,7 +593,7 @@ const Studio27Main = () => {
 				/>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Studio27Main
+export default Studio27Main;
