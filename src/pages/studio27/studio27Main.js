@@ -511,7 +511,7 @@ const Studio27Main = () => {
 						<p className="text-lg mb-10">
 							<span className="text-xl">CONTACT E-MAIL</span>
 							<br />
-							studio27@galaxyuniverse.ai
+							s27@galaxyuniverse.ai
 						</p>
 						<p className="text-lg">
 							비즈니스 제안
@@ -527,7 +527,7 @@ const Studio27Main = () => {
 				<p className="text-lg mb-5">
 					<span className="text-xl">CONTACT E-MAIL</span>
 					<br />
-					studio27@galaxyuniverse.ai
+					s7@galaxyuniverse.ai
 				</p>
 				<p className="text-lg mb-12">
 					비즈니스 제안
