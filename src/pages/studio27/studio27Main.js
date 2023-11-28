@@ -287,9 +287,7 @@ const Studio27Main = () => {
 							<p className="text-xs lg:text-2xl">
 								Director : 장호기
 								<br />
-								Air Date : 2023. 01. 24
-								<br />
-								회차 : 9부작
+								Air Date : 2024. 3월 예정
 								<br />
 								채널 정보 : 넷플릭스
 							</p>
@@ -339,9 +337,7 @@ const Studio27Main = () => {
 								<p className="text-xs lg:text-2xl">
 									Director : 장호기
 									<br />
-									Air Date : 2023. 01. 24
-									<br />
-									회차 : 9부작
+									Air Date : 2024. 3월 예정
 									<br />
 									채널 정보 : 넷플릭스
 								</p>
@@ -527,7 +523,7 @@ const Studio27Main = () => {
 				<p className="text-lg mb-5">
 					<span className="text-xl">CONTACT E-MAIL</span>
 					<br />
-					s7@galaxyuniverse.ai
+					s27@galaxyuniverse.ai
 				</p>
 				<p className="text-lg mb-12">
 					비즈니스 제안
