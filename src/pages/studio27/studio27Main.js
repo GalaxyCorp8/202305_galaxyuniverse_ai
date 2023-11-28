@@ -224,6 +224,7 @@ const Studio27Main = () => {
 					<img
 						src={isXs ? AimingTxtXs : isSm ? AimingTxtSm : AimingTxt}
 						alt=""
+						피지컬100
 						className="mx-auto"
 					/>
 				</h2>
@@ -287,7 +288,9 @@ const Studio27Main = () => {
 							<p className="text-xs lg:text-2xl">
 								Director : 장호기
 								<br />
-								Air Date : 2024. 3월 예정
+								Air Date : 2023. 01. 24
+								<br />
+								회차 : 9부작
 								<br />
 								채널 정보 : 넷플릭스
 							</p>
