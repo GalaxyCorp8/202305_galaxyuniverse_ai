@@ -1,20 +1,20 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { ParallaxBanner } from 'react-scroll-parallax'
-import Pysical1 from '../../assets/image/WEB_image/x1/studio27/pys1.png'
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { ParallaxBanner } from "react-scroll-parallax";
+import Pysical1 from "../../assets/image/WEB_image/x1/studio27/pys1.png";
 
-import Img1 from '../../assets/image/WEB_image/x1/studio27/pd.png'
-import Img2 from '../../assets/image/WEB_image/x1/studio27/pd2.png'
-import Img3 from '../../assets/image/WEB_image/x1/studio27/pd3.png'
+import Img1 from "../../assets/image/WEB_image/x1/studio27/pd.png";
+import Img2 from "../../assets/image/WEB_image/x1/studio27/pd2.png";
+import Img3 from "../../assets/image/WEB_image/x1/studio27/pd3.png";
 
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState, useRef } from 'react'
-import { setDefaultLanguage } from 'react-multi-lang'
+import { useTranslation } from "react-i18next";
+import { useEffect, useState, useRef } from "react";
+import { setDefaultLanguage } from "react-multi-lang";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { selectLanguage, setLang } from '../../hooks/language'
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage, setLang } from "../../hooks/language";
 
-import { useWindowSize } from '@react-hook/window-size'
+import { useWindowSize } from "@react-hook/window-size";
 
 const Container960 = styled.div`
 	width: 960px;
@@ -22,7 +22,7 @@ const Container960 = styled.div`
 	@media (max-width: 767px) {
 		width: auto;
 	}
-`
+`;
 
 const Ul = styled.ul`
 	list-style: none;
@@ -33,38 +33,37 @@ const Ul = styled.ul`
 		&:before {
 			position: absolute;
 			left: 0;
-			content: '-';
+			content: "-";
 			display: block;
 		}
 	}
-`
+`;
 
 const Pd = () => {
-	const language = useSelector(selectLanguage)
-	const { t, i18n } = useTranslation()
-	const [width, height] = useWindowSize({ fps: 60 })
-	const [isXs, setIsXs] = useState(false)
+	const language = useSelector(selectLanguage);
+	const { t, i18n } = useTranslation();
+	const [width, height] = useWindowSize({ fps: 60 });
+	const [isXs, setIsXs] = useState(false);
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : 'ko')
+		setDefaultLanguage(language ? language : "ko");
 		if (width < 767) {
-			setIsXs(true)
+			setIsXs(true);
 		} else {
-			setIsXs(false)
+			setIsXs(false);
 		}
-	}, [language, width])
+	}, [language, width]);
 
 	return (
 		<>
 			<Container960 className="">
 				<div className="block lg:flex flex-row mb-32">
+					{/* 장호기 피디 사진 영역 (화면 폭과 상관없이 공통으로 1개만 정의) */}
 					<div className="lg:basis-1/2">
-						<img
-							src={Img1}
-							alt="장호기 PD"
-							className="mb-5 lg:mb-0"
-						/>
+						<img src={Img1} alt="장호기 PD" className="mb-5 lg:mb-0" />
 					</div>
+
+					{/* 소형화면 용 */}
 					<div className="flex flex-col lg:justify-between lg:basis-1/2 lg:pl-11 px-7 lg:pr-0 sm:hidden">
 						<div>
 							<h2 className="text-6xl lg:text-7xl mb-4">
@@ -107,11 +106,10 @@ const Pd = () => {
 							</li>
 						</Ul>
 					</div>
-					<div className="none lg:pl-11 px-7 lg:pr-0 sm:block">
-						<div
-							className="float-right"
-							style={{ width: 360 }}
-						>
+
+					{/* 대형화면 용 */}
+					<div className="hidden lg:pl-11 px-7 lg:pr-0 sm:block">
+						<div className="float-right" style={{ width: 360 }}>
 							<div className="">
 								<h2 className="text-6xl lg:text-7xl mb-4">
 									<strong>JANG HOGI</strong>
@@ -168,7 +166,7 @@ const Pd = () => {
 				/> */}
 			</Container960>
 		</>
-	)
-}
+	);
+};
 
-export default Pd
+export default Pd;
