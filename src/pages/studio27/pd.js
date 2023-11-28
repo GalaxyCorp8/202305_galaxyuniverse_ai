@@ -67,7 +67,7 @@ const Pd = () => {
 					<div className="flex flex-col lg:justify-between lg:basis-1/2 lg:pl-11 px-7 lg:pr-0 sm:hidden">
 						<div>
 							<h2 className="text-6xl lg:text-7xl mb-4">
-								<strong>[소/sm:hidden]JANG HOGI</strong>
+								<strong>JANG HOGI</strong>
 							</h2>
 							<p className="text-2xl mb-4">장호기 PD</p>
 							<p className="text-2xl mb-7 lg:mb-14">갤럭시코퍼레이션 CCO</p>
@@ -112,7 +112,7 @@ const Pd = () => {
 						<div className="float-right" style={{ width: 360 }}>
 							<div className="">
 								<h2 className="text-6xl lg:text-7xl mb-4">
-									<strong>[대/sm:block]JANG HOGI</strong>
+									<strong>JANG HOGI</strong>
 								</h2>
 								<p className="text-2xl mb-4">장호기 PD</p>
 								<p className="text-2xl mb-7 lg:mb-14">갤럭시코퍼레이션 CCO</p>
