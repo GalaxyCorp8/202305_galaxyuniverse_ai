@@ -1,23 +1,23 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import styled from 'styled-components'
-import Arr from '../../assets/image/common/dropdown_arr.svg'
-import TempImg from '../../assets/image/news/temp.png'
-import Txt1 from '../../assets/image/news/txt1.svg'
-import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
-import { setDefaultLanguage } from 'react-multi-lang'
+import styled from "styled-components";
+import Arr from "../../assets/image/common/dropdown_arr.svg";
+import TempImg from "../../assets/image/news/temp.png";
+import Txt1 from "../../assets/image/news/txt1.svg";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import { setDefaultLanguage } from "react-multi-lang";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { selectLanguage, setLang } from '../../hooks/language'
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage, setLang } from "../../hooks/language";
 
-import { useWindowSize } from '@react-hook/window-size'
+import { useWindowSize } from "@react-hook/window-size";
 
 const Banner = styled.div`
 	height: 464px;
 	background-color: rgba(255, 255, 255, 0.5);
-`
+`;
 
 const GallItem = styled.li`
 	background-color: rgba(255, 255, 255, 0.08);
@@ -35,35 +35,32 @@ const GallItem = styled.li`
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.25);
 	}
-`
+`;
 
 const News = () => {
-	const [activeTab, setActiveTab] = useState(0)
-	const [activeDropdown, setActiveDropdown] = useState(false)
-	const language = useSelector(selectLanguage)
-	const { t, i18n } = useTranslation()
-	const [width, height] = useWindowSize({ fps: 60 })
-	const [isXs, setIsXs] = useState(false)
+	const [activeTab, setActiveTab] = useState(0);
+	const [activeDropdown, setActiveDropdown] = useState(false);
+	const language = useSelector(selectLanguage);
+	const { t, i18n } = useTranslation();
+	const [width, height] = useWindowSize({ fps: 60 });
+	const [isXs, setIsXs] = useState(false);
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : 'ko')
+		setDefaultLanguage(language ? language : "ko");
 		if (width < 767) {
-			setIsXs(true)
+			setIsXs(true);
 		} else {
-			setIsXs(false)
+			setIsXs(false);
 		}
-	}, [language, width])
+	}, [language, width]);
 	return (
 		<>
 			<div className="container px-7 lg:p-0 mt-24 md:mt-60">
 				<h2 className="flex justify-center mt-0 md:mt-14 mb-10">
-					<img
-						src={Txt1}
-						alt=""
-					/>
+					<img src={Txt1} alt="" />
 				</h2>
 				<p className="text-lg lg:text-4xl text-center mb-8 lg:mb-40">
-					{t('news1')}
+					{t("news1")}
 				</p>
 				<ul className="tabBtns text-center flex items-center justify-center gap-5 lg:gap-10 mb-20 lg:mb-28">
 					<li>
@@ -71,12 +68,12 @@ const News = () => {
 							type="button"
 							className={
 								activeTab === 0
-									? 'active text-base md:text-3xl'
-									: 'text-base md:text-3xl'
+									? "active text-base md:text-3xl"
+									: "text-base md:text-3xl"
 							}
 							onClick={() => setActiveTab(0)}
 						>
-							{t('news2')}
+							{t("news2")}
 						</button>
 					</li>
 					{/* <li>
@@ -123,13 +120,10 @@ const News = () => {
 					<GallItem className="p-5">
 						<Link to="/page/news/1">
 							<div className="img mb-5">
-								<img
-									src={TempImg}
-									alt=""
-								/>
+								<img src={TempImg} alt="" />
 							</div>
 							<div className="mb-4">
-								<p className="text-base font-light">{t('news3')}</p>
+								<p className="text-base font-light">{t("news3")}</p>
 							</div>
 							<div className="flex items-center justify-between">
 								<p className="text-base"></p>
@@ -140,7 +134,7 @@ const News = () => {
 				</ul>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default News
+export default News;
