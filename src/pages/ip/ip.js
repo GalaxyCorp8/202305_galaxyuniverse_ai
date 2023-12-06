@@ -1,62 +1,63 @@
-import Bg from '../../assets/image/ip/bg.png'
-import styled from 'styled-components'
-import React, { useEffect, useState, useRef } from 'react'
-import { Parallax, useParallax, ParallaxBanner } from 'react-scroll-parallax'
+import Bg from "../../assets/image/ip/bg.png";
+import styled from "styled-components";
+import React, { useEffect, useState, useRef } from "react";
+import { Parallax, useParallax, ParallaxBanner } from "react-scroll-parallax";
 
-import Img1 from '../../assets/image/ip/cardImg/image_1.jpg'
-import Img2 from '../../assets/image/ip/cardImg/image_2.jpg'
-import Img3 from '../../assets/image/ip/cardImg/image_3.jpg'
-import Img4 from '../../assets/image/ip/cardImg/image_4.jpg'
-import Img5 from '../../assets/image/ip/cardImg/image_5.jpg'
-import Img6 from '../../assets/image/ip/cardImg/image_6.jpg'
-import Img7 from '../../assets/image/ip/cardImg/image_7.jpg'
-import Img8 from '../../assets/image/ip/cardImg/image_8.jpg'
-import Img9 from '../../assets/image/ip/cardImg/image_9.jpg'
-import Img10 from '../../assets/image/ip/cardImg/image_10.jpg'
-import Img11 from '../../assets/image/ip/cardImg/image_11.jpg'
-import Img12 from '../../assets/image/ip/cardImg/image_12.jpg'
-import Img13 from '../../assets/image/ip/cardImg/image_13.jpg'
-import Img14 from '../../assets/image/ip/cardImg/image_14.jpg'
-import Img15 from '../../assets/image/ip/cardImg/image_15.jpg'
-import Img16 from '../../assets/image/ip/cardImg/image_16.jpg'
-import Img17 from '../../assets/image/ip/cardImg/image_17.jpg'
-import Img18 from '../../assets/image/ip/cardImg/image_18.jpg'
-import Img19 from '../../assets/image/ip/cardImg/image_19.jpg'
-import Img20 from '../../assets/image/ip/cardImg/image_20.jpg'
-import Img21 from '../../assets/image/ip/cardImg/image_21.jpg'
-import Img22 from '../../assets/image/ip/cardImg/image_22.jpg'
-import Img23 from '../../assets/image/ip/cardImg/image_23.jpg'
-import Img24 from '../../assets/image/ip/cardImg/image_24.jpg'
-import Img25 from '../../assets/image/ip/cardImg/image_25.jpg'
-import Img26 from '../../assets/image/ip/cardImg/image_26.jpg'
-import Img27 from '../../assets/image/ip/cardImg/image_27.jpg'
-import Img28 from '../../assets/image/ip/cardImg/image_28.jpg'
-import Img29 from '../../assets/image/ip/cardImg/image_29.jpg'
-import Img30 from '../../assets/image/ip/cardImg/image_30.jpg'
-import Img31 from '../../assets/image/ip/cardImg/image_31.jpg'
-import Img32 from '../../assets/image/ip/cardImg/image_32.jpg'
-import Img33 from '../../assets/image/ip/cardImg/image_33.jpg'
-import Img34 from '../../assets/image/ip/cardImg/image_34.jpg'
-import Img35 from '../../assets/image/ip/cardImg/image_35.jpg'
-import Img36 from '../../assets/image/ip/cardImg/image_36.jpg'
-import Img37 from '../../assets/image/ip/cardImg/image_37.jpg'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import ArrLeft from '../../assets/image/business/media/arr-l.svg'
-import ArrRight from '../../assets/image/business/media/arr-r.svg'
-import PopupCloseImg from '../../assets/image/common/popupClose.svg'
+import Img1 from "../../assets/image/ip/cardImg/image_1.jpg";
+import Img2 from "../../assets/image/ip/cardImg/image_2.jpg";
+import Img3 from "../../assets/image/ip/cardImg/image_3.jpg";
+import Img4 from "../../assets/image/ip/cardImg/image_4.jpg";
+import Img5 from "../../assets/image/ip/cardImg/image_5.jpg";
+import Img6 from "../../assets/image/ip/cardImg/image_6.jpg";
+import Img7 from "../../assets/image/ip/cardImg/image_7.jpg";
+import Img8 from "../../assets/image/ip/cardImg/image_8.jpg";
+import Img9 from "../../assets/image/ip/cardImg/image_9.jpg";
+import Img10 from "../../assets/image/ip/cardImg/image_10.jpg";
+import Img11 from "../../assets/image/ip/cardImg/image_11.jpg";
+import Img12 from "../../assets/image/ip/cardImg/image_12.jpg";
+import Img13 from "../../assets/image/ip/cardImg/image_13.jpg";
+import Img14 from "../../assets/image/ip/cardImg/image_14.jpg";
+import Img15 from "../../assets/image/ip/cardImg/image_15.jpg";
+import Img16 from "../../assets/image/ip/cardImg/image_16.jpg";
+import Img17 from "../../assets/image/ip/cardImg/image_17.jpg";
+import Img18 from "../../assets/image/ip/cardImg/image_18.jpg";
+import Img19 from "../../assets/image/ip/cardImg/image_19.jpg";
+import Img20 from "../../assets/image/ip/cardImg/image_20.jpg";
+import Img21 from "../../assets/image/ip/cardImg/image_21.jpg";
+import Img22 from "../../assets/image/ip/cardImg/image_22.jpg";
+import Img23 from "../../assets/image/ip/cardImg/image_23.jpg";
+import Img24 from "../../assets/image/ip/cardImg/image_24.jpg";
+import Img25 from "../../assets/image/ip/cardImg/image_25.jpg";
+import Img26 from "../../assets/image/ip/cardImg/image_26.jpg";
+import Img27 from "../../assets/image/ip/cardImg/image_27.jpg";
+import Img28 from "../../assets/image/ip/cardImg/image_28.jpg";
+import Img29 from "../../assets/image/ip/cardImg/image_29.jpg";
+import Img30 from "../../assets/image/ip/cardImg/image_30.jpg";
+// 2023.12.06 마미손 관련 긴급 작업
+// import Img31 from '../../assets/image/ip/cardImg/image_31.jpg'
+// import Img32 from '../../assets/image/ip/cardImg/image_32.jpg'
+import Img33 from "../../assets/image/ip/cardImg/image_33.jpg";
+import Img34 from "../../assets/image/ip/cardImg/image_34.jpg";
+import Img35 from "../../assets/image/ip/cardImg/image_35.jpg";
+import Img36 from "../../assets/image/ip/cardImg/image_36.jpg";
+import Img37 from "../../assets/image/ip/cardImg/image_37.jpg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ArrLeft from "../../assets/image/business/media/arr-l.svg";
+import ArrRight from "../../assets/image/business/media/arr-r.svg";
+import PopupCloseImg from "../../assets/image/common/popupClose.svg";
 
-import SubVisual from '../../assets/image/ava_poster.png'
-import SUbVisualXs from '../../assets/image/ava_poster.jpg'
-import { setDefaultLanguage } from 'react-multi-lang'
+import SubVisual from "../../assets/image/ava_poster.png";
+import SUbVisualXs from "../../assets/image/ava_poster.jpg";
+import { setDefaultLanguage } from "react-multi-lang";
 
-import { useWindowSize } from '@react-hook/window-size'
+import { useWindowSize } from "@react-hook/window-size";
 
-import ReactHammer from 'react-hammerjs'
+import ReactHammer from "react-hammerjs";
 
-import { useDispatch, useSelector } from 'react-redux'
-import { selectLanguage, setLang } from '../../hooks/language'
+import { useDispatch, useSelector } from "react-redux";
+import { selectLanguage, setLang } from "../../hooks/language";
 
 const VideoBackground = styled.video`
 	position: absolute;
@@ -65,7 +66,7 @@ const VideoBackground = styled.video`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-`
+`;
 const VideoWrapper = styled.div`
 	position: relative;
 	height: 100vh;
@@ -77,7 +78,7 @@ const VideoWrapper = styled.div`
 	.main-visual-inner {
 		z-index: 1;
 	}
-`
+`;
 
 const PostContainer = styled.div`
 	position: absolute;
@@ -88,7 +89,7 @@ const PostContainer = styled.div`
 	background-image: url(${Bg});
 	background-size: cover;
 	background-position: center;
-`
+`;
 const ImgContainer = styled.ul`
 	position: absolute;
 	left: 0;
@@ -96,7 +97,7 @@ const ImgContainer = styled.ul`
 	bottom: 0;
 	padding-bottom: 45px;
 	&:before {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		left: 0;
@@ -111,7 +112,7 @@ const ImgContainer = styled.ul`
 		z-index: 1;
 	}
 	&:after {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		right: 0;
@@ -134,7 +135,7 @@ const ImgContainer = styled.ul`
 	.slick-dots {
 		display: none !important;
 	}
-`
+`;
 const NextArrowContainer = styled.div`
 	position: absolute;
 	top: 50%;
@@ -148,7 +149,7 @@ const NextArrowContainer = styled.div`
 		width: 43px;
 		height: 85px;
 	}
-`
+`;
 const PrevArrowContainer = styled.div`
 	position: absolute;
 	top: 50%;
@@ -162,7 +163,7 @@ const PrevArrowContainer = styled.div`
 		width: 43px;
 		height: 85px;
 	}
-`
+`;
 
 const PopupContainer = styled.div`
 	position: fixed;
@@ -225,45 +226,45 @@ const PopupContainer = styled.div`
 			}
 		}
 	}
-`
+`;
 
 const Ip = () => {
-	const language = useSelector(selectLanguage)
-	const [popup, setPopup] = useState(false)
-	const imageRefs = useRef([])
-	const [width, height] = useWindowSize({ fps: 60 })
-	const [isXs, setIsXs] = useState(false)
+	const language = useSelector(selectLanguage);
+	const [popup, setPopup] = useState(false);
+	const imageRefs = useRef([]);
+	const [width, height] = useWindowSize({ fps: 60 });
+	const [isXs, setIsXs] = useState(false);
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : 'ko')
+		setDefaultLanguage(language ? language : "ko");
 		if (width < 767) {
-			setIsXs(true)
+			setIsXs(true);
 		} else {
-			setIsXs(false)
+			setIsXs(false);
 		}
-	}, [language, width])
+	}, [language, width]);
 
 	const NextArrow = (props) => {
-		const { className, style, onClick } = props
+		const { className, style, onClick } = props;
 		return (
 			<NextArrowContainer
 				className={className}
 				style={{ ...style }}
 				onClick={onClick}
 			/>
-		)
-	}
+		);
+	};
 
 	const PrevArrow = (props) => {
-		const { className, style, onClick } = props
+		const { className, style, onClick } = props;
 		return (
 			<PrevArrowContainer
 				className={className}
 				style={{ ...style }}
 				onClick={onClick}
 			/>
-		)
-	}
+		);
+	};
 	const imgArr = [
 		Img1,
 		Img2,
@@ -295,14 +296,15 @@ const Ip = () => {
 		Img28,
 		Img29,
 		Img30,
-		Img31,
-		Img32,
+		// 2023.12.06 마미손 관련 긴급 작업
+		// Img31,
+		// Img32,
 		Img33,
 		Img34,
 		Img35,
 		Img36,
 		Img37,
-	]
+	];
 
 	const settings = {
 		dots: false,
@@ -347,23 +349,23 @@ const Ip = () => {
 				},
 			},
 		],
-	}
+	};
 
 	const handleSwipeLeft = (index) => {
-		console.log(index)
-	}
+		console.log(index);
+	};
 
 	const handleswipeRight = (index) => {
-		console.log(index)
-	}
+		console.log(index);
+	};
 
 	const handleClick = (index) => {
-		setPopup(true)
-	}
+		setPopup(true);
+	};
 
 	useEffect(() => {
-		imageRefs.current = imageRefs.current.slice(0, imgArr.length)
-	}, [imgArr])
+		imageRefs.current = imageRefs.current.slice(0, imgArr.length);
+	}, [imgArr]);
 
 	return (
 		<>
@@ -412,7 +414,7 @@ const Ip = () => {
 				</Slider>
 			</ImgContainer>
 		</>
-	)
-}
+	);
+};
 
-export default Ip
+export default Ip;
