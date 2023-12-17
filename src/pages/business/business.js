@@ -1,20 +1,20 @@
-import SubVisualImage from '../../assets/image/WEB_image/x1/2_business/BUSINESS_1.jpg'
-import SubVisualImageXs from '../../assets/image/MOBILE_image/x1/2_business_main/business_main.jpg'
+import SubVisualImage from "../../assets/image/WEB_image/x1/2_business/BUSINESS_1.jpg";
+import SubVisualImageXs from "../../assets/image/MOBILE_image/x1/2_business_main/business_main.jpg";
 
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { ParallaxBanner } from 'react-scroll-parallax'
-import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
-import { setDefaultLanguage } from 'react-multi-lang'
+import { ParallaxBanner } from "react-scroll-parallax";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import { setDefaultLanguage } from "react-multi-lang";
 
-import { useSelector } from 'react-redux'
-import { selectLanguage } from '../../hooks/language'
-import MainTxt from '../../assets/image/business/biz_main_txt.svg'
-import MainTxtXs from '../../assets/image/business/biz_main_txtxs.svg'
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../../hooks/language";
+import MainTxt from "../../assets/image/business/biz_main_txt.svg";
+import MainTxtXs from "../../assets/image/business/biz_main_txtxs.svg";
 
-import { useWindowSize } from '@react-hook/window-size'
+import { useWindowSize } from "@react-hook/window-size";
 
 const ListItem = styled(Link)`
 	position: relative;
@@ -25,7 +25,7 @@ const ListItem = styled(Link)`
 	margin-bottom: 20px;
 	display: block;
 	&:after {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -81,22 +81,22 @@ const ListItem = styled(Link)`
 			transform: scale(0.75) translateX(12px) translateY(-13px);
 		}
 	}
-`
+`;
 
 const Business = () => {
-	const language = useSelector(selectLanguage)
-	const { t, i18n } = useTranslation()
-	const [width, height] = useWindowSize({ fps: 60 })
-	const [isXs, setIsXs] = useState(false)
+	const language = useSelector(selectLanguage);
+	const { t, i18n } = useTranslation();
+	const [width, height] = useWindowSize({ fps: 60 });
+	const [isXs, setIsXs] = useState(false);
 
 	useEffect(() => {
-		setDefaultLanguage(language ? language : 'ko')
+		setDefaultLanguage(language ? language : "ko");
 		if (width < 767) {
-			setIsXs(true)
+			setIsXs(true);
 		} else {
-			setIsXs(false)
+			setIsXs(false);
 		}
-	}, [language, width])
+	}, [language, width]);
 
 	return (
 		<>
@@ -143,16 +143,13 @@ const Business = () => {
 
 			<div className="container px-7 lg:p-0">
 				<h2 className="flex justify-center mt-14 mb-12 lg:mb-20 ">
-					<img
-						src={isXs ? MainTxtXs : MainTxt}
-						alt=""
-					/>
+					<img src={isXs ? MainTxtXs : MainTxt} alt="" />
 					{/* METAVERSE WORLD FOR PEOPLE // {i18n.language} -- {t('welcome')} */}
 				</h2>
 				<div className="w-auto md:w-4/5 mx-auto">
 					<p
 						className="text-lg lg:text-2xl text-center font-extralight lg:leading-9 leading-8 mb-28 lg:mb-16 break-keep"
-						dangerouslySetInnerHTML={{ __html: t('biz1') }}
+						dangerouslySetInnerHTML={{ __html: t("biz1") }}
 					></p>
 				</div>
 			</div>
@@ -184,7 +181,7 @@ const Business = () => {
 								</svg>
 							</span>
 							<div className="">
-								{' '}
+								{" "}
 								{/**transition ease-in-out hover:-translate-y-1 hover:scale-110 */}
 								<span className="absolute top-20 lg:top-4 right-0 clear-both block">
 									{/* <span className="block lg:hidden">
@@ -237,11 +234,14 @@ const Business = () => {
 							className="eng pt-4 mb-8 lg:mb-0 relative pb-5 lg:pb-16 pl-2"
 						>
 							<span className="pr-2 text-3xl lg:text-4xl svgMenu svgMedia">
+								<p style={{ margin: 0 }} className="lg:ml-8 lg:mr-8">
+									CONTENTS
+								</p>
 								{/* <img
 									src={isXs ? bizMn2Xs : bizMn2}
 									alt="media"
 								/> */}
-								<svg
+								{/* <svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="166.668"
 									height="28.196"
@@ -254,7 +254,7 @@ const Business = () => {
 										transform="translate(-3.572 25.346)"
 										fill="#fff"
 									/>
-								</svg>
+								</svg> */}
 							</span>
 							<div className="">
 								<span className="absolute top-20 lg:top-4 right-0 clear-both">
@@ -451,7 +451,7 @@ const Business = () => {
 				</div>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Business
+export default Business;
