@@ -57,98 +57,55 @@ const Pd = () => {
 	return (
 		<>
 			<Container960 className="">
+				{/* <div className="block lg:flex justify-between mb-32"> */}
 				<div className="block lg:flex flex-row mb-32">
 					{/* 장호기 피디 사진 영역 (화면 폭과 상관없이 공통으로 1개만 정의) */}
 					<div className="lg:basis-1/2">
 						<img src={Img1} alt="장호기 PD" className="mb-5 lg:mb-0" />
 					</div>
-
 					{/* 소형화면 용 */}
 					<div className="flex flex-col lg:justify-between lg:basis-1/2 lg:pl-11 px-7 lg:pr-0 sm:hidden">
-						<div>
-							<h2 className="text-6xl lg:text-7xl mb-4">
-								<strong>JANG HOGI</strong>
-							</h2>
-							<p className="text-2xl mb-4">장호기 PD</p>
-							<p className="text-2xl mb-7 lg:mb-14">갤럭시코퍼레이션 CCO</p>
-						</div>
 						<Ul className="mb-10 lg:mb-16">
-							<li>넷플릭스 피지컬: 100 시즌1(23.01.24 온에어)</li>
-							<li>넷플릭스 피지컬: 100 시즌2(제작 중)</li>
-							<li>MBC PD수첩</li>
-							<li>MBC 당신이 믿었던 페이크</li>
-							<li>채널A 신문이야기 돌직구 쇼+</li>
-							<li>채널A 먹거리 X파일</li>
-							<li>채널A 신년특집 신혁이</li>
-							<li>채널A 갈 데까지 가보자</li>
-							<li>채널A 논리로 풀다</li>
-							<li>채널A 다큐스페셜</li>
+							<li>2024 Netflix &lt;PHYSICAL:100&gt; S2</li>
+							<li>2023 Netflix &lt;PHYSICAL:100&gt; S1</li>
+							<li>2015 ~ 2023 MBC Documentary Producer</li>
 						</Ul>
+
+						<div className="">
+							<p className="text-2xl mb-4">수상 내역</p>
+						</div>
+
 						<Ul>
-							<li>
-								2014 제 19회 아시안 TV 어워즈
-								<br />
-								베스트 다큐멘터리 시리즈부문 최우수상
-							</li>
-							<li>2017 푸른미디어 특별상</li>
-							<li>2020 올해의 호루라기 언론상 (PD수첩)</li>
-							<li>
-								2021 방송통신심의위원회
-								<br />
-								6월 이달의 좋은 프로그램상
-								<br />
-								(PD수첩 - 국정원과 하얀방 고문,공작관들의 고백)
-							</li>
-							<li>
-								2023 ‘제5회 뉴시스 한류엑스포’
-								<br />
-								한국콘텐츠진흥원장상
-							</li>
+							<li>2023 대한민국 콘텐츠 대상 ‘방송영상산업발전 유공 포상’</li>
+							<li>2023 부산국제영화제 베스트 리얼리티&버라이어티상</li>
+							<li>2023 한류문화대상 한국콘텐츠진흥원장상</li>
+							<li>2021 올해의 호루라기 언론상</li>
+							<li>2021 방송통신심의위원회 6월 이달의 좋은 프로그램상</li>
+							<li>2017 푸른 미디어 특별상</li>
+							<li>2014 제19회 아시안 TV어워즈 베스트 다큐멘터리</li>
 						</Ul>
 					</div>
-
 					{/* 대형화면 용 */}
 					<div className="hidden lg:pl-11 px-7 lg:pr-0 sm:block">
-						<div className="float-right" style={{ width: 360 }}>
-							<div className="">
-								<h2 className="text-6xl lg:text-7xl mb-4">
-									<strong>JANG HOGI</strong>
-								</h2>
-								<p className="text-2xl mb-4">장호기 PD</p>
-								<p className="text-2xl mb-7 lg:mb-14">갤럭시코퍼레이션 CCO</p>
-							</div>
+						<div className="float-right" style={{ width: 400 }}>
 							<Ul className="mb-10 lg:mb-16">
-								<li>넷플릭스 피지컬: 100 시즌1(23.01.24 온에어)</li>
-								<li>넷플릭스 피지컬: 100 시즌2(제작 중)</li>
-								<li>MBC PD수첩</li>
-								<li>MBC 당신이 믿었던 페이크</li>
-								<li>채널A 신문이야기 돌직구 쇼+</li>
-								<li>채널A 먹거리 X파일</li>
-								<li>채널A 신년특집 신혁이</li>
-								<li>채널A 갈 데까지 가보자</li>
-								<li>채널A 논리로 풀다</li>
-								<li>채널A 다큐스페셜</li>
+								<li>2024 Netflix &lt;PHYSICAL:100&gt; S2</li>
+								<li>2023 Netflix &lt;PHYSICAL:100&gt; S1</li>
+								<li>2015 ~ 2023 MBC Documentary Producer</li>
 							</Ul>
+
+							<div className="">
+								<p className="text-2xl mb-4">수상 내역</p>
+							</div>
+
 							<Ul>
-								<li>
-									2014 제 19회 아시안 TV 어워즈
-									<br />
-									베스트 다큐멘터리 시리즈부문 최우수상
-								</li>
-								<li>2017 푸른미디어 특별상</li>
-								<li>2020 올해의 호루라기 언론상 (PD수첩)</li>
-								<li>
-									2021 방송통신심의위원회
-									<br />
-									6월 이달의 좋은 프로그램상
-									<br />
-									(PD수첩 - 국정원과 하얀방 고문,공작관들의 고백)
-								</li>
-								<li>
-									2023 ‘제5회 뉴시스 한류엑스포’
-									<br />
-									한국콘텐츠진흥원장상
-								</li>
+								<li>2023 대한민국 콘텐츠 대상 ‘방송영상산업발전 유공 포상’</li>
+								<li>2023 부산국제영화제 베스트 리얼리티&버라이어티상</li>
+								<li>2023 한류문화대상 한국콘텐츠진흥원장상</li>
+								<li>2021 올해의 호루라기 언론상</li>
+								<li>2021 방송통신심의위원회 6월 이달의 좋은 프로그램상</li>
+								<li>2017 푸른 미디어 특별상</li>
+								<li>2014 제19회 아시안 TV어워즈 베스트 다큐멘터리</li>
 							</Ul>
 						</div>
 						<div className="clear-both"></div>
