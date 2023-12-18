@@ -29,7 +29,7 @@ import Sl14 from "../../assets/image/business/media/sl14.png";
 import Sl15 from "../../assets/image/business/media/sl15.png";
 import Sl16 from "../../assets/image/business/media/sl16.png";
 
-import Txt1 from "../../assets/image/business/media/txt1.svg";
+import creating_the_worlds_txt from "../../assets/image/business/media/creating_the_worlds_txt.png";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { setDefaultLanguage } from "react-multi-lang";
@@ -172,8 +172,8 @@ const Media = () => {
 				/>
 			</div>
 			<div className="container px-7 lg:p-0">
-				<h2 className="flex justify-center mt-14 mb-12 lg:mb-10 ">
-					<img src={Txt1} alt="" />
+				<h2 className="flex justify-center mt-4 mb-4 lg:mb-4 ">
+					<img src={creating_the_worlds_txt} alt="" />
 				</h2>
 				<h3 className="text-lg lg:text-3xl text-center font-light lg:mb-36 mb-10">
 					{t("media1_1")}
