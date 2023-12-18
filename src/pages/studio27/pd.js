@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ParallaxBanner } from "react-scroll-parallax";
 import Pysical1 from "../../assets/image/WEB_image/x1/studio27/pys1.png";
 
-import Img1 from "../../assets/image/WEB_image/x1/studio27/pd.png";
+import Img1 from "../../assets/image/WEB_image/x1/studio27/janghogi_02.jpg";
 import Img2 from "../../assets/image/WEB_image/x1/studio27/pd2.png";
 import Img3 from "../../assets/image/WEB_image/x1/studio27/pd3.png";
 
@@ -82,7 +82,7 @@ const Pd = () => {
 							<li>2021 올해의 호루라기 언론상</li>
 							<li>2021 방송통신심의위원회 6월 이달의 좋은 프로그램상</li>
 							<li>2017 푸른 미디어 특별상</li>
-							<li>2014 제19회 아시안 TV어워즈 베스트 다큐멘터리</li>
+							<li>2014 제19회 아시안 TV어워즈 베스트 다큐멘터리상</li>
 						</Ul>
 					</div>
 					{/* 대형화면 용 */}
@@ -105,7 +105,7 @@ const Pd = () => {
 								<li>2021 올해의 호루라기 언론상</li>
 								<li>2021 방송통신심의위원회 6월 이달의 좋은 프로그램상</li>
 								<li>2017 푸른 미디어 특별상</li>
-								<li>2014 제19회 아시안 TV어워즈 베스트 다큐멘터리</li>
+								<li>2014 제19회 아시안 TV어워즈 베스트 다큐멘터리상</li>
 							</Ul>
 						</div>
 						<div className="clear-both"></div>
