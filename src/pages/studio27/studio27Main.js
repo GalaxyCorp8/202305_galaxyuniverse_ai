@@ -7,12 +7,12 @@ import SubVisualImageXs from "../../assets/image/MOBILE_image/x1/6_business-tech
 import Visual1 from "../../assets/image/WEB_image/x1/studio27/visual1.png";
 import Visual1Xs from "../../assets/image/MOBILE_image/x1/studio27/visual1.png";
 
-import AimingTxt from "../../assets/image/WEB_image/x1/studio27/aiming.png";
+import AimingTxt from "../../assets/image/WEB_image/x1/studio27/beyond_frame_txt.png";
 import AimingTxtXs from "../../assets/image/MOBILE_image/x1/studio27/aiming.png";
 import AimingTxtSm from "../../assets/image/MOBILE_image/x1/studio27/aiming_sm.png";
 
 import Pysical100Img from "../../assets/image/WEB_image/x1/studio27/img1.png";
-import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/img2.png";
+import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.jpg";
 
 import Img3 from "../../assets/image/WEB_image/x1/studio27/img3.png";
 
@@ -220,9 +220,11 @@ const Studio27Main = () => {
 				/>
 			</div>
 			<div className="container px-7 lg:p-0">
-				<h2 className="text-2xl lg:text-5xl eng text-center mt-14 lg:mt-40 mb-24 lg:mb-32">
+				<h2 className="text-2xl lg:text-5xl eng text-center mt-14 lg:mt-10 mb-24 lg:mb-12">
 					<img
-						src={isXs ? AimingTxtXs : isSm ? AimingTxtSm : AimingTxt}
+						// 2023.12.18(월) 이미지로 된 텍스트 교체
+						// src={isXs ? AimingTxtXs : isSm ? AimingTxtSm : AimingTxt}
+						src={AimingTxt}
 						alt=""
 						피지컬100
 						className="mx-auto"
@@ -370,14 +372,14 @@ const Studio27Main = () => {
 								<p className="text-xs lg:text-2xl">
 									Director : 장호기
 									<br />
-									Air Date : 2024. 3월 예정
+									Air Date : 2024. 03 예정
 									<br />
 									채널 정보 : 넷플릭스
 								</p>
 							</div>
 						</RowItem>
 						<RowItem style={{ width: isSm ? "30%" : "50%" }}>
-							<img src={Pysical100_2Img} alt="피지컬100" />
+							<img src={Pysical100_2Img} alt="피지컬100_02" />
 						</RowItem>
 					</Row>
 				</MContainer>
@@ -386,7 +388,7 @@ const Studio27Main = () => {
 				<MContainer className="mb-28 lg:mb-64">
 					<Row>
 						<RowItem style={{ width: isSm ? "30%" : "50%" }}>
-							<img src={Pysical100Img} alt="피지컬100" />
+							<img src={Pysical100Img} alt="피지컬100_01" />
 						</RowItem>
 						<RowItem
 							className="pl-5 lg:pl-14"
