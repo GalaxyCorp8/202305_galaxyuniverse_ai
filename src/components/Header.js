@@ -339,6 +339,18 @@ const Header = ({ isScroll }) => {
 								BUSINESS
 							</button>
 						</li>
+
+						{/* 2023.12.19 화요 작업 콘텐츠 추가 */}
+						<li>
+							<button
+								type="button"
+								className="pt-5 pb-8 block"
+								onClick={() => handleOverlayClick("/page/business/media")}
+							>
+								CONTENTS
+							</button>
+						</li>
+
 						<li>
 							<button
 								type="button"
@@ -357,7 +369,7 @@ const Header = ({ isScroll }) => {
 								NEWS
 							</button>
 						</li>
-						<li>
+						{/* <li>
 							<button
 								type="button"
 								className="pt-5 pb-8 block"
@@ -365,7 +377,7 @@ const Header = ({ isScroll }) => {
 							>
 								INVESTORS
 							</button>
-						</li>
+						</li> */}
 						<li>
 							<button
 								type="button"
