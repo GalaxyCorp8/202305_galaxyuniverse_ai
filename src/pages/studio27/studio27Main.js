@@ -448,9 +448,10 @@ const Studio27Main = () => {
 			</div>
 
 			<div className="container px-7 lg:p-0">
-				<h2 className="text-2xl lg:text-5xl eng text-center mb-60 lg:mb-64">
+				{/* 2023.12.19 화요 작업, 삭제 */}
+				{/* <h2 className="text-2xl lg:text-5xl eng text-center mb-60 lg:mb-64">
 					<img src={isXs || isSm ? Txt3Xs : Txt3} alt="" className="mx-auto" />
-				</h2>
+				</h2> */}
 				<h2 className="text-2xl lg:text-4xl eng text-center mb-9 lg:mb-10">
 					CONTACT US
 				</h2>
