@@ -4,8 +4,11 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import SubVisualImage from "../../assets/image/WEB_image/x1/2_4tech/tech_1.jpg";
 import SubVisualImageXs from "../../assets/image/MOBILE_image/x1/6_business-tech/business-tech_1.jpg";
 
-import Visual1 from "../../assets/image/WEB_image/x1/studio27/visual1.png";
-import Visual1Xs from "../../assets/image/MOBILE_image/x1/studio27/visual1.png";
+// import Visual1 from "../../assets/image/WEB_image/x1/studio27/visual1.png";
+// import Visual1Xs from "../../assets/image/MOBILE_image/x1/studio27/visual1.png";
+
+import Visual1 from "../../assets/image/WEB_image/x1/studio27/studio27_top.png";
+import Visual1Xs from "../../assets/image/MOBILE_image/x1/studio27/studio27_top_under500.jpg";
 
 import AimingTxt from "../../assets/image/WEB_image/x1/studio27/beyond_frame_txt.png";
 import AimingTxtXs from "../../assets/image/MOBILE_image/x1/studio27/aiming.png";
@@ -466,6 +469,7 @@ const Studio27Main = () => {
 				]}
 				style={{ height: 328 }}
 			/>
+			{/* 피씨 버전 */}
 			<div className="hidden lg:block container mt-10 mb-32">
 				<div className="flex flex-row">
 					<div className="basis-1/3">
@@ -500,6 +504,7 @@ const Studio27Main = () => {
 					</div>
 				</div>
 			</div>
+			{/* 모바일 버전 */}
 			<div className="block lg:hidden container mt-10 mb-40 px-7">
 				<p className="text-lg mb-5">
 					<span className="text-xl">CONTACT E-MAIL</span>
@@ -513,14 +518,25 @@ const Studio27Main = () => {
 					<br />
 					작가/피디 상시 지원
 				</p>
-				<div className="flex justify-end">
-					<p className="text-lg">
-						10, Gukjegeumyung-ro,
+
+				<div className="flex flex-end">
+					<div className="basis-1/2"></div>
+					<div className="basis-1/2">
+						<p className="text-lg">
+							10, Gukjegeumyung-ro,
+							<br />
+							Yeongdeungpo-gu, Seoul,
+							<br />
+							Republic of Korea
+						</p>
 						<br />
-						Yeongdeungpo-gu, Seoul,
 						<br />
-						Republic of Korea
-					</p>
+						<p className="text-lg">
+							서울 영등포구 국제금융로
+							<br />
+							10 Three IFC 53F
+						</p>
+					</div>
 				</div>
 			</div>
 			<div className="relative mb-32">
