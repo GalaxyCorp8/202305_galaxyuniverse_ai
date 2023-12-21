@@ -11,7 +11,7 @@ const VideoBackground = styled.video`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	object-fit: center;
+	object-fit: cover;
 `;
 const VideoWrapper = styled.div`
 	position: relative;
@@ -62,21 +62,43 @@ const Landing = () => {
 			</div> */}
 
 			{/* 최종선 대표님 코드, 모바일에서는 영상 배경이 되지 않도록 하였음 */}
-			{/* {isMobile ? (
-				<PostContainer />
-			) : (
-				<VideoBackground muted autoPlay loop>
+			{isMobile ? (
+				<VideoBackground
+					playsInline
+					muted
+					autoPlay
+					loop
+					webkit-playsinline="true"
+				>
 					<source
-						// src={Video}
 						src={
-							"https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/main.webm"
+							"https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/welcomeStar_mobile.mp4"
 						}
-						type="video/webm"
+						type="video/mp4"
 					/>
 				</VideoBackground>
-			)} */}
+			) : (
+				<VideoBackground
+					playsInline
+					muted
+					autoPlay
+					loop
+					webkit-playsinline="true"
+				>
+					<source
+						// src={Video}
+						// src={
+						// 	'https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/main.webm'
+						// }
+						src={
+							"https://s3.ap-northeast-2.amazonaws.com/2023.05.galhome.webm/welcomeStar.mp4"
+						}
+						type="video/mp4"
+					/>
+				</VideoBackground>
+			)}
 			{/* 안동현 코드, 모바일에서 영상 배경이 되지 않도록 한 것은 지우고, 항상 배경이 영상이 되도록. */}
-			<VideoBackground
+			{/* <VideoBackground
 				playsInline
 				muted
 				autoPlay
@@ -93,7 +115,7 @@ const Landing = () => {
 					}
 					type="video/mp4"
 				/>
-			</VideoBackground>
+			</VideoBackground> */}
 		</VideoWrapper>
 	);
 };
