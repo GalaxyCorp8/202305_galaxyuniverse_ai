@@ -245,10 +245,11 @@ const Header = ({ isScroll }) => {
 				style={{
 					display: "flex",
 					alignItems: "center",
-					justifyContent: "flex-bewteen",
+					justifyContent: "space-between",
 					// background: "blue",
 				}}
 			>
+				{/* 로고이미지 있는 영역 */}
 				<h1
 					style={{
 						flexShrink: 0,
@@ -267,55 +268,53 @@ const Header = ({ isScroll }) => {
 					</Link>
 				</h1>
 				{/* 메뉴들이 있는 영역 */}
-				<div
+				<ul
 					className={
 						isScroll
-							? "flex items-center justify-between eng scrolled"
-							: "flex items-center justify-between eng"
+							? "hidden lg:flex flex items-center justify-between text-xl nav eng scrolled"
+							: "hidden lg:flex flex items-center justify-between text-xl nav eng"
 					}
-					style={{ flexGrow: 1, justifyContent: "space-between" }}
+					// className="container hidden lg:flex items-center justify-between text-xl nav gap-10"
+					style={{
+						flexGrow: 1,
+						flexShrink: 1,
+						justifyContent: "space-between",
+						gap: "20px",
+						margin: "10px",
+						// background: "red",
+					}}
 					id="headerContainer"
 				>
-					<MobileMenu
-						type="button"
-						className="block lg:hidden"
-						onClick={handleOverlay}
-					>
-						<span></span>
-						<span></span>
-						<span></span>
-					</MobileMenu>
-					<ul className="container lg:flex items-center justify-center text-xl nav hidden">
-						<li className="lg:mr-8">
-							<Link to="/page/company">COMPANY</Link>
-						</li>
-						<li className="lg:ml-8 lg:mr-8">
-							<Link to="/page/business">BUSINESS</Link>
-						</li>
-						<li className="lg:ml-8 lg:mr-8">
-							<Link to="/page/business/media">CONTENTS</Link>
-						</li>
-						<li className="lg:ml-8 lg:mr-8">
-							<Link to="/page/career">CAREER</Link>
-						</li>
-						<li className="lg:ml-8 lg:mr-8">
-							<Link to="/page/news">NEWS</Link>
-						</li>
-						{/* 2023.09.25(화) 작업, 미르 요청, 메뉴 비활성화 */}
-						{/* <li className="lg:ml-8">
+					<li style={{ flexGrow: 1, flexShrink: 1, textAlign: "center" }}>
+						<Link to="/page/company">COMPANY</Link>
+					</li>
+					<li style={{ flexGrow: 1, flexShrink: 1, textAlign: "center" }}>
+						<Link to="/page/business">BUSINESS</Link>
+					</li>
+					<li style={{ flexGrow: 1, flexShrink: 1, textAlign: "center" }}>
+						<Link to="/page/business/media">CONTENTS</Link>
+					</li>
+					<li style={{ flexGrow: 1, flexShrink: 1, textAlign: "center" }}>
+						<Link to="/page/career">CAREER</Link>
+					</li>
+					<li style={{ flexGrow: 1, flexShrink: 1, textAlign: "center" }}>
+						<Link to="/page/news">NEWS</Link>
+					</li>
+					{/* 2023.09.25(화) 작업, 미르 요청, 메뉴 비활성화 */}
+					{/* <li className="lg:ml-8">
 						<Link to="/page/investors">INVESTORS</Link>
 					</li> */}
-						<li className="lg:ml-8">
-							<Link to="/page/contact">CONTACT</Link>
-						</li>
-					</ul>
-				</div>
+					<li style={{ flexGrow: 1, flexShrink: 1, textAlign: "center" }}>
+						<Link to="/page/contact">CONTACT</Link>
+					</li>
+				</ul>
+				{/* 언어변환 버튼 있는 영역 */}
 				<ul
 					style={{
 						flexShrink: 0,
-						margin: "5px",
+						// background: "violet",
 					}}
-					className="lang hidden lg:block eng"
+					className="lang lg:block eng"
 				>
 					<li>
 						<button type="button" onClick={() => handleLanguage("ko")}>
