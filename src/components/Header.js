@@ -245,26 +245,35 @@ const Header = ({ isScroll }) => {
 				style={{
 					display: "flex",
 					alignItems: "center",
-					justifyContent: "flex-start",
+					justifyContent: "flex-bewteen",
+					// background: "blue",
 				}}
 			>
-				<h1 style={{ verticalAlign: "middle" }}>
+				<h1
+					style={{
+						flexShrink: 0,
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						verticalAlign: "middle",
+						minWidth: "60px",
+						width: "60px",
+						height: "40px",
+						// background: "green",
+					}}
+				>
 					<Link to="/">
-						<img
-							style={{ height: "40px", margin: "10px" }}
-							src={LogoNormal}
-							alt="로고"
-							className="logo"
-						/>
+						<img src={LogoNormal} alt="로고" className="logo" />
 					</Link>
 				</h1>
+				{/* 메뉴들이 있는 영역 */}
 				<div
 					className={
 						isScroll
 							? "flex items-center justify-between eng scrolled"
 							: "flex items-center justify-between eng"
 					}
-					style={{ justifyContent: "space-between" }}
+					style={{ flexGrow: 1, justifyContent: "space-between" }}
 					id="headerContainer"
 				>
 					<MobileMenu
@@ -300,24 +309,30 @@ const Header = ({ isScroll }) => {
 							<Link to="/page/contact">CONTACT</Link>
 						</li>
 					</ul>
-					<ul className="lang hidden lg:block">
-						<li>
-							<button type="button" onClick={() => handleLanguage("ko")}>
-								KO
-							</button>
-						</li>
-						<li>
-							<button type="button" onClick={() => handleLanguage("en")}>
-								EN
-							</button>
-						</li>
-						<li>
-							<button type="button" onClick={() => handleLanguage("jp")}>
-								JP
-							</button>
-						</li>
-					</ul>
 				</div>
+				<ul
+					style={{
+						flexShrink: 0,
+						margin: "5px",
+					}}
+					className="lang hidden lg:block eng"
+				>
+					<li>
+						<button type="button" onClick={() => handleLanguage("ko")}>
+							KO
+						</button>
+					</li>
+					<li>
+						<button type="button" onClick={() => handleLanguage("en")}>
+							EN
+						</button>
+					</li>
+					<li>
+						<button type="button" onClick={() => handleLanguage("jp")}>
+							JP
+						</button>
+					</li>
+				</ul>
 			</Container>
 			<MobileOverlay className={overlay ? "active" : ""}>
 				<div className="overlay-bg" onClick={handleOverlay}></div>
