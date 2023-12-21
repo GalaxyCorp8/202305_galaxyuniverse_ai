@@ -242,68 +242,82 @@ const Header = ({ isScroll }) => {
 	return (
 		<>
 			<Container
-				className={
-					isScroll
-						? "flex items-center justify-between eng scrolled"
-						: "flex items-center justify-between eng"
-				}
-				id="headerContainer"
+				style={{
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "flex-start",
+				}}
 			>
-				<h1>
+				<h1 style={{ verticalAlign: "middle" }}>
 					<Link to="/">
-						<img src={LogoNormal} alt="로고" className="logo" />
+						<img
+							style={{ height: "40px", margin: "10px" }}
+							src={LogoNormal}
+							alt="로고"
+							className="logo"
+						/>
 					</Link>
 				</h1>
-				<MobileMenu
-					type="button"
-					className="block lg:hidden"
-					onClick={handleOverlay}
+				<div
+					className={
+						isScroll
+							? "flex items-center justify-between eng scrolled"
+							: "flex items-center justify-between eng"
+					}
+					style={{ justifyContent: "space-between" }}
+					id="headerContainer"
 				>
-					<span></span>
-					<span></span>
-					<span></span>
-				</MobileMenu>
-				<ul className="container lg:flex items-center justify-center text-xl nav hidden">
-					<li className="lg:mr-8">
-						<Link to="/page/company">COMPANY</Link>
-					</li>
-					<li className="lg:ml-8 lg:mr-8">
-						<Link to="/page/business">BUSINESS</Link>
-					</li>
-					<li className="lg:ml-8 lg:mr-8">
-						<Link to="/page/business/media">CONTENTS</Link>
-					</li>
-					<li className="lg:ml-8 lg:mr-8">
-						<Link to="/page/career">CAREER</Link>
-					</li>
-					<li className="lg:ml-8 lg:mr-8">
-						<Link to="/page/news">NEWS</Link>
-					</li>
-					{/* 2023.09.25(화) 작업, 미르 요청, 메뉴 비활성화 */}
-					{/* <li className="lg:ml-8">
+					<MobileMenu
+						type="button"
+						className="block lg:hidden"
+						onClick={handleOverlay}
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</MobileMenu>
+					<ul className="container lg:flex items-center justify-center text-xl nav hidden">
+						<li className="lg:mr-8">
+							<Link to="/page/company">COMPANY</Link>
+						</li>
+						<li className="lg:ml-8 lg:mr-8">
+							<Link to="/page/business">BUSINESS</Link>
+						</li>
+						<li className="lg:ml-8 lg:mr-8">
+							<Link to="/page/business/media">CONTENTS</Link>
+						</li>
+						<li className="lg:ml-8 lg:mr-8">
+							<Link to="/page/career">CAREER</Link>
+						</li>
+						<li className="lg:ml-8 lg:mr-8">
+							<Link to="/page/news">NEWS</Link>
+						</li>
+						{/* 2023.09.25(화) 작업, 미르 요청, 메뉴 비활성화 */}
+						{/* <li className="lg:ml-8">
 						<Link to="/page/investors">INVESTORS</Link>
 					</li> */}
-					<li className="lg:ml-8">
-						<Link to="/page/contact">CONTACT</Link>
-					</li>
-				</ul>
-				<ul className="lang hidden lg:block">
-					<li>
-						<button type="button" onClick={() => handleLanguage("ko")}>
-							KO
-						</button>
-					</li>
-					<li>
-						<button type="button" onClick={() => handleLanguage("en")}>
-							EN
-						</button>
-					</li>
-					<li>
-						<button type="button" onClick={() => handleLanguage("jp")}>
-							JP
-						</button>
-					</li>
-				</ul>
+						<li className="lg:ml-8">
+							<Link to="/page/contact">CONTACT</Link>
+						</li>
+					</ul>
+					<ul className="lang hidden lg:block">
+						<li>
+							<button type="button" onClick={() => handleLanguage("ko")}>
+								KO
+							</button>
+						</li>
+						<li>
+							<button type="button" onClick={() => handleLanguage("en")}>
+								EN
+							</button>
+						</li>
+						<li>
+							<button type="button" onClick={() => handleLanguage("jp")}>
+								JP
+							</button>
+						</li>
+					</ul>
+				</div>
 			</Container>
 			<MobileOverlay className={overlay ? "active" : ""}>
 				<div className="overlay-bg" onClick={handleOverlay}></div>
