@@ -15,7 +15,8 @@ import AimingTxtXs from "../../assets/image/MOBILE_image/x1/studio27/aiming.png"
 import AimingTxtSm from "../../assets/image/MOBILE_image/x1/studio27/aiming_sm.png";
 
 import Pysical100Img from "../../assets/image/WEB_image/x1/studio27/img1.png";
-import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.jpg";
+// import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.jpg";
+import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.webp";
 
 import Img3 from "../../assets/image/WEB_image/x1/studio27/img3.png";
 
@@ -353,29 +354,27 @@ const Studio27Main = () => {
 								>
 									피지컬100
 									<br />
-									시즌2
+									시즌2 - Underground
 								</h3>
 								<p className="text-sm lg:text-2xl mb-10">
 									{isXs ? (
 										<>
-											더 강하고 더 치열하게
+											최고의 피지컬을 자랑하는 100인의 참가자,
 											<br />
-											글로벌 1위 예능의 두번째
-											<br />
-											이야기
+											연이은 험난한 대결에서 치열한 경쟁을 펼친다.
 										</>
 									) : (
 										<>
-											더 강하고 더 치열하게
+											최고의 피지컬을 자랑하는 100인의 참가자,
 											<br />
-											글로벌 1위 예능의 두번째 이야기
+											연이은 험난한 대결에서 치열한 경쟁을 펼친다.
 										</>
 									)}
 								</p>
 								<p className="text-xs lg:text-2xl">
 									Director : 장호기
 									<br />
-									Air Date : 2024. 03 예정
+									Air Date : 2024. 03. 19
 									<br />
 									채널 정보 : 넷플릭스
 								</p>
@@ -390,12 +389,12 @@ const Studio27Main = () => {
 				{/* 피지컬100 1 영역 */}
 				<MContainer className="mb-28 lg:mb-64">
 					<Row>
-						<RowItem style={{ width: isSm ? "30%" : "50%" }}>
+						<RowItem style={{ width: isSm ? "30%" : "45%" }}>
 							<img src={Pysical100Img} alt="피지컬100_01" />
 						</RowItem>
 						<RowItem
 							className="pl-5 lg:pl-14"
-							style={{ width: isSm ? "70%" : "50%" }}
+							style={{ width: isSm ? "70%" : "55%" }}
 						>
 							<h3
 								className="text-2xl lg:text-5xl font-medium mb-2.5"
@@ -408,15 +407,15 @@ const Studio27Main = () => {
 							<p className="text-sm lg:text-2xl mb-3 sm:mb-10">
 								{isXs ? (
 									<span className="text-xs">
-										2023년 1월 24일 넷플릭스
-										<br />에 공개된 넷플릭스 오리지
-										<br />널 프로그램.
+										최고의 ‘몸’을 찾기 위해, 최강 피지컬
+										<br />
+										100인이 벌이는 극강의 서바이벌 게임 예능
 									</span>
 								) : (
 									<>
-										2023년 1월 24일 넷플릭스에 공개된
+										최고의 ‘몸’을 찾기 위해, 최강 피지컬
 										<br />
-										넷플릭스 오리지널 프로그램.
+										100인이 벌이는 극강의 서바이벌 게임 예능
 									</>
 								)}
 							</p>
