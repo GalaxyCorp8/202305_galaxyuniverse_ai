@@ -16,7 +16,7 @@ import AimingTxtSm from "../../assets/image/MOBILE_image/x1/studio27/aiming_sm.p
 
 import Pysical100Img from "../../assets/image/WEB_image/x1/studio27/img1.png";
 // import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.jpg";
-import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.webp";
+import Pysical100_2Img from "../../assets/image/WEB_image/x1/studio27/physical100_02.png";
 
 import Img3 from "../../assets/image/WEB_image/x1/studio27/img3.png";
 
